@@ -1,0 +1,9 @@
+[
+    {
+      "name": "ws-nrf",
+      "environmentSetupScript": "/workspace/build/ws-blinky/Debug/NRF52_DK/activate.sh"
+    },
+    {
+      "name": "ws-linux"
+    }
+  ]

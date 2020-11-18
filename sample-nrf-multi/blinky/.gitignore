@@ -1,0 +1,5 @@
+.parasoft
+.project
+cpptest_results.clog
+cpptestscan.bdf
+.cpptest/
