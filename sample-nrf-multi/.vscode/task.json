@@ -1,0 +1,17 @@
+{
+    "version": "0.1.0",
+    "_runner": "terminal",
+    "command": "",
+    "isShellCommand": true,
+    "showOutput": "always",
+    "suppressTaskName": true,
+    "tasks": [
+        {
+            "taskName": "example-script",
+            "isBuildCommand": true,
+            "args": [
+                "echo michel"
+            ]
+        }
+    ]
+}

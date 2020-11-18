@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "linux",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "logging": {
+        "trace": true,
+        "traceResponse": true
+      },
+      "linux": {
+        "MIMode": "gdb",
+      },
+    },
+    {
+      "type": "cortex-debug",
+      "request": "launch",
+      "name": "Blinky-MCU",
+      "executable": "${workspaceRoot}/build/ws-blinky/Debug/NRF52_DK/bin/spu_blinky_app",
+      "gdbTarget": "172.17.0.1:2331",
+      "cwd": "${workspaceFolder}",
+      "servertype": "external",
+      "runToMain": false,
+      "showDevDebugOutput": false,
+      "preLaunchCommands": [
+        "monitor reset halt",
+      ],
+      "preRestartCommands": ["monitor reset"],
+    },
+  ]
+}

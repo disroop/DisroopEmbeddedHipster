@@ -1,0 +1,17 @@
+include(gcc-nrf52840)
+opt_flags = -O3 -g3 -flto
+c_flags=  $base_c_flags -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -fshort-enums $opt_flags
+ld_flags= $base_ld_flags -Wl,--gc-sections --specs=nano.specs $opt_flags
+
+CFLAGS += 
+CFLAGS += 
+[settings]
+build_type=Release
+
+[env]
+ASMFLAGS          = $base_asm_flags
+CFLAGS            = $c_flags
+CXXFLAGS          = $c_flags
+LDFLAGS           = $ld_flags
+CONAN_C_FLAGS     = $c_flags
+CONAN_CXX_FLAGS   = $c_flags

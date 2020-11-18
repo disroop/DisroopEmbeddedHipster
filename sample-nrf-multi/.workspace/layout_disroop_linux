@@ -1,0 +1,14 @@
+[build_folder]
+/workspaces/SPU_SPU_ESWD_Blinky/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
+
+[includedirs]
+src
+
+[source_folder]
+
+
+[libdirs]
+/workspaces/SPU_SPU_ESWD_Blinky/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/lib
+
+#[bindirs]
+#/workspaces/SPU_SPU_ESWD_Blinky/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/bin

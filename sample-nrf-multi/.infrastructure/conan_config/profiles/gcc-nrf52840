@@ -1,0 +1,41 @@
+toolchain=/opt/toolchain-arm/gcc-arm-none-eabi-9-2020-q2-update
+target_host=arm-none-eabi
+cc_compiler=gcc
+cxx_compiler=g++
+base_c_flags = -mcpu=cortex-m4 -mthumb -mabi=aapcs -Wall -Werror -mfloat-abi=hard -mfpu=fpv4-sp-d16 --sysroot=$toolchain
+base_ld_flags = -mthumb -mabi=aapcs -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Xlinker --data-sections --specs=nano.specs -lc -lnosys
+base_asm_flags = -g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16
+
+[settings]
+compiler=gcc
+compiler.version=9
+compiler.libcxx=libstdc++11
+
+
+# We are building in Ubuntu Linux
+os_build=Linux
+arch_build=x86_64
+
+# We are cross-building to Cortex-M4
+os=Baremetal
+arch=armv7
+
+[env]
+PATH                    =[$toolchain/bin]
+AR                      = $target_host-ar
+CC                      = $target_host-$cc_compiler
+CXX                     = $target_host-$cxx_compiler
+OBJCOPY                 = $target_host-objcopy
+OBJDUMP                 = $target_host-objdump
+SIZE                    = $target_host-size   
+DEBUGGER                = $target_host-gdb    
+CPPFILT                 = $target_host-c++filt
+LD                      = $target_host-ld
+CONAN_CMAKE_SYSTEM_NAME = "Generic"
+CONAN_C_COMPILER        = $cc_compiler
+CONAN_CXX_COMPILER      = $cxx_compiler
+DISROOP_TOOL_FORMATTER  = clang-format
+DISROOP_TOOL_COVERAGE   = llvm-cov
+DISROOP_TOOL_PROFDATA   = llvm-profdata
+DISROOP_CMAKE_SYSTEM_PROCESSOR = arm
+DISROOP_CMAKE_TRY_COMPILE_TARGET_TYPE=STATIC_LIBRARY

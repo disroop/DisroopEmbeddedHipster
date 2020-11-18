@@ -1,0 +1,5 @@
+include(GoogleTest)
+add_executable(toggle_test toggle_test.cpp $<TARGET_OBJECTS:toggle-obj>)
+target_include_directories(toggle_test PRIVATE $<TARGET_PROPERTY:toggle-obj,INCLUDE_DIRECTORIES>)
+target_link_libraries(toggle_test PUBLIC ${CONAN_LIBS_GTEST})
+gtest_discover_tests(toggle_test TEST_PREFIX new:)
