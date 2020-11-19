@@ -1,6 +1,6 @@
 set(LIBRARY_NAME hal)
 
-set(SOURCES 
+set(SOURCES
         ${CMAKE_CURRENT_LIST_DIR}/Hal.hpp
         ${CMAKE_CURRENT_LIST_DIR}/HalNrf.cpp
         ${CMAKE_CURRENT_LIST_DIR}/HalNrf.hpp)

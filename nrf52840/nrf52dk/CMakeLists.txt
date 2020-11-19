@@ -3,14 +3,14 @@ set(SDK_ROOT ${CMAKE_CURRENT_BINARY_DIR}/../nrf5sdk/nrf5sdk)
 
 set(TARGET_NAME ${PROJECT_NAME})
 
-SET(SOURCES 
+SET(SOURCES
   ${CMAKE_CURRENT_LIST_DIR}/config/app_config.h
   ${SDK_ROOT}/modules/nrfx/mdk/gcc_startup_nrf52840.S 
   ${SDK_ROOT}/components/boards/boards.c 
   ${SDK_ROOT}/modules/nrfx/mdk/system_nrf52840.c 
 )
 
-SET(INCLUDE_DIRECTORIES 
+SET(INCLUDE_DIRECTORIES
   ${CMAKE_CURRENT_LIST_DIR}/config
   ${SDK_ROOT}/config/nrf52840/config
   ${SDK_ROOT}/components 
