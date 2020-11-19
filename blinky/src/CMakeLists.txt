@@ -1,7 +1,7 @@
 set(TARGET_NAME blinky_app)
 
-set(SOURCES 
-        LedStrip.cpp 
+set(SOURCES
+        LedStrip.cpp
         LedStrip.hpp)
 add_library(visual-obj OBJECT ${SOURCES})
 
