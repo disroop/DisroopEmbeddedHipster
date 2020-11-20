@@ -84,5 +84,14 @@
     "files.autoSaveDelay": 500,
     "workbench.tree.indent": 20,
     "cortex-debug.armToolchainPath": "/opt/toolchain-arm/gcc-arm-none-eabi-9-2020-q2-update/bin",
-    "python.envFile": "${workspaceFolder}/.env/dev.env"
+    "python.envFile": "${workspaceFolder}/.env/dev.env",
+    "workbench.colorCustomizations": {
+      "activityBar.background": "#2aa5a1",
+      "titleBar.activeBackground": "#a3d858",
+      "titleBar.activeForeground": "#282734",
+      "sideBar.background": "#282734",
+      "editor.background": "#282734",
+      "statusBar.background": "#282734"
+      
+    }
 }
