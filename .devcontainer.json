@@ -27,7 +27,8 @@
 		"matepek.vscode-catch2-test-adapter",
 		"wayou.vscode-todo-highlight",
 		"ms-vscode.cmake-tools",
-		"parasoft.vscode-cpptest"
+		"parasoft.vscode-cpptest",
+		"anjali.clipboard-history"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
