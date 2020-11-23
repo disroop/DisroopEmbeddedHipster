@@ -3,7 +3,7 @@ target_host=arm-none-eabi
 cc_compiler=gcc
 cxx_compiler=g++
 base_c_flags = -mcpu=cortex-m4 -mthumb -mabi=aapcs -Wall -Werror -mfloat-abi=hard -mfpu=fpv4-sp-d16 --sysroot=$toolchain
-base_ld_flags = -mthumb -mabi=aapcs -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Xlinker --data-sections --specs=nano.specs -lc -lnosys
+base_ld_flags = -mthumb -mabi=aapcs -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -Xlinker -lc -lnosys
 base_asm_flags = -g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16
 
 [settings]
