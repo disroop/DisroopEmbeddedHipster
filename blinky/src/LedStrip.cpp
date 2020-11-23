@@ -1,7 +1,7 @@
 #include "LedStrip.hpp"
 #include "Hal.hpp"
 
-LedStrip::LedStrip(std::unique_ptr<HalNrf> hal): hal(std::move(hal)){}
+LedStrip::LedStrip(std::unique_ptr<Hal> hal): hal(std::move(hal)){}
 
 void LedStrip::on(const Led& led){
 
