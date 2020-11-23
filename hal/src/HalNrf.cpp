@@ -5,8 +5,7 @@ extern "C" {
     #include "boards.h"
 }
 
-//TODO: Refactor
-void HalNrf::init(void){
+HalNrf::HalNrf(void){
     bsp_board_init(BSP_INIT_LEDS);
 }
 

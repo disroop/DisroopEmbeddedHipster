@@ -5,6 +5,21 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "cortex-debug",
+      "request": "launch",
+      "name": "Blinky-MCU",
+      "executable": "${workspaceRoot}/build/ws-blinky/Debug/NRF52_DK/bin/blinky_app",
+      "gdbTarget": "172.17.0.1:2331",
+      "cwd": "${workspaceFolder}",
+      "servertype": "external",
+      "runToMain": false,
+      "showDevDebugOutput": false,
+      "preLaunchCommands": [
+        "monitor reset halt",
+      ],
+      "preRestartCommands": ["monitor reset"],
+    },
+    {
       "name": "linux",
       "type": "cppdbg",
       "request": "launch",
@@ -21,20 +36,6 @@
         "MIMode": "gdb",
       },
     },
-    {
-      "type": "cortex-debug",
-      "request": "launch",
-      "name": "Blinky-MCU",
-      "executable": "${workspaceRoot}/build/ws-blinky/Debug/NRF52_DK/bin/spu_blinky_app",
-      "gdbTarget": "172.17.0.1:2331",
-      "cwd": "${workspaceFolder}",
-      "servertype": "external",
-      "runToMain": false,
-      "showDevDebugOutput": false,
-      "preLaunchCommands": [
-        "monitor reset halt",
-      ],
-      "preRestartCommands": ["monitor reset"],
-    },
+    
   ]
 }
