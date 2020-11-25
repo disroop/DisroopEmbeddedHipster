@@ -1,5 +1,5 @@
 [build_folder]
-/workspaces/SPU_SPU_ESWD_Blinky/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
+/workspaces/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
 
 [includedirs]
 src
@@ -8,7 +8,7 @@ src
 
 
 [libdirs]
-/workspaces/SPU_SPU_ESWD_Blinky/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/lib
+/workspaces/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/lib
 
 #[bindirs]
-#/workspaces/SPU_SPU_ESWD_Blinky/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/bin
+#/workspaces/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/bin
