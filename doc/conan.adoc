@@ -5,3 +5,9 @@
 ```sh
 $ conan search
 ```
+
+== Remove all local packages
+
+```sh
+$ conan remove */*
+```
