@@ -9,5 +9,5 @@ $ conan search
 == Remove all local packages
 
 ```sh
-$ conan remove */*
+$ conan remove "*" -s -b -f
 ```
