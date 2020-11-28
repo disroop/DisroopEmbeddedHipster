@@ -44,6 +44,7 @@ NRF52840? ->nRF52840-DK
 * define a module file structure convention and some pyton base classes for libs, header only, ... so that one does not need to rewrite the conan recipe everytime
 * create build job
     ** use https://github.com/conan-io/conan-package-tools
+    ** publish to binray
 
 * Coverage Analysis
     ** in Build
