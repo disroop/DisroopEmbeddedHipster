@@ -42,6 +42,7 @@ NRF52840? ->nRF52840-DK
 == Features to add
 
 * create build job
+    ** use https://github.com/conan-io/conan-package-tools
 
 * Coverage Analysis
     ** in Build
