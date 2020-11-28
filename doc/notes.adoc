@@ -1,0 +1,65 @@
+= Notes
+Doc Writer <doc.writer@asciidoctor.org>
+v1.0, 2013-08-01
+:toc:
+== Supported IDE
+
+- vscode
+- clion
+
+== Compiler
+=== Host
+- clang
+- gcc
+
+=== ARM
+- clang
+- arm gcc
+- iar -> ask for linux licence?
+
+== Development Operating Systems
+
+- Linux
+- Windows
+- macOs
+
+== HW Debuggers
+- OpenOcd
+- Segger
+
+
+== Boards
+=== STM
+Nucleo-F411RE
+Nucleo-L152RE
+stm32f3discovery
+
+
+=== Nordic
+Nordic Thingy:52
+NRF52840? ->nRF52840-DK
+
+== Features to add
+
+* create build job
+
+* Coverage Analysis
+    ** in Build
+    ** IDE Integration
+    ** define coverage limits
+
+* Code Analysis
+    ** clang format
+    ** iwyu
+    ** ... others
+
+* Docker
+    ** publish disroop docker images
+* Architecture
+    ** create Modularized Architecture wit
+        *** runtime
+        *** hal
+        *** hal implementation
+        *** bsp
+        *** Applications
+        *** other components
