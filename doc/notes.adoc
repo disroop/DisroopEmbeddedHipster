@@ -54,6 +54,7 @@ NRF52840? ->nRF52840-DK
 * Code Analysis
     ** clang format
     ** iwyu
+    ** Sonar
     ** ... others
 
 * Docker
