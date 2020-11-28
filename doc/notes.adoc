@@ -67,3 +67,5 @@ NRF52840? ->nRF52840-DK
         *** driver
         *** Applications
         *** other components
+
+* continuous validation of releases with check sum on binary file
