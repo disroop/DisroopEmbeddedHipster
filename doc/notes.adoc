@@ -62,5 +62,6 @@ NRF52840? ->nRF52840-DK
         *** hal
         *** hal implementation
         *** bsp
+        *** driver
         *** Applications
         *** other components
