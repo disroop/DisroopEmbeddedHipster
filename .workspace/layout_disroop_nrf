@@ -3,6 +3,8 @@
 
 [includedirs]
 src
+
+[platformnrf52840/local-dev@disroop/development:includedirs]
 /workspace/nrf52840/nrf52dk/config
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/components/boards
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/components/libraries/delay
@@ -16,6 +18,16 @@ src
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/modules/nrfx/drivers
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/modules/nrfx/mdk
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/modules/nrfx/hal
+
+[hal/local-dev@disroop/development:source_folder]
+src/nrf
+
+[hal/local-dev@disroop/development:includedirs]
+include 
+
+[hal/local-dev@disroop/development:build_folder]
+/workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
+
 
 [source_folder]
 

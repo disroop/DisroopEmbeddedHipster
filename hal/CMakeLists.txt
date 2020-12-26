@@ -7,7 +7,13 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_paths.cmake)
-conan_basic_setup()
+conan_basic_setup(TARGETS)
 
-add_subdirectory(src)
+message(INFO HELLO ${CMAKE_SYSTEM_NAME})
+if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    add_subdirectory(src/linux)
+else(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+    add_subdirectory(src/nrf)
+endif(CMAKE_SYSTEM_NAME MATCHES "Linux")
+
 

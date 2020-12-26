@@ -1,14 +1,23 @@
 [build_folder]
-/workspaces/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
+/workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
 
 [includedirs]
 src
 
 [source_folder]
-
+src
 
 [libdirs]
-/workspaces/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/lib
+/workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/lib
 
-#[bindirs]
-#/workspaces/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/bin
+[bindirs]
+/workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}/bin
+
+[hal/local-dev@disroop/development:build_folder]
+/workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
+
+[hal/local-dev@disroop/development:includedirs]
+include
+
+[hal/local-dev@disroop/development:source_folder]
+src/linux

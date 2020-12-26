@@ -74,7 +74,15 @@
       "stdexcept": "cpp",
       "streambuf": "cpp",
       "cinttypes": "cpp",
-      "typeinfo": "cpp"
+      "typeinfo": "cpp",
+      "ctime": "cpp",
+      "forward_list": "cpp",
+      "list": "cpp",
+      "map": "cpp",
+      "set": "cpp",
+      "unordered_set": "cpp",
+      "iomanip": "cpp",
+      "iostream": "cpp"
     },
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildKit}",
     "cmake.configureOnEdit": true,

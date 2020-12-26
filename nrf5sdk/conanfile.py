@@ -44,3 +44,5 @@ class NRF5SDKConan(ConanFile):
         self.copy("*.ld", keep_path=True)
         self.copy("*.a", keep_path=True)
 
+    def package_id(self):
+        self.info.header_only()

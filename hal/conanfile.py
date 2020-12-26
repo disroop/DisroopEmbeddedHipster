@@ -5,7 +5,6 @@ from pathlib import Path
 
 def loadDevEnv():
     current_path = os.getcwd()
-    print(f"HELLO BRO {current_path}")
     env_path = f'{current_path}/../.env/dev.env'
     if os.path.exists(env_path):
         load_dotenv(dotenv_path=env_path)
@@ -24,7 +23,7 @@ class Hal(ConanFile):
     description = "TODO"
     generators = "cmake", "cmake_paths","virtualenv", "txt"
     settings = "os", "compiler", "build_type", "arch"
-    exports_sources = "CMakeLists.txt",  "src/*", "test/*", ".parasoft_settings/*"
+    exports_sources = "CMakeLists.txt",  "include/*", "src/*", "test/*", ".parasoft_settings/*"
     options = { "run_cpptest_pro": [True, False] }
     default_options = { "run_cpptest_pro": False }
 
@@ -54,7 +53,7 @@ class Hal(ConanFile):
 
     def package(self):
         self.copy("*.a", dst="lib", keep_path=False)
-        self.copy("*.hpp", dst="include", keep_path=False)
+        self.copy("include/*.hpp", dst="include", keep_path=False)
 
 
         
