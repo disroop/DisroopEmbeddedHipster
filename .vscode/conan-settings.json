@@ -1,16 +1,4 @@
 {
-    "profiles": [
-        { 
-            "name":"blinkylinux", 
-            "conanFile":"${workspaceFolder}/blinky/conanfile.py",
-            "profile":"clang-linux-debug",
-            "installArg": "--build missing -o run_cpptest_pro=True",
-            "buildArg":"",
-            "createUser": "disroop",
-            "createChannel": "development",
-            "createArg": "--build=missing -o run_cpptest_pro=True" 
-        }
-    ],
     "workspace":[
         {
             "name":"ws-nrf",

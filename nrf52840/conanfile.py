@@ -1,5 +1,5 @@
 import os
-from conans import ConanFile, CMake
+from conans import ConanFile, CMake, CMakeToolchain
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -25,6 +25,12 @@ class PlatformNrf52840(ConanFile):
     settings = "build_type", "os", "arch"
     exports_sources = "CMakeLists.txt", "cmake/*", "nrf52dk/*"
     keep_imports = True
+
+    def generate(self):
+        tc = CMakeToolchain(self)
+        tc.preprocessor_definitions["MYVAR"] = "MyValue"
+        # customize toolchain "tc"
+        tc.generate()
 
     def requirements(self):
         self.requires(f"nrf5sdk/{project_version}@disroop/development")

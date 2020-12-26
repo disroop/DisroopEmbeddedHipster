@@ -4,7 +4,7 @@ project(platform-nrf52840 C ASM)
 set(CMAKE_C_STANDARD 99)
 
 include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
+conan_basic_setup(TARGETS)
 
 if(${DISROOP_BOARD} STREQUAL "NRF52_DK")
     add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/nrf52dk)

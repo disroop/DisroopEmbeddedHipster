@@ -19,6 +19,6 @@ function(target_setup_runtime TARGET_NAME)
         COMMAND $ENV{OBJDUMP} -x -D -S -s ${FILENAME} | $ENV{CPPFILT} > ${FILENAME}.dump
         WORKING_DIRECTORY ${OUTPUT_BIN_DIR}
         COMMENT "Create bin and Hex")
-endfunction(target_setup_runtime)
+endfunction(target_setup_runtime TARGET_NAME)
 
 
