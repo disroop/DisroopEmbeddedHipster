@@ -28,7 +28,8 @@
 		"wayou.vscode-todo-highlight",
 		"ms-vscode.cmake-tools",
 		"parasoft.vscode-cpptest",
-		"anjali.clipboard-history"
+		"anjali.clipboard-history",
+		"vscode-icons-team.vscode-icons"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
