@@ -29,7 +29,8 @@
 		"ms-vscode.cmake-tools",
 		"parasoft.vscode-cpptest",
 		"anjali.clipboard-history",
-		"eamodio.gitlens"
+		"eamodio.gitlens",
+		"vscode-icons-team.vscode-icons"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
