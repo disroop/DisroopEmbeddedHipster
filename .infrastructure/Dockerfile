@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     doxygen=1.8.17-0ubuntu2 \
     wget=1.20.3-1ubuntu1 \ 
     ssh=1:8.2p1-4ubuntu0.1 \
+    patch=2.7.6-6 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 #
@@ -41,7 +42,7 @@ RUN wget ${TOOLCHAIN_TARBALL_URL} \
 	&& rm ${TOOLCHAIN_TARBALL_FILENAME}
 #
 # Install Conan
-RUN pip3 install -Iv conan==1.30.0
+RUN pip3 install -Iv conan==1.32.1
 RUN pip3 install -Iv python-dotenv==0.15.0
 #
 # Clean up

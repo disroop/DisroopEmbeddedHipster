@@ -9,7 +9,6 @@ include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_paths.cmake)
 conan_basic_setup(TARGETS)
 
-message(INFO HELLO ${CMAKE_SYSTEM_NAME})
 if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
     add_subdirectory(src/linux)
 else(${CMAKE_SYSTEM_NAME} MATCHES "Linux")

@@ -1,4 +1,6 @@
 ##Python##
 *.pyc
+install/*
+src/*
 source/*
 build/*

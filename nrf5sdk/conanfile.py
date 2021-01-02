@@ -1,6 +1,7 @@
 import os
 from conans import ConanFile, CMake
-from conans.tools import download, unzip
+from conans.tools import download, unzip, Git, patch, replace_in_file
+
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -24,6 +25,7 @@ class NRF5SDKConan(ConanFile):
     license = "None"
     author = "None"
     topics = None
+    exports_sources = "*.patch"
 
     def downloadArtefact(self, url):
         artefact_zip = "nrf5sdk.zip"
@@ -33,16 +35,30 @@ class NRF5SDKConan(ConanFile):
 
     def source(self):
         self.downloadArtefact("https://www.nordicsemi.com/-/media/Software-and-other-downloads/SDKs/nRF5/Binaries/nRF5SDK160098a08e2.zip")
+        git = Git("cmake-nrf")
+        git.clone("https://github.com/Polidea/cmake-nRF5x.git",branch="master",shallow=True)
+
+    def disroop_configure(self,cmake):
+        if os.getenv("DISROOP_CMAKE_TRY_COMPILE_TARGET_TYPE"):
+            cmake.definitions["CMAKE_TRY_COMPILE_TARGET_TYPE"] = os.getenv("DISROOP_CMAKE_TRY_COMPILE_TARGET_TYPE")
+        cmake.definitions["CMAKE_EXPORT_COMPILE_COMMANDS"] = 1
+        #cmake.definitions["CMAKE_TOOLCHAIN_FILE"]=os.path.join(self.source_folder, "nrf5sdk/cmake/arm-none-eabi.cmake")
+        #cmake.definitions["TOOLCHAIN_PREFIX"]=os.path.join(self.source_folder, "nrf5sdk/cmake/arm-none-eabi.cmake")
+        #-DTOOLCHAIN_PREFIX="/Users/przemyslawlenart/git/nrf5-cmake/ci/toolchains/gcc" \
+        cmake.definitions["NRF5_SDK_PATH"]=os.path.join(self.source_folder, "nrf5sdk")
+        cmake.definitions["NRF5_SDK_VERSION"]="16.0.0"
+        cmake.definitions["NRF5_BOARD"]="pca10056"
+        cmake.definitions["NRF5_SOFTDEVICE_VARIANT"]="s140"
+        cmake.definitions["NRF5_LINKER_SCRIPT"]="/workspace/nrf5sdk/source/nrf5sdk/config/nrf52840/armgcc/generic_gcc_nrf52.ld"
 
     def build(self):
-        pass
+        replace_in_file(f"{self.source_folder}/patch/nrf5.patch", "REPLACE_SDK_IN_SOURCE_DIR",
+        f"{self.source_folder}/nrf5sdk")
+        patch(base_path=f"{self.source_folder}/cmake-nrf",patch_file=f"{self.source_folder}/patch/nrf5.patch")
+#
 
     def package(self):
-        self.copy("*.h", keep_path=True)
-        self.copy("*.c", keep_path=True)
-        self.copy("*.S", keep_path=True)
-        self.copy("*.ld", keep_path=True)
-        self.copy("*.a", keep_path=True)
+        self.copy("*.cmake", keep_path=False)
 
-    def package_id(self):
-        self.info.header_only()
+    def package_info(self):
+        self.cpp_info.build_modules.append("nrf5.cmake")

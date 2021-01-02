@@ -85,8 +85,5 @@ class PlatformNrf52840(ConanFile):
             self.copy("nrf52dk/config/*.h", dst="include", keep_path=False)
             self.copy("nrf52dk/cmake/*", dst="nrf52dk/cmake", keep_path=False)
             self.copy("nrf52dk/linker/*.ld", dst="nrf52dk/linker", keep_path=False)
-        elif self.settings.os.board == "YP_UNO_PEN_LC":
-            #TODO: set export files for YP_UNO_PEN_LC BOARD
-            pass
         else:
             raise ConanInvalidConfiguration("This board is not supported")
