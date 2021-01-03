@@ -28,3 +28,11 @@ class NRF5SDKConanTest(ConanFile):
         self.disroop_configure(cmake)
         cmake.configure()
         cmake.build()
+
+    def test(self):
+        elf_path = os.path.join(self.build_folder, "blinky")
+        bin_path = os.path.join(self.build_folder, "blinky.bin")
+        hex_path = os.path.join(self.build_folder, "blinky.hex")
+        assert(os.path.isfile(elf_path))
+        assert(os.path.isfile(bin_path))
+        assert(os.path.isfile(hex_path))
