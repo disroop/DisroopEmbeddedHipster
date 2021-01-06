@@ -10,7 +10,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(WorkspaceProject C ASM)
 
-
 message(STATUS ${CMAKE_CURRENT_BINARY_DIR})
 include(${CMAKE_CURRENT_BINARY_DIR}/conanworkspace.cmake)
 conan_workspace_subdirectories()

@@ -31,6 +31,12 @@ class NRF5SDKConan(ConanFile):
         unzip(artefact_zip, "nrf5sdk")
         os.unlink(artefact_zip)
 
+    def deploy(self):
+        # deploy the documentation when conan installing to make it easily available
+        svdFolder = f"svd"
+        self.output.info(f"Deploying svd for this package to {svdFolder}")
+        self.copy("nrf52840.svd", src="nrf5sdk/modules/nrfx/mdk", dst=svdFolder, keep_path=False)
+
     def source(self):
         self.downloadArtefact("https://www.nordicsemi.com/-/media/Software-and-other-downloads/SDKs/nRF5/Binaries/nRF5SDK160098a08e2.zip")
 
@@ -43,6 +49,8 @@ class NRF5SDKConan(ConanFile):
         self.copy("*.S", keep_path=True)
         self.copy("*.ld", keep_path=True)
         self.copy("*.a", keep_path=True)
+        self.copy("*.svd", keep_path=True)
+
 
     def package_id(self):
         self.info.header_only()
