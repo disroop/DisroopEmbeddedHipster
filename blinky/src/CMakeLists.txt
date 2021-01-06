@@ -5,11 +5,13 @@ set(SOURCES
         LedStrip.hpp)
 add_library(visual-obj OBJECT ${SOURCES})
 
-target_include_directories(visual-obj PUBLIC ${CMAKE_CURRENT_LIST_DIR})
+target_include_directories(visual-obj PUBLIC ${CMAKE_CURRENT_LIST_DIR} ${CONAN_INCLUDE_DIRS_HAL})
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Generic")
         add_executable(${TARGET_NAME} main_target.cpp $<TARGET_OBJECTS:visual-obj>)
-        target_link_libraries(${TARGET_NAME} PUBLIC ${CONAN_LIBS})
+        target_include_directories(${TARGET_NAME} PUBLIC ${CONAN_INCLUDE_DIRS_HAL})
+        target_link_libraries(${TARGET_NAME} PUBLIC CONAN_LIB::hal_halnrf)
+        #target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::hal)
 endif(${CMAKE_SYSTEM_NAME} STREQUAL "Generic")
 
 find_package(Platform)
