@@ -1,5 +1,5 @@
 import os
-from conans import ConanFile, CMake, CMakeToolchain
+from conans import ConanFile, CMake
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -21,16 +21,16 @@ class PlatformNrf52840(ConanFile):
     version=f'{project_version}'
     license = "Closed"
     description = "TODO"
-    generators = "cmake", "virtualenv", "txt"
+    generators = "cmake", "virtualenv", "txt", "cmake_find_package"
     settings = "build_type", "os", "arch"
     exports_sources = "CMakeLists.txt", "cmake/*", "nrf52dk/*"
     keep_imports = True
 
-    def generate(self):
-        tc = CMakeToolchain(self)
-        tc.preprocessor_definitions["MYVAR"] = "MyValue"
-        # customize toolchain "tc"
-        tc.generate()
+    #def generate(self):
+    #    tc = CMakeToolchain(self)
+    #    tc.preprocessor_definitions["MYVAR"] = "MyValue"
+    #    # customize toolchain "tc"
+    #    tc.generate()
 
     def requirements(self):
         self.requires(f"nrf5sdk/{project_version}@disroop/development")
@@ -60,7 +60,7 @@ class PlatformNrf52840(ConanFile):
             self.cpp_info.builddirs.append("nrf52dk/cmake")
 
     def build(self):
-        cmake = CMake(self, set_cmake_flags=True)
+        cmake = CMake(self)
         self.disroop_configure(cmake)
         cmake.configure()
         cmake.build()

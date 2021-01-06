@@ -7,6 +7,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 include(${CMAKE_CURRENT_BINARY_DIR}/conanbuildinfo.cmake)
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_paths.cmake)
-conan_basic_setup()
+conan_basic_setup(TARGETS)
 
 add_subdirectory(src)

@@ -36,7 +36,7 @@ class Hal(ConanFile):
              raise ConanInvalidConfiguration("unsupported arch")         
 
     def package_info(self):
-        self.cpp_info.libs = ["hal"]
+        self.cpp_info.libs = ["halnrf"]
         self.cpp_info.srcdirs = ["src"]
     
     def disroop_configure(self,cmake):
