@@ -19,15 +19,8 @@ src
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/modules/nrfx/mdk
 /workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os.board}}/nrf5sdk/nrf5sdk/modules/nrfx/hal
 
-[hal/local-dev@disroop/development:source_folder]
-src/nrf
-
 [hal/local-dev@disroop/development:includedirs]
-include 
-
-[hal/local-dev@disroop/development:build_folder]
-/workspace/build/ws-{{reference.name}}/{{settings.build_type}}/{{settings.os}}
-
+include
 
 [source_folder]
 
