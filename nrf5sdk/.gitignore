@@ -2,3 +2,4 @@
 *.pyc
 source/*
 build/*
+test_package/build/*
