@@ -87,7 +87,29 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     clangd-10=1:10.0.0-4ubuntu1 \
     libncurses5 \
     && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* 
+#AddJlink Debugger
+ARG TMP_JLINK_TGZ=/tmp
+ARG TAR_NAME=JLink_Linux_x86_64.tgz
+ARG FOLDER_JLINK=/opt/segger_jlink_v692
+RUN wget https://www.segger.com/downloads/jlink/${TAR_NAME} --directory-prefix=$TMP_JLINK_TGZ --post-data="accept_license_agreement=accepted"
+RUN mkdir ${FOLDER_JLINK} && tar -xzvf $TMP_JLINK_TGZ/$TAR_NAME -C ${FOLDER_JLINK} --strip 1
+RUN ls /opt/segger_jlink_v692
+RUN rm ${FOLDER_JLINK}/JLinkConfigExe
+RUN rm ${FOLDER_JLINK}/JLinkGDBServerExe
+RUN rm ${FOLDER_JLINK}/JLinkGUIServerExe
+RUN rm ${FOLDER_JLINK}/JLinkRemoteServer
+RUN rm ${FOLDER_JLINK}/JLinkRemoteServerCLExe
+RUN rm ${FOLDER_JLINK}/JLinkRemoteServerExe
+RUN rm ${FOLDER_JLINK}/JLinkRTTViewerExe
+RUN rm ${FOLDER_JLINK}/JLinkSWOViewerExe
+RUN rm ${FOLDER_JLINK}/JLinkRegistration
+RUN rm ${FOLDER_JLINK}/JLinkRegistrationExe
+RUN rm ${FOLDER_JLINK}/JLinkLicenseManager
+RUN rm ${FOLDER_JLINK}/JLinkLicenseManagerExe
+RUN rm -rf ${FOLDER_JLINK}/Samples
+ENV PATH="${FOLDER_JLINK}:${PATH}"
+
 #
 # Set Clangd-10 as default clangd
 RUN ln -s /usr/bin/clangd-10 /usr/bin/clangd

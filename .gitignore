@@ -4,4 +4,5 @@ build/*
 .vscode/.cortex-debug.registers.state.json
 cmake-*
 .idea
+.downloads
 .DS_store

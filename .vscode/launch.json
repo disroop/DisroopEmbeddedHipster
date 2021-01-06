@@ -20,6 +20,24 @@
       "preRestartCommands": ["monitor reset"],
     },
     {
+      "name": "Release",
+      "cwd": "${workspaceRoot}",
+      "executable": "${workspaceRoot}/build/ws-blinky/Debug/NRF52_DK/bin/blinky_app",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "jlink",
+      "interface": "swd",
+      "device": "nRF52840_xxAA",
+      "ipAddress": "172.17.0.1",
+      "runToMain": true,
+      "svdFile": "${workspaceRoot}/.downloads/svd/nrf52840.svd",
+      "preRestartCommands": [
+        "load",
+        "enable breakpoint",
+        "monitor reset"
+      ]
+    },
+    {
       "name": "linux",
       "type": "cppdbg",
       "request": "launch",
