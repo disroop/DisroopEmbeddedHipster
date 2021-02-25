@@ -7,7 +7,6 @@ compiler.version=10
 compiler.libcxx=libstdc++11
 arch=x86_64
 os=Linux
-build_type=Debug
 
 [env]
 CC                      = $cc_compiler
