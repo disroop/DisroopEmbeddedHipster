@@ -35,7 +35,7 @@ class ArmGCCConan(ConanFile):
         self.env_info.SIZE =  os.path.join(bin_folder, "arm-none-eabi-size")
         self.env_info.CPPFILT =  os.path.join(bin_folder, "arm-none-eabi-c++filt")
         self.env_info.SYSROOT = self.package_folder
-        self.env_info.LDFLAGS = "-g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16"
+        self.env_info.LDFLAGS = "-g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16 -specs=nosys.specs"
         self.env_info.CFLAGS = "-mcpu=cortex-m4 -mthumb -mabi=aapcs -Wall -Werror -mfloat-abi=hard -mfpu=fpv4-sp-d16"
         self.env_info.CXXFLAGS = "-mcpu=cortex-m4 -mthumb -mabi=aapcs -Wall -Werror -mfloat-abi=hard -mfpu=fpv4-sp-d16"
         self.env_info.ASMFLAGS = "-g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16"
