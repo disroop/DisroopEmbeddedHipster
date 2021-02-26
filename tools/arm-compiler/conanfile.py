@@ -19,6 +19,10 @@ class ArmGCCConan(ConanFile):
 
     def package_info(self):
         bin_folder = os.path.join(self.package_folder, "bin")
+        self.env_info.AR = os.path.join(bin_folder, "arm-none-eabi-ar")
+        self.env_info.OBJCOPY = os.path.join(bin_folder, "arm-none-eabi-objcopy")
+        self.env_info.OBJDUMP = os.path.join(bin_folder, "arm-none-eabi-objdump")
+        self.env_info.SIZE = os.path.join(bin_folder, "arm-none-eabi-size")
         self.env_info.CC = os.path.join(bin_folder, "arm-none-eabi-gcc")
         self.env_info.CXX = os.path.join(bin_folder, "arm-none-eabi-g++")
         self.env_info.CONAN_CMAKE_CC = os.path.join(bin_folder, "arm-none-eabi-gcc")
@@ -31,3 +35,7 @@ class ArmGCCConan(ConanFile):
         self.env_info.SIZE =  os.path.join(bin_folder, "arm-none-eabi-size")
         self.env_info.CPPFILT =  os.path.join(bin_folder, "arm-none-eabi-c++filt")
         self.env_info.SYSROOT = self.package_folder
+        self.env_info.LDFLAGS = "-g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16"
+        self.env_info.CFLAGS = "-mcpu=cortex-m4 -mthumb -mabi=aapcs -Wall -Werror -mfloat-abi=hard -mfpu=fpv4-sp-d16"
+        self.env_info.CXXFLAGS = "-mcpu=cortex-m4 -mthumb -mabi=aapcs -Wall -Werror -mfloat-abi=hard -mfpu=fpv4-sp-d16"
+        self.env_info.ASMFLAGS = "-g3 -mcpu=cortex-m4 -mthumb -mabi=aapcs -mfloat-abi=hard -mfpu=fpv4-sp-d16"

@@ -9,10 +9,11 @@ target_include_directories(visual-obj PUBLIC ${CMAKE_CURRENT_LIST_DIR} ${CONAN_I
 
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Generic")
         add_executable(${TARGET_NAME} main_target.cpp $<TARGET_OBJECTS:visual-obj>)
+    
         target_include_directories(${TARGET_NAME} PUBLIC ${CONAN_INCLUDE_DIRS_HAL})
-        target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::hal)
+        #target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::hal)
         #target_link_libraries(${TARGET_NAME} PUBLIC CONAN_LIB::hal_halnrf)
-        #target_link_libraries(${TARGET_NAME} PUBLIC ${CONAN_LIBS})
+        target_link_libraries(${TARGET_NAME} PUBLIC ${CONAN_LIBS})
 endif(${CMAKE_SYSTEM_NAME} STREQUAL "Generic")
 
 find_package(Platform)
