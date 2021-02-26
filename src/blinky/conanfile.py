@@ -17,6 +17,8 @@ if not project_version:
 class BlinkyLc(ConanFile):
     name = "blinky"
     version=f'{project_version}'
+    user = "disroop"
+    channel = "develop"
     url = "todo add url"
     license = "Closed"
     description = "TODO"
@@ -25,7 +27,7 @@ class BlinkyLc(ConanFile):
     exports_sources = "CMakeLists.txt",  "src/*", "test/*",
 
     def requirements(self):
-        self.requires(f"hal/{project_version}@disroop/development")        
+        self.requires(f"hal/{project_version}@disroop/develop")        
 
     def package_info(self):
         self.cpp_info.srcdirs = ["src"]

@@ -18,16 +18,18 @@ if not project_version:
 class Hal(ConanFile):
     name = "hal"
     version=f'{project_version}'
+    user = "disroop"
+    channel = "develop"
     url = "todo add url"
     license = "Closed"
     description = "TODO"
     generators = "cmake", "cmake_paths","virtualenv", "txt"
     settings = "os", "compiler", "build_type", "arch"
-    exports_sources = "CMakeLists.txt",  "include/*", "src/*", "test/*", ".parasoft_settings/*"
+    exports_sources = "CMakeLists.txt",  "include/*", "src/*", "test/*"
     
     def requirements(self):
         if self.settings.arch == "armv7":
-            self.requires(f"nrfx/0.1.0@disroop/develop")
+            self.requires(f"nrfsdk/0.1.0@disroop/develop")
         elif self.settings.arch == "x86_64":
             self.requires("gtest/1.10.0", private=True)
         else:

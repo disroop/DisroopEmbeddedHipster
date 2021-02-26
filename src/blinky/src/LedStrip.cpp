@@ -30,7 +30,7 @@ uint16_t LedStrip::convert(const Cycle &cycle)
         cycleConverted = 1000;
         break;
     default:
-        throw std::out_of_range("Cycles are not defined!");
+        //TODO CREATE ERROR
         break;
     }
     return cycleConverted;
