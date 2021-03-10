@@ -82,7 +82,7 @@ ARG USER_GID=$USER_UID
 #Install specific devtools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     vim=2:8.1.2269-1ubuntu5 \
-    sudo=1.8.31-1ubuntu1.1 \
+    sudo=1.8.31-1ubuntu1.2\
     gdb=9.2-0ubuntu1~20.04 \
     clangd-10=1:10.0.0-4ubuntu1 \
     libncurses5 \
