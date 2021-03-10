@@ -29,7 +29,8 @@
 		"ms-vscode.cmake-tools",
 		"parasoft.vscode-cpptest",
 		"anjali.clipboard-history",
-		"vscode-icons-team.vscode-icons"
+		"vscode-icons-team.vscode-icons",
+		"alefragnani.numbered-bookmarks"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
