@@ -101,5 +101,6 @@
       "editor.background": "#282734",
       "statusBar.background": "#282734"
       
-    }
+    },
+    "numberedBookmarks.navigateThroughAllFiles": "replace",
 }
