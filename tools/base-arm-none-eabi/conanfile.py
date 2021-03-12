@@ -21,9 +21,7 @@ class Base(object):
     def run_test_analytics(self):
         if self.settings.arch == "x86_64":
             os.environ["GTEST_OUTPUT"] = f"xml:{self.build_folder}/test-report/"
-            self.run("ctest --no-tests=ignore")  # cmake.test() doesn't work with parasoft cpptest
-        #    if (self.settings.compiler == "parasoft-clang-wrapper") and self.options.run_cpptest_pro:
-        #        self.run("cmake --build . --target parasoft-cpptest")
+            self.run("ctest --no-tests=ignore")
 
     def build(self):
         self.output.info("Disroop run: build")
@@ -44,19 +42,14 @@ class Base(object):
         if self.settings.arch == "x86_64":
             self.build_requires("gtest/1.10.0", force_host_context=True)
 
-    def default_requirements(self):
-        #self.requires("env_cmake_toolchain/1.0.0+20210209.6@C/release")
-    
-    def requirements(self):
-        self.default_requirements()
-
     def deploy(self):
-        executableFolder = f"executable_{self.name}_{self.info.package_id()}"
-        self.output.info(f"Deploying Artifacts to {executableFolder}")
-        self.copy("*", src="bin", dst=executableFolder, keep_path=True)
-        documentationFolder = f"documentation_{self.name}_{self.info.package_id()}"
-        self.output.info(f"Deploying documentation for this package to {documentationFolder}")
-        self.copy("*", src="documentation", dst=documentationFolder, keep_path=True)
+        app=f"{self.name}_{self.info.package_id()}"
+        binaries = f"{app}/bin"
+        self.output.info(f"Deploying Artifacts to {binaries}")
+        self.copy("*", src="bin", dst=binaries, keep_path=True)
+        reports = f"{app}/reports"
+        self.output.info(f"Deploying reports for this package to {reports}")
+        self.copy("*", src="documentation", dst=reports, keep_path=True)
 
 class DisroopBase(ConanFile):
     name = "disroopBase"
