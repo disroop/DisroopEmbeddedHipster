@@ -7,7 +7,7 @@ These are the main Features:
 * Focusing one https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
 * Using Docker to manage the toolchain
 * Easy to setup developer environment in 10 seconds.
-* Reproduceable builds with a fully automated toolchain
+* Reproducible builds with a fully automated toolchain
 * Use https://docs.conan.io/en/latest/[Conan as package manager]
 * Use CMake in a https://cliutils.gitlab.io/modern-cmake/[Modern CMake] manner
 * Use https://www.jfrog.com/confluence/display/JFROG/Conan+Repositories[Artifactory] to manage artifacts
@@ -24,3 +24,10 @@ These are the main Features:
     ** https://www.jenkins.io/[Jenkins]
 
 For more information read the <<doc/doc.adoc#,documentation>>
+
+
+
+Try our VsCode extension
+
+https://marketplace.visualstudio.com/items?itemName=disroop.conan
+
