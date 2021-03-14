@@ -30,9 +30,10 @@ v1.0, 2013-08-01
 
 == Boards
 === STM
-Nucleo-F411RE
-Nucleo-L152RE
-stm32f3discovery
+- Nucleo-F411RE
+- Nucleo-L152RE
+- stm32f3discovery
+- stm32wb55
 
 
 === Nordic
@@ -60,12 +61,12 @@ NRF52840? ->nRF52840-DK
 * Docker
     ** publish disroop docker images
 * Architecture
-    ** create Modularized Architecture wit
+    ** create Modularized Architecture with
         *** runtime
         *** hal
         *** hal implementation
         *** bsp
-        *** driver
+        *** drivers
         *** Applications
         *** other components
 
