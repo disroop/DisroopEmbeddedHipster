@@ -1,0 +1,16 @@
+= Principles
+:toc:
+:toc:
+:toclevels: 2
+:sectnums:
+:sectnumlevels: 5
+
+
+== Build One
+We try to build code one if ever possible. Thus leading to a use of *.o or *.a files.
+This is achieved by using target in CMake and a clear API for each conan package.
+
+We try to avoid of adding compile time dependencies for example by using #define BUFFER_SIZE 123 in a library.
+By that a library mus get recompiled depending on the desired BUFFER_SIZE. Further such define hide dependencies. See STM-CMSIS
+todo and link and causes the build the be longer in case many test need different configured valued for BUFFER_SIZE.
+

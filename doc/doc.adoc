@@ -1,0 +1,118 @@
+= DisroopEmbeddedHipster
+:toc:
+:toc:
+:toclevels: 2
+:sectnums:
+:sectnumlevels: 5
+
+
+== Getting Started
+todo describe how to clone and run the project
+
+== Introduction
+
+== Conan
+
+== Cmake
+== Unittest
+=== Supported IDE
+
+- VsCode
+- clion
+
+=== Compiler
+==== Host
+===== clang
+===== gcc
+
+==== ARM
+===== clang
+===== arm gcc
+===== iar -> ask for linux licence?
+
+== Infrastructure
+
+Show an overview about
+
+- local development
+- Servers ( Artifactory, Build-Automation) For more informatino see
+Learn how to organize the document into <<Build Automation>>.
+
+
+=== Development Operating Systems
+==== Linux
+==== Windows
+==== macOs
+
+== Debug on the HW
+=== OpenOcd
+
+=== Segger
+
+- Segger for St-Link
+
+
+== Boards
+=== STM
+==== Nucleo-F411RE
+==== Nucleo-L152RE
+==== stm32f3discovery
+==== stm32wb55
+
+
+=== Nordic
+Nordic Thingy:52
+NRF52840? ->nRF52840-DK
+
+== Modular Architecture
+
+* define a module file structure convention and some pyton base classes for libs, header only, ... so that one does not need to rewrite the conan recipe everytime
+
+- CMSIS
+
+== CI/CD
+
+== Build Automation
+
+
+
+== Quality-Built in
+=== Code Analysis
+* clangformat
+
+* create build job
+** use https://github.com/conan-io/conan-package-tools
+** publish to binray
+
+* Coverage Analysis
+** in Build
+** IDE Integration
+** define coverage limits
+
+* Code Analysis
+** clang format
+** iwyu
+** Sonar
+** ... others
+
+* Docker
+** publish disroop docker images
+* Architecture
+** create Modularized Architecture with
+*** runtime
+*** hal
+*** hal implementation
+*** bsp
+*** drivers
+*** Applications
+*** other components
+
+* continuous validation of releases with check sum on binary file
+
+
+== Toolchain
+
+- CMake
+- Todo Vervollständigen
+
+== VsCode Conan Plugin
