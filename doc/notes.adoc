@@ -71,3 +71,9 @@ NRF52840? ->nRF52840-DK
         *** other components
 
 * continuous validation of releases with check sum on binary file
+
+
+= Toolchain
+
+- CMake
+- Todo Vervollständigen
