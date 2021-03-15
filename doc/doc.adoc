@@ -73,7 +73,10 @@ NRF52840? ->nRF52840-DK
 == CI/CD
 
 == Build Automation
-
+- azure
+- travis
+- github actions
+- jenkins
 
 
 == Quality-Built in
