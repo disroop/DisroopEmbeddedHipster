@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 #Install C++ tools
 RUN apt-get update && apt-get install --no-install-recommends -y \
     python3=3.8.2-0ubuntu2 \
-    python3-pip=20.0.2-5ubuntu1.1 \
+    python3-pip=20.0.2-5ubuntu1.4 \
     clang-10=1:10.0.0-4ubuntu1 \
     clang-format-10=1:10.0.0-4ubuntu1 \
     cmake=3.16.3-1ubuntu1\
@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     graphviz=2.42.2-3build2 \
     doxygen=1.8.17-0ubuntu2 \
     wget=1.20.3-1ubuntu1 \ 
-    ssh=1:8.2p1-4ubuntu0.1 \
+    ssh=1:8.2p1-4ubuntu0.2 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 #
