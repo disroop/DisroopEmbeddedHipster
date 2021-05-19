@@ -16,7 +16,6 @@ int main()
   while (1)
   {
     BSP_LED_Toggle(LED_GREEN);
-    /* Insert delay 100 ms */
     HAL_Delay(1000);
   }
 
