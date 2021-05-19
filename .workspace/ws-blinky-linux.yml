@@ -1,9 +1,0 @@
-editables:
-    blinky/0.1.0@disroop/development:
-        path: ../blinky
-    hal/local-dev@disroop/development:
-        path: ../hal
-layout: layout_disroop_linux
-workspace_generator: cmake
-root: 
-    - blinky/0.1.0@disroop/development

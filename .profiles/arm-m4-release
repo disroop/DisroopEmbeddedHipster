@@ -1,0 +1,8 @@
+include(arm-m4)
+[settings]
+build_type = Release
+
+[env]
+CONAN_C_FLAGS=$base_c_flags -O2
+CONAN_CXX_FLAGS=$base_c_flags -O2
+LDFLAGS=$base_ld_flags

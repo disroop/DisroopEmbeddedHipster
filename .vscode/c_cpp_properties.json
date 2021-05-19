@@ -1,16 +1,16 @@
 {
     "configurations": [
         {
-            "name": "Nrf",
+            "name": "debug",
             "intelliSenseMode": "gcc-arm",
             "cStandard": "c99",
             "cppStandard": "c++11",
-            "compilerPath": "/opt/toolchain-arm/gcc-arm-none-eabi-9-2020-q2-update/bin/arm-none-eabi-gcc",
-            "compileCommands": "${workspaceFolder}/build/ws-nrf/compile_commands.json",
-            "includePath": ["/workspace/.conan/data/*"]
+            "compilerPath": "/home/dev/.conan/data/gcc_arm_none_eabi/10.2.0/disroop/release/source/toolchain/bin/arm-none-eabi-gcc",
+            "compileCommands": "${workspaceFolder}/build/debug/compile_commands.json",
+            "includePath": ["/home/dev/.conan/data/*"]
         },
         {
-            "name": "Linux",
+            "name": "host",
             "defines": [
                 "${default}"
             ],
@@ -19,7 +19,7 @@
             "cppStandard": "c++11",
             "compilerPath": "/usr/bin/clang",
             "configurationProvider": "vector-of-boolean.cmake-tools",
-            "includePath": ["/workspace/.conan/data/*"]
+            "includePath": ["/home/dev/.conan/data/*"]
         }
     ],
     "version": 4
