@@ -1,0 +1,19 @@
+base_c_flags = -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -mthumb -mabi=aapcs -Wall -ffunction-sections -fdata-sections -fno-strict-aliasing -fno-builtin -ffast-math
+base_ld_flags = -mthumb -mabi=aapcs -Wl,--gc-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -specs=nano.specs
+
+[settings]
+compiler=gcc
+compiler.version=10
+compiler.libcxx=libstdc++11
+
+# We are building in Ubuntu Linux
+os_build=Linux
+arch_build=x86_64
+
+# We are cross-building to Cortex-M4
+os=Arduino
+os.board=ANY
+arch=armv7
+
+[build_requires]
+gcc_arm_none_eabi/10.2.0@disroop/release
