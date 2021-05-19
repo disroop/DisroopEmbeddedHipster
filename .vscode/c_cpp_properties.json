@@ -6,7 +6,7 @@
             "cStandard": "c99",
             "cppStandard": "c++11",
             "compilerPath": "/home/dev/.conan/data/gcc_arm_none_eabi/10.2.0/disroop/release/source/toolchain/bin/arm-none-eabi-gcc",
-            "compileCommands": "${workspaceFolder}/build/debug/compile_commands.json",
+            "compileCommands": "${workspaceFolder}/build/blinky-debug/compile_commands.json",
             "includePath": ["/home/dev/.conan/data/*"]
         },
         {
