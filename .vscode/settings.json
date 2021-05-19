@@ -82,7 +82,8 @@
       "set": "cpp",
       "unordered_set": "cpp",
       "iomanip": "cpp",
-      "iostream": "cpp"
+      "iostream": "cpp",
+      "stm32l475e_iot01.h": "c"
     },
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildKit}",
     "cmake.configureOnEdit": true,
@@ -92,7 +93,7 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
     "workbench.tree.indent": 20,
-    "cortex-debug.armToolchainPath": "/opt/toolchain-arm/gcc-arm-none-eabi-9-2020-q2-update/bin",
+    "cortex-debug.armToolchainPath": "/home/dev/.conan/data/gcc_arm_none_eabi/10.2.0/disroop/release/source/toolchain/bin",
     "python.envFile": "${workspaceFolder}/.env/dev.env",
     "workbench.colorCustomizations": {
       "activityBar.background": "#2aa5a1",
