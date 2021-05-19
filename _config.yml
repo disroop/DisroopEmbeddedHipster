@@ -1,1 +1,30 @@
-theme: jekyll-theme-slate
+# site settings
+title: Disroop
+subtitle: by HTML5 UP
+email: info@disroop.ch
+description:
+baseurl: "" # the subpath of your site, e.g. /blog
+url: # the base hostname & protocol for your site
+author:
+street_address: Marquard-Wocher-Strasse 51
+city: Thun
+zip_code: 3600
+country: Schweiz
+#phone: (716) 555-5555
+
+# homepage tiles
+tiles-source: pages # accepts "posts" or "pages"
+tiles-count: 6
+
+# social settings
+500px_url:
+facebook_url:
+github_url: https://gitlab.com/disroop
+
+# build settings
+markdown: kramdown
+
+sass:
+  style: compressed
+
+exclude: [readme.md, run.sh, forty_jekyll_theme.gemspec]

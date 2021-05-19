@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="660mm"
+   height="190mm"
+   viewBox="0 0 660 190"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   sodipodi:docname="Disroop_Logo_gross_plus-1.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.21435469"
+     inkscape:cx="1310.7006"
+     inkscape:cy="279.69369"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1440"
+     inkscape:window-height="774"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     showborder="true"
+     inkscape:pagecheckerboard="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.5833px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="15.068283"
+       y="143.70633"
+       id="text12"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         x="15.068283"
+         y="143.70633"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:176.389px;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#EDF6F3;fill-opacity:1;stroke-width:0.264583">d<tspan
+   id="tspan843"
+   style="fill:#EDF6F3;fill-opacity:0">i</tspan></tspan></text>
+    <rect
+       y="64.052353"
+       x="123.33356"
+       height="34.747726"
+       width="34.747726"
+       id="rect837-2"
+       style="fill:#2aa5a1;fill-opacity:1;stroke-width:0.215129" />
+    <rect
+       style="fill:#245e71;fill-opacity:1;stroke-width:0.215129"
+       id="rect837-2-8"
+       width="34.747726"
+       height="34.747726"
+       x="123.27367"
+       y="108.86507" />
+    <rect
+       y="-65.858803"
+       x="135.9561"
+       height="34.747726"
+       width="34.747726"
+       id="rect837-2-8-9"
+       style="fill:#a3d858;fill-opacity:1;stroke-width:0.215129"
+       transform="rotate(29.298836)" />
+  </g>
+</svg>
