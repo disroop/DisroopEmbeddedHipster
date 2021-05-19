@@ -3,7 +3,7 @@ title: Disroop
 subtitle: by HTML5 UP
 email: info@disroop.ch
 description:
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/DisroopEmbeddedHipster" # the subpath of your site, e.g. /blog
 url: # the base hostname & protocol for your site
 author:
 street_address: Marquard-Wocher-Strasse 51
