@@ -1,9 +1,7 @@
 [
     {
-      "name": "ws-nrf",
-      "environmentSetupScript": "/workspace/build/ws-blinky/Debug/NRF52_DK/activate.sh"
-    },
-    {
-      "name": "ws-linux"
+      "name": "blinky-debug",
+      "environmentSetupScript": "/workspace/build/blinky-debug/activate.sh",
+      "toolchainFile": "${workspaceFolder}/build/blinky-debug/conan_toolchain.cmake"
     }
   ]

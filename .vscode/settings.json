@@ -87,6 +87,7 @@
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildKit}",
     "cmake.configureOnEdit": true,
     "cmake.parseBuildDiagnostics": true,
+    "cmake.sourceDirectory": "${workspaceFolder}/blinky",
     "output.smartScroll.enabled": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
