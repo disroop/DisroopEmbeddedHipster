@@ -1,16 +1,26 @@
 {
-    "workspace":[
+    "profiles": [
         {
-            "name":"ws-nrf",
-            "conanWs": "${workspaceFolder}/.workspace/ws-blinky-nrf.yml",
-            "profile":"gcc-nrf52840-debug",
-            "arg": "--build=missing --settings os.board=NRF52_DK -e DISROOP_BOARD=NRF52_DK"
+            "name":"blinky-debug",
+            "conanFile": "${workspaceFolder}/blinky/conanfile.py",
+            "profileBuild":"default",
+            "profileHost":"${workspaceFolder}/.profiles/arm-m4-debug",
+            "installArg": "--build missing",
+            "buildArg":"",
+            "createUser": "disroop",
+            "createChannel": "development",
+            "createArg":"--build=missing"
         },
         {
-            "name":"ws-linux",
-            "conanWs": "${workspaceFolder}/.workspace/ws-blinky-linux.yml",
-            "profile":"clang-linux-debug",
-            "arg": "--build=missing"
+            "name":"blinky-release",
+            "conanFile": "${workspaceFolder}/blinky/conanfile.py",
+            "profileBuild":"default",
+            "profileHost":"${workspaceFolder}/.profiles/arm-m4-release",
+            "installArg": "--build missing",
+            "buildArg":"",
+            "createUser": "disroop",
+            "createChannel": "release",
+            "createArg":"--build=missing"
         }
     ]
 }
