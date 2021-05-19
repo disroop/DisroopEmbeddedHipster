@@ -9,14 +9,15 @@ class Blinky(ConanFile):
     license = "closed"
     url = "TODO"
     default_channel = "development"
-    default_user = "mymichu"
+    default_user = "disroop"
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps","CMakeToolchain","cmake_vars","virtualenv"
     exports_sources = "source/*", "CMakeLists.txt"
     
     def requirements(self):
-        self.requires(f"stm32_bsp_iot_node/1.1.7@disroop/development")
-        self.requires(f"cmake_vars/1.0.0@disroop/development",private=True)
+        self.requires("stm32_bsp_iot_node/1.1.7@disroop/development")
+        self.requires("cmake_vars/1.0.0@disroop/development",private=True)
+        self.requires("stm32_runtime_l475_vtg/0.1.0@disroop/development")
 
     def build(self):
         cmake = CMake(self)
@@ -24,8 +25,8 @@ class Blinky(ConanFile):
         cmake.build()
     
     def package(self):
-        self.package("*.hex",src="source",dst="bin")
-        self.package("*.bin",src="source",dst="bin")
-        self.package("*.elf",src="source",dst="bin")
-        self.package("*.map",src="source",dst="bin")
-
+        self.copy("blinky.hex",src=f"{self.build_folder}/bin",dst="bin")
+        self.copy("blinky.bin",src=f"{self.build_folder}/bin",dst="bin")
+        self.copy("blinky",src=f"{self.build_folder}/bin",dst="bin")
+        self.copy("flash.jLink",src=f"{self.build_folder}/bin",dst="bin")
+        self.copy("blinky.map",src=f"{self.build_folder}/bin",dst="bin")
