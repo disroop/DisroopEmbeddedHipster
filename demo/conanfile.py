@@ -26,7 +26,7 @@ class DemoConan(ConanFile):
     def build(self):
         cmake = CMake(self)
         cmake.configure(source_folder="src")
-        self.run("../build-wrapper/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build .")
+        self.run("/app/build-wrapper/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build .")
         
 
     def package(self):
