@@ -6,3 +6,5 @@ cmake-*
 .idea
 .downloads
 .DS_store
+
+demo/build
