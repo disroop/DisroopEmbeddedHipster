@@ -13,7 +13,7 @@
       "servertype": "jlink",
       "interface": "swd",
       "device": "STM32L475VG",
-      "ipAddress": "172.17.0.1",
+      "ipAddress": "${host.docker.internal}",
       "runToMain": false,
       "svdFile": "${workspaceRoot}/blinky/doc/STM32L4x5.svd",
       "preRestartCommands": [
