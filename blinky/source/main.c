@@ -1,4 +1,5 @@
-#include "stm32l475e_iot01.h"
+#include "B-L475E-IOT01/stm32l475e_iot01.h"
+#include "B-L475E-IOT01/stm32l475e_iot01_gyro.h"
 #include "stm32l4xx_hal.h"
 
 static void SystemClock_Config();
