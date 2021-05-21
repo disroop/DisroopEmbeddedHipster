@@ -1,5 +1,5 @@
 from conans import ConanFile, CMake
-
+import os
 
 class DemoConan(ConanFile):
     name = "demo"
@@ -26,7 +26,8 @@ class DemoConan(ConanFile):
     def build(self):
         cmake = CMake(self)
         cmake.configure(source_folder="src")
-        self.run("/app/build-wrapper/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build .")
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        self.run(f"{dir_path}/../build-wrapper/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build .")
         
 
     def package(self):

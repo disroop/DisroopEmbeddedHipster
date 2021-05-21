@@ -13,9 +13,13 @@ int main()
   SystemClock_Config();
 
   BSP_LED_Init(LED_GREEN);
+  BSP_GYRO_Init(); 
+  BSP_GYRO_LowPower(0);
 
   while (1)
   {
+    float gyro[3];
+    BSP_GYRO_GetXYZ(gyro);
     BSP_LED_Toggle(LED_GREEN);
     HAL_Delay(1000);
   }
