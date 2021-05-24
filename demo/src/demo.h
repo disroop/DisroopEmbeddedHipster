@@ -7,3 +7,5 @@
 #endif
 
 demo_EXPORT void demo();
+
+int demo_doit();
