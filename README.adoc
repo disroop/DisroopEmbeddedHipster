@@ -33,3 +33,22 @@ Try our VsCode extension
 
 https://marketplace.visualstudio.com/items?itemName=disroop.conan
 
+== Code Analysis
+
+image:https://sonarcloud.io/images/project_badges/sonarcloud-black.svg[]
+
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=bugs[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=code_smells[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=coverage[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=duplicated_lines_density[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=ncloc[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=sqale_rating[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=alert_status[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=reliability_rating[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=security_rating[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=sqale_index[]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=vulnerabilities[]
+
+
+
+
