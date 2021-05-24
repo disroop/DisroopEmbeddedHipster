@@ -10,14 +10,19 @@ class DemoConan(ConanFile):
     description = "<Description of Demo here>"
     topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
-    options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
-    generators = "cmake"
-    exports_sources = "src/*"
+    options = {"shared": [True, False], "fPIC": [True, False], "sonar_scanner": [True, False]}
+    default_options = {"shared": False, "fPIC": True, "sonar_scanner": False}
+    generators = "cmake", "virtualenv", "cmake_paths",
+    exports_sources = "src/*", "test/*", "CMakeLists.txt", "sonar-project.properties"
 
     def configure(self):
         del self.settings.compiler.libcxx
         del self.settings.compiler.cppstd
+
+    def build_requirements(self):
+       if self.settings.arch == "x86_64":
+           self.build_requires("gtest/1.10.0", force_host_context=True)
+        
 
     def config_options(self):
         if self.settings.os == "Windows":
@@ -25,10 +30,12 @@ class DemoConan(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        cmake.configure(source_folder="src")
-        dir_path = os.path.dirname(os.path.realpath(__file__))
-        self.run(f"{dir_path}/../build-wrapper/build-wrapper-linux-x86-64 --out-dir bw-output cmake --build .")
-        
+        cmake.configure()
+        self.run(f"build-wrapper --out-dir bw-output cmake --build .")
+        if self.options.sonar_scanner == True:
+            self.output.info("Start sonar-scanner")
+            self.run(f"sonar-scanner") 
+            self.output.info("End sonar-scanner")
 
     def package(self):
         self.copy("*.h", dst="include", src="src")

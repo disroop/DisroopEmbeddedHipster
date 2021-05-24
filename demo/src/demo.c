@@ -9,3 +9,8 @@ void demo() {
         printf("demo/1.0-(pure C): Hello World Debug!\n");
     #endif
 }
+
+
+int demo_doit(){
+    return 123;
+}
