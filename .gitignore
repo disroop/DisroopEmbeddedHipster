@@ -8,3 +8,7 @@ cmake-*
 .DS_store
 
 demo/build
+
+
+# Sonar
+**/.scannerwork
