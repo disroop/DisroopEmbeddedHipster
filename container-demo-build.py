@@ -1,14 +1,22 @@
 #!/usr/bin/python
 import os
 import docker
+import argparse
+
+def get_args():
+    cwd = os.getcwd()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--sonartoken", type=str, required=False,
+                        default="", help="Use Sonartoken")
+    return parser.parse_args()
 
 
-def run_build(docker_image, container_command):
+def run_build(docker_image, container_command, sonar_token):
     client = docker.from_env()
     current_path = os.getcwd()
     try:
         retVal = client.containers.run(image=docker_image, command=container_command, remove=True,
-                                       working_dir="/app", volumes={current_path: {'bind': '/app', 'mode': 'rw'}})
+                                       working_dir="/app", volumes={current_path: {'bind': '/app', 'mode': 'rw'}}, environment=[f"SONAR_TOKEN={sonar_token}"])
         retVal = retVal.decode('utf-8')
         print(f'{retVal}')
         print("SUCCESS")
@@ -20,6 +28,7 @@ def run_build(docker_image, container_command):
 
 
 if __name__ == "__main__":
+    args = get_args()
     bash_command = "setup; ./buildDemo.sh"
     command = f"/bin/bash -c '{bash_command}'"
-    run_build("disroop/embedded-hipster-sonar:0.5.1", command)
+    run_build("disroop/embedded-hipster-sonar:0.5.1", command, args.sonartoken)

@@ -1,5 +1,5 @@
 .conan/*
-build/*
+**/build/*
 .vscode/.cortex-debug.peripherals.state.json
 .vscode/.cortex-debug.registers.state.json
 cmake-*

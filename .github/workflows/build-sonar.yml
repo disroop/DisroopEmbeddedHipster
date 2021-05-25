@@ -20,8 +20,5 @@ jobs:
           pip install docker 
 
       - name: build & SonarCloud Scan
-        run: python3 ./container-demo-build.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: python3 ./container-demo-build.py --sonartoken=${{ secrets.SONAR_TOKEN }}
     

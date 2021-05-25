@@ -34,7 +34,7 @@ class DemoConan(ConanFile):
         self.run(f"build-wrapper --out-dir bw-output cmake --build .")
         if self.options.sonar_scanner == True:
             self.output.info("Start sonar-scanner")
-            self.run(f"sonar-scanner") 
+            self.run(f"sonar-scanner -Dsonar.login={os.environ['SONAR_TOKEN']}") 
             self.output.info("End sonar-scanner")
 
     def package(self):
