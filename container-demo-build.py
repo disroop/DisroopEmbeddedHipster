@@ -22,4 +22,4 @@ def run_build(docker_image, container_command):
 if __name__ == "__main__":
     bash_command = "setup; ./buildDemo.sh"
     command = f"/bin/bash -c '{bash_command}'"
-    run_build("disroop/embedded-hipster-dev:0.5.1", command)
+    run_build("disroop/embedded-hipster-sonar:0.5.1", command)
