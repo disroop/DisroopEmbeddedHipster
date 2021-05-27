@@ -21,6 +21,17 @@
             "createUser": "disroop",
             "createChannel": "release",
             "createArg":"--build=missing"
+        },
+        {
+            "name":"demo",
+            "conanFile": "${workspaceFolder}/demo/conanfile.py",
+            "profileBuild":"default",
+            "profileHost":"${workspaceFolder}/.profiles/clang-linux-debug",
+            "installArg": "--build missing",
+            "buildArg":"",
+            "createUser": "disroop",
+            "createChannel": "release",
+            "createArg":"--build=missing"
         }
     ]
 }

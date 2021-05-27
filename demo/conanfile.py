@@ -1,26 +1,27 @@
 from conans import ConanFile, CMake
 import os
 
+from conans.client import build
+
 class DemoConan(ConanFile):
     name = "demo"
     version = "1.0"
-    license = "<Put the package license here>"
-    author = "<Put your name here> <And your email here>"
-    url = "<Package recipe repository url here, for issues about the package>"
-    description = "<Description of Demo here>"
-    topics = ("<Put some tag here>", "<here>", "<and here>")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False], "sonar_scanner": [True, False]}
     default_options = {"shared": False, "fPIC": True, "sonar_scanner": False}
-    generators = "cmake", "virtualenv", "cmake_paths",
+    generators = "cmake_paths", "CMakeDeps","CMakeToolchain","virtualenv" , "cmake_vars"
     exports_sources = "src/*", "test/*", "CMakeLists.txt", "sonar-project.properties"
 
     def configure(self):
         del self.settings.compiler.libcxx
         del self.settings.compiler.cppstd
 
+
+    def requirements(self):
+        self.requires("cmake_vars/1.0.0@disroop/development",private=True)
+
     def build_requirements(self):
-       if self.settings.arch == "x86_64":
+        if self.settings.arch == "x86_64":
            self.build_requires("gtest/1.10.0", force_host_context=True)
         
 
@@ -36,6 +37,12 @@ class DemoConan(ConanFile):
             self.output.info("Start sonar-scanner")
             self.run(f"sonar-scanner -Dsonar.login={os.environ['SONAR_TOKEN']}") 
             self.output.info("End sonar-scanner")
+        else:
+            cmake.build()
+        cmake.test()            
+        
+        
+
 
     def package(self):
         self.copy("*.h", dst="include", src="src")
