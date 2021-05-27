@@ -9,6 +9,8 @@ include(${CMAKE_CURRENT_BINARY_DIR}/cmake_vars.cmake)
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_toolchain.cmake)
 
 add_subdirectory(src)
+# fixme move to profile
+set(CMAKE_CXX_FLAGS "-fprofile-arcs -ftest-coverage")
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Generic")
     enable_testing()
