@@ -1,6 +1,7 @@
 #include "B-L475E-IOT01/stm32l475e_iot01.h"
 #include "B-L475E-IOT01/stm32l475e_iot01_gyro.h"
 #include "stm32l4xx_hal.h"
+#define ABS(x)                    (x < 0) ? (-x) : x
 
 static void SystemClock_Config();
 
@@ -15,11 +16,24 @@ int main()
   BSP_LED_Init(LED_GREEN);
   BSP_GYRO_Init(); 
   BSP_GYRO_LowPower(0);
-
+  /* Gyroscope variables */
+  float buffer[3] = {0};
+  int32_t xval = 0;
+  int32_t yval = 0;
+  int32_t zval = 0;
+  uint32_t xvalabs = 0;
+  uint32_t yvalabs = 0;
+  uint32_t zvalabs = 0;
   while (1)
   {
-    float gyro[3];
-    BSP_GYRO_GetXYZ(gyro);
+    BSP_GYRO_GetXYZ(buffer);
+   /* Get absolute value */
+    xval = (int32_t) buffer[0];
+    yval = (int32_t) buffer[1];
+    zval = (int32_t) buffer[2];
+    xvalabs = ABS(xval);
+    yvalabs = ABS(yval);
+    zvalabs = ABS(zval);
     BSP_LED_Toggle(LED_GREEN);
     HAL_Delay(1000);
   }
