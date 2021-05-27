@@ -3,5 +3,10 @@
       "name": "blinky-debug",
       "environmentSetupScript": "/workspace/build/blinky-debug/activate.sh",
       "toolchainFile": "${workspaceFolder}/build/blinky-debug/conan_toolchain.cmake"
+    },
+    {
+      "name": "demo",
+      "environmentSetupScript": "/workspace/build/demo/activate.sh",
+      "toolchainFile": "${workspaceFolder}/build/demo/conan_toolchain.cmake"
     }
   ]

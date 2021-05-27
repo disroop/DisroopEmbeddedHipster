@@ -89,7 +89,7 @@
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildKit}",
     "cmake.configureOnEdit": true,
     "cmake.parseBuildDiagnostics": true,
-    "cmake.sourceDirectory": "${workspaceFolder}/blinky",
+    "cmake.sourceDirectory": "${workspaceFolder}/${buildKit}",
     "output.smartScroll.enabled": false,
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 500,
@@ -106,4 +106,5 @@
       
     },
     "numberedBookmarks.navigateThroughAllFiles": "replace",
+    "python.pythonPath": "/bin/python",
 }
