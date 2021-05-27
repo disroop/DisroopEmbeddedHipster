@@ -83,7 +83,8 @@
       "unordered_set": "cpp",
       "iomanip": "cpp",
       "iostream": "cpp",
-      "stm32l475e_iot01.h": "c"
+      "stm32l475e_iot01.h": "c",
+      "stm32l475e_iot01_gyro.h": "c"
     },
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildKit}",
     "cmake.configureOnEdit": true,
