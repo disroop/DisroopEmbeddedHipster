@@ -3,4 +3,4 @@ mumoco --remotes
 
 cd demo || exit
 
-conan create -o demo:sonar_scanner=True .
+conan create --build=missing -o demo:sonar_scanner=True .
