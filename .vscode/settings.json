@@ -107,4 +107,6 @@
     },
     "numberedBookmarks.navigateThroughAllFiles": "replace",
     "python.pythonPath": "/bin/python",
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true
 }
