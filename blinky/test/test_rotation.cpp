@@ -18,7 +18,10 @@ class UT_Rotation : public testing::Test {
     void TearDown() override {}
 };
 
-TEST(UT_Rotation, positive) {
-    angle_degree moved_angle = calculate_moved_angle(&fake_gyro_wrapper, 0);
-    EXPECT_TRUE(false);
+TEST_F(UT_Rotation, positive) {
+    pfakeGyro->set_gyro(100, 200, 300);
+    angle_degree moved_angle = calculate_moved_angle(&fake_gyro_wrapper, 100);
+    EXPECT_EQ(1, moved_angle.x);
+    EXPECT_EQ(2, moved_angle.y);
+    EXPECT_EQ(3, moved_angle.z);
 }
