@@ -28,7 +28,8 @@
 		"ms-vscode.cmake-tools",
 		"anjali.clipboard-history",
 		"vscode-icons-team.vscode-icons",
-		"alefragnani.numbered-bookmarks"
+		"alefragnani.numbered-bookmarks",
+		"sourcegraph.sourcegraph"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
