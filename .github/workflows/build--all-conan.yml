@@ -21,5 +21,5 @@ jobs:
           pip install docker 
 
       - name: build 
-        run: python3 ./container-build.py
+        run: python3 -u ./container-build.py
       
