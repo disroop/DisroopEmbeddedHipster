@@ -29,6 +29,8 @@ class Blinky(ConanFile):
         cmake = CMake(self)
         cmake.configure()
         cmake.build()
+        if self.settings.arch == "x86_64":
+            cmake.test()
     
     def package(self):
         self.copy("blinky.hex",src=f"{self.build_folder}/bin",dst="bin")
