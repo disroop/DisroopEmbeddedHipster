@@ -1,7 +1,7 @@
 ---
 title: Disroop Embedded Hipster
 layout: landing
-description: 'Modern embeded development proces'
+description: 'A modern embedded development process '
 image: assets/images/pic07.jpg
 nav-menu: false
 ---
