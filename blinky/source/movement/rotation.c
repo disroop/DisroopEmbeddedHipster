@@ -1,4 +1,5 @@
 #include "rotation.h"
+#include <stdbool.h>
 
 angle_degree calculate_moved_angle(void (*gyro_xyz)(float *),
                                    uint16_t diff_time_ms) {

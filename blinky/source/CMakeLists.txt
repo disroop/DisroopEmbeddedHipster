@@ -15,7 +15,7 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     find_package(stm32_hal_l4 REQUIRED)
     
     add_executable(${APP_NAME} ${SOURCES})
-    target_link_libraries(${APP_NAME} PRIVATE 
+    target_link_libraries(${APP_NAME} PRIVATE movement
                         stm32_bsp_iot_node::stm32_bsp_iot_node 
                         stm32_runtime_l475_vtg::stm32_runtime_l475_vtg
                         stm32_hal_l4::stm32_hal_l4)
