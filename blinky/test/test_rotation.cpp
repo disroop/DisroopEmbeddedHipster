@@ -1,5 +1,5 @@
 extern "C" {
-#include "rotation.h"
+#include "internal/rotation.h"
 }
 #include "fake_gyro.hpp"
 #include "gtest/gtest.h"
