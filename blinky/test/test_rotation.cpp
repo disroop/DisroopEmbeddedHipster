@@ -20,8 +20,8 @@ class UT_Rotation : public testing::Test {
 
 TEST_F(UT_Rotation, positive) {
     pfakeGyro->set_gyro(100, 200, 300);
-    angle_degree moved_angle = calculate_moved_angle(&fake_gyro_wrapper, 100);
-    EXPECT_EQ(1, moved_angle.x);
-    EXPECT_EQ(2, moved_angle.y);
-    EXPECT_EQ(3, moved_angle.z);
+    rotation_mdegps moved_angle = get_rotation(&fake_gyro_wrapper);
+    EXPECT_EQ(100, moved_angle.x);
+    EXPECT_EQ(200, moved_angle.y);
+    EXPECT_EQ(300, moved_angle.z);
 }
