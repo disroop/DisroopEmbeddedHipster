@@ -1,6 +1,9 @@
 set(APP_NAME blinky)
 
+add_subdirectory(eiger)
 add_subdirectory(movement)
+add_subdirectory(indication)
+add_subdirectory(coordinator)
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 
@@ -15,7 +18,7 @@ if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
     find_package(stm32_hal_l4 REQUIRED)
     
     add_executable(${APP_NAME} ${SOURCES})
-    target_link_libraries(${APP_NAME} PRIVATE movement
+    target_link_libraries(${APP_NAME} PRIVATE eiger movement indication coordinator
                         stm32_bsp_iot_node::stm32_bsp_iot_node 
                         stm32_runtime_l475_vtg::stm32_runtime_l475_vtg
                         stm32_hal_l4::stm32_hal_l4)

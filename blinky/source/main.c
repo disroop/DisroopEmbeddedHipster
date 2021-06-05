@@ -1,40 +1,32 @@
 #include "B-L475E-IOT01/stm32l475e_iot01.h"
 #include "B-L475E-IOT01/stm32l475e_iot01_gyro.h"
-#include "movement/rotation.h"
-#include "movement/tracker.h"
+#include "coordinator/coordinator.h"
+#include "eiger/scheduler.h"
+#include "indication/indication.h"
+#include "movement/movement.h"
 #include "stm32l4xx_hal.h"
 
 static void SystemClock_Config();
 
-int main() {
+void platform_init() {
     HAL_Init();
-
-    /* Configure the system clock to 80 MHz */
     SystemClock_Config();
-
-    const uint16_t slow_delay = 10000;
-    const uint16_t fast_delay = 500;
-    uint16_t current_delay = 10000;
-
     BSP_LED_Init(LED_GREEN);
     BSP_GYRO_Init();
     BSP_GYRO_LowPower(0);
-    tracker_set_range(10);
-    tracker_reset_start_position();
-
+}
+int main() {
+    platform_init();
+    indication indicator =
+        indication_create(LED_GREEN, BSP_LED_On, BSP_LED_Off);
+    coordinator_init(100, indicator);
+    movement_init(BSP_GYRO_GetXYZ);
+    scheduler_config_time(HAL_Delay);
+    scheduler_add_task(coordinator_run, 100);
+    scheduler_add_task(movement_run, 20);
     while (1) {
-        angle_degree moved_angle =
-            calculate_moved_angle(BSP_GYRO_GetXYZ, current_delay);
-        tracker_update_position(moved_angle);
-        if (tracker_is_within_range(moved_angle)) {
-            current_delay = fast_delay;
-        } else {
-            current_delay = slow_delay;
-        }
-        BSP_LED_Toggle(LED_GREEN);
-        HAL_Delay(current_delay);
+        scheduler_update();
     }
-
     return 0;
 }
 
@@ -75,7 +67,4 @@ static void SystemClock_Config(void) {
     }
 }
 
-void assert_failed(char *file, uint32_t line) {
-    while (1)
-        ;
-}
+void assert_failed(char *file, uint32_t line) {}
