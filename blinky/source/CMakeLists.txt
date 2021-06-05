@@ -5,7 +5,7 @@ add_subdirectory(movement)
 add_subdirectory(indication)
 add_subdirectory(coordinator)
 
-if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+if(CMAKE_CROSSCOMPILING)
 
     set(SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/main.c
