@@ -15,7 +15,7 @@ set(CMAKE_C_STANDARD 11)
 add_subdirectory(source)
 
 
-if(CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+if(NOT CMAKE_CROSSCOMPILING)
     enable_testing()
     add_subdirectory(test)
 endif()
