@@ -1,0 +1,42 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  arm_build:
+    runs-on: ubuntu-latest
+    container:
+      image: disroop/embedded-hipster:0.6.1
+    steps:
+      - name: Checking out our code
+        uses: actions/checkout@master
+      - run: |
+          ls
+          setup
+          mumoco --remotes
+        name: setup conan
+      - run: |
+          conan install -if build-arm -pr:b=default -pr:h=.profiles/arm-m4-release --build=missing blinky/conanfile.py
+        name: install dependencies
+      - run: |
+          source ./build-arm/activate.sh
+          cmake -B build-arm  bu-DCMAKE_TOOLCHAIN_FILE=conan_toolchain ../blinky/. 
+          build-wrapper --out-dir bw-output cmake --build -B build-arm 
+          source ./build-arm/deactivate.sh
+        name: build
+      - run: |
+          cp blinky/sonar-project.properties build-arm/sonar-project.properties 
+          pushd build-arm
+          sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          popd
+        name: static code analysis
