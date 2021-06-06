@@ -16,7 +16,7 @@ jobs:
   arm_build:
     runs-on: ubuntu-latest
     container:
-      image: disroop/embedded-hipster:0.6.1
+      image: disroop/embedded-hipster-sonar:0.6.1
     steps:
       - name: Checking out our code
         uses: actions/checkout@master
