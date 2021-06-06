@@ -30,7 +30,7 @@ jobs:
         name: install dependencies
       - run: |
           bash ./build-arm/activate.sh
-          cmake -B build-arm  bu-DCMAKE_TOOLCHAIN_FILE=conan_toolchain ../blinky/. 
+          cmake -B build-arm  bu-DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. 
           build-wrapper --out-dir bw-output cmake --build -B build-arm 
           bash ./build-arm/deactivate.sh
         name: build
