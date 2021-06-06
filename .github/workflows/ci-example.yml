@@ -38,3 +38,5 @@ jobs:
           cp blinky/sonar-project.properties build-arm/sonar-project.properties 
           cd build-arm && sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         name: static code analysis
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
