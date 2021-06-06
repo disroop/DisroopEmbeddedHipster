@@ -29,10 +29,10 @@ jobs:
           conan install -if build-arm -pr:b=default -pr:h=.profiles/arm-m4-release --build=missing blinky/conanfile.py
         name: install dependencies
       - run: |
-          bash ./build-arm/activate.sh
+          /bin/bash -c "source ./build-arm/activate.sh"
           cmake -B build-arm  bu-DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. 
           build-wrapper --out-dir bw-output cmake --build -B build-arm 
-          bash ./build-arm/deactivate.sh
+          /bin/bash -c "source ./build-arm/deactivate.sh"
         name: build
       - run: |
           cp blinky/sonar-project.properties build-arm/sonar-project.properties 
