@@ -34,18 +34,31 @@ jobs:
           build-wrapper --out-dir build-arm/bw-output cmake --build ./build-arm &&
           source ./build-arm/deactivate.sh"
         name: build
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
+      - run: sonar-scanner
+          -Dsonar.projectKey=disroop_DisroopEmbeddedHipster
+          -Dsonar.organization=disroop
+          -Dsonar.sources=blinky/source
+          -Dsonar.sourceEncoding=UTF-8
+          -Dsonar.cfamily.build-wrapper-output=build-arm/bw-output
+          -Dsonar.host.url=https://sonarcloud.io/
+          -Dsonar.cfamily.threads=2
+          -Dsonar.cfamily.cache.enabled=false
+        name: SonarCloud Scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        with:
-          args: >
-            -Dsonar.projectKey=disroop_DisroopEmbeddedHipster
-            -Dsonar.organization=disroop
-            -Dsonar.sources=blinky/source
-            -Dsonar.sourceEncoding=UTF-8
-            -Dsonar.cfamily.build-wrapper-output=build-arm/bw-output
-            -Dsonar.host.url=https://sonarcloud.io/
-            -Dsonar.cfamily.threads=1
-            -Dsonar.cfamily.cache.enabled=false
+      # - name: SonarCloud Scan
+      #   uses: sonarsource/sonarcloud-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #   with:
+      #     args: >
+      #       -Dsonar.projectKey=disroop_DisroopEmbeddedHipster
+      #       -Dsonar.organization=disroop
+      #       -Dsonar.sources=blinky/source
+      #       -Dsonar.sourceEncoding=UTF-8
+      #       -Dsonar.cfamily.build-wrapper-output=build-arm/bw-output
+      #       -Dsonar.host.url=https://sonarcloud.io/
+      #       -Dsonar.cfamily.threads=2
+      #       -Dsonar.cfamily.cache.enabled=false
