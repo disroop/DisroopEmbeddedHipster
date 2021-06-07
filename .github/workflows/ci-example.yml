@@ -59,8 +59,8 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io/
           -Dsonar.cfamily.threads=2
           -Dsonar.cfamily.cache.enabled=false
-          -Dsonar.testExecutionReportPaths=build-host/utest-report/
           -Dsonar.cfamily.gcov.reportsPath=build-host/gcov/
+          #-Dsonar.cfamily.cppunit.reportsPath=build-host/utest-report/
         name: SonarCloud Scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
