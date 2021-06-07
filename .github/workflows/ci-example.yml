@@ -64,11 +64,18 @@ jobs:
         name: install dependencies
       - run: |
           /bin/bash -c "source ./build-host/activate.sh && 
-          export GTEST_OUTPUT=$(pwd)/build-host/utest-report
           cmake -B build-host  DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
           cmake --build ./build-host &&
           source ./build-host/deactivate.sh"
         name: build
       - run: |
+          export GTEST_OUTPUT="xml:$(pwd)/build-host/utest-report"
           ctest --test-dir build-host
         name: unit-test execution
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure() # run this step even if previous step failed
+        with:
+          name: JEST Tests # Name of the check run which will be created
+          path: build-host/utest-report/*.xml # Path to test results
+          reporter: jest-junit # Format of test results
