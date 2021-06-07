@@ -69,8 +69,8 @@ jobs:
           source ./build-host/deactivate.sh"
         name: build
       - run: |
-          export GTEST_OUTPUT="xml:$(pwd)/build-host/utest-report"
-          ctest --test-dir build-host
+          /bin/bash -c "export GTEST_OUTPUT='xml:$(pwd)/build-host/utest-report/' &&
+          ctest --test-dir build-host --verbose"
         name: unit-test execution
       - name: Test Report
         uses: dorny/test-reporter@v1
