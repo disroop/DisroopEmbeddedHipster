@@ -59,7 +59,7 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io/
           -Dsonar.cfamily.threads=2
           -Dsonar.cfamily.cache.enabled=false
-          -Dsonar.junit.reportPaths=build-host/utest-report/blinky_test.xml
+          -Dsonar.cfamily.cppunit.reportsPath=build-host/utest-report/blinky_test.xml
           -Dsonar.cfamily.gcov.reportsPath=build-host/gcov/
         name: SonarCloud Scan
         env:
