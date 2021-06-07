@@ -16,7 +16,7 @@ jobs:
   buildAnalyze:
     runs-on: ubuntu-latest
     container:
-      image: disroop/embedded-hipster-sonar:0.6.1
+      image: disroop/embedded-hipster-sonar:0.6.2
     steps:
       - name: Checking out our code
         uses: actions/checkout@master
@@ -36,10 +36,10 @@ jobs:
           cmake -B build-arm -DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
           build-wrapper --out-dir build-arm/bw-output cmake --build ./build-arm &&
           source ./build-arm/deactivate.sh"
-        name: build
+        name: build arm
       - run: |
           /bin/bash -c "source ./build-host/activate.sh && 
-          cmake -B build-host  DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
+          cmake -B build-host -DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
           cmake --build ./build-host &&
           source ./build-host/deactivate.sh"
         name: build host
@@ -47,6 +47,9 @@ jobs:
           /bin/bash -c "export GTEST_OUTPUT='xml:$(pwd)/build-host/utest-report/' &&
           ctest --test-dir build-host --verbose"
         name: unit-test execution
+      - run: |
+          python calc_gcov.py
+        name: create coverage report
       - run: sonar-scanner
           -Dsonar.projectKey=disroop_DisroopEmbeddedHipster
           -Dsonar.organization=disroop
@@ -57,6 +60,7 @@ jobs:
           -Dsonar.cfamily.threads=2
           -Dsonar.cfamily.cache.enabled=false
           -Dsonar.junit.reportPaths=build-host/utest-report/blinky_test.xml
+          -Dsonar.cfamily.gcov.reportsPath=build-host/gcov/
         name: SonarCloud Scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
