@@ -59,7 +59,7 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io/
           -Dsonar.cfamily.threads=2
           -Dsonar.cfamily.cache.enabled=false
-          -Dsonar.cxx.xunit.reportPaths=build-host/utest-report/
+          -Dsonar.cfamily.xunit.reportPaths=build-host/utest-report/
           -Dsonar.cfamily.gcov.reportsPath=build-host/gcov/
         name: SonarCloud Scan
         env:
