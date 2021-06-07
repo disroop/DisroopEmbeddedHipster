@@ -31,4 +31,4 @@ if __name__ == "__main__":
     args = get_args()
     bash_command = "setup; ./buildDemo.sh"
     command = f"/bin/bash -c '{bash_command}'"
-    run_build("disroop/embedded-hipster-sonar:0.6.1", command, args.sonartoken)
+    run_build("disroop/embedded-hipster-sonar:0.6.2", command, args.sonartoken)
