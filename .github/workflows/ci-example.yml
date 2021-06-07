@@ -13,7 +13,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
-  arm_build:
+  buildAnalyze:
     runs-on: ubuntu-latest
     container:
       image: disroop/embedded-hipster-sonar:0.6.1
@@ -27,13 +27,26 @@ jobs:
         name: setup conan
       - run: |
           conan install -if build-arm -pr:b=default -pr:h=.profiles/arm-m4-release --build=missing blinky/conanfile.py
-        name: install dependencies
+        name: install dependencies arm
+      - run: |
+          conan install -if build-host -pr:b=default -pr:h=default --build=missing blinky/conanfile.py
+        name: install dependencies host
       - run: |
           /bin/bash -c "source ./build-arm/activate.sh && 
           cmake -B build-arm -DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
           build-wrapper --out-dir build-arm/bw-output cmake --build ./build-arm &&
           source ./build-arm/deactivate.sh"
         name: build
+      - run: |
+          /bin/bash -c "source ./build-host/activate.sh && 
+          cmake -B build-host  DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
+          cmake --build ./build-host &&
+          source ./build-host/deactivate.sh"
+        name: build host
+      - run: |
+          /bin/bash -c "export GTEST_OUTPUT='xml:$(pwd)/build-host/utest-report/' &&
+          ctest --test-dir build-host --verbose"
+        name: unit-test execution
       - run: sonar-scanner
           -Dsonar.projectKey=disroop_DisroopEmbeddedHipster
           -Dsonar.organization=disroop
@@ -43,39 +56,16 @@ jobs:
           -Dsonar.host.url=https://sonarcloud.io/
           -Dsonar.cfamily.threads=2
           -Dsonar.cfamily.cache.enabled=false
+          -Dsonar.junit.reportPaths=build-host/utest-report/blinky_test.xml
         name: SonarCloud Scan
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-  host_build:
-    runs-on: ubuntu-latest
-    container:
-      image: disroop/embedded-hipster:0.6.1
-    steps:
-      - name: Checking out our code
-        uses: actions/checkout@master
-      - run: |
-          ls
-          setup
-          mumoco --remotes
-        name: setup conan
-      - run: |
-          conan install -if build-host -pr:b=default -pr:h=default --build=missing blinky/conanfile.py
-        name: install dependencies
-      - run: |
-          /bin/bash -c "source ./build-host/activate.sh && 
-          cmake -B build-host  DCMAKE_TOOLCHAIN_FILE=conan_toolchain blinky/. &&
-          cmake --build ./build-host &&
-          source ./build-host/deactivate.sh"
-        name: build
-      - run: |
-          /bin/bash -c "export GTEST_OUTPUT='xml:$(pwd)/build-host/utest-report/' &&
-          ctest --test-dir build-host --verbose"
-        name: unit-test execution
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure() # run this step even if previous step failed
         with:
-          name: JEST Tests # Name of the check run which will be created
-          path: build-host/utest-report/*.xml # Path to test results
+          name: Publish test # Name of the check run which will be created
+          path: build-host/utest-report/blinky_test.xml # Path to test results
           reporter: jest-junit # Format of test results
+
