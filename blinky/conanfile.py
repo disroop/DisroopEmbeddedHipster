@@ -15,7 +15,6 @@ class Blinky(ConanFile):
     exports_sources = "source/*", "test/*", "CMakeLists.txt"
 
     def build_requirements(self):
-        
         if self.settings.arch == "x86_64":
             self.build_requires("gtest/1.10.0", force_host_context=True)
 
