@@ -19,13 +19,13 @@ DisroopEmbeddedHipster is a showcase project which demonstrates how to create mo
 
 These are the main Features:
 
-* Focusing one https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
-* Using Docker to manage the toolchain
+* Focusing on https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
+* Using https://hub.docker.com/u/disroop[Docker] to manage the toolchain
 * Easy to setup developer environment in 10 seconds.
 * Reproducible builds with a fully automated toolchain
 * Use https://docs.conan.io/en/latest/[Conan as package manager]
 * Use CMake in a https://cliutils.gitlab.io/modern-cmake/[Modern CMake] manner
-* Use https://www.jfrog.com/confluence/display/JFROG/Conan+Repositories[Artifactory] to manage artifacts
+* Use https://disroop.jfrog.io/[Artifactory] to manage artifacts
 * Modular Architecture
 * Testing (Unittest, Conan Package-Tests, Test on the Hardware)
 * Supported Frameworks (https://github.com/google/googletest[Gtest], https://github.com/catchorg/Catch2[Catch2], http://cpputest.github.io/[Cpputest])
@@ -33,10 +33,13 @@ These are the main Features:
 * Build-In Quality
     ** Code Analysis
     ** Coverage Analysis
+    ** https://sonarcloud.io/organizations/disroop/projects?search=hipster[Sonar]
 
 * Build Automation
-    ** https://azure.microsoft.com/de-de/services/devops/pipelines/[Azure-Pipelines]
-    ** https://www.jenkins.io/[Jenkins]
+    ** Project CLI with invoke
+    ** https://github.com/disroop/DisroopEmbeddedHipster/actions[GitHub Actions]
+    ** https://azure.microsoft.com/de-de/services/devops/pipelines/[Azure-Pipelines -todo]
+    ** https://www.jenkins.io/[Jenkins -todo]
 
 For more information read the <<doc/doc.adoc#,documentation>>
 
