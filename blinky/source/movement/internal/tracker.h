@@ -9,4 +9,4 @@ void tracker_reset();
 
 bool tracker_has_rotated();
 
-void tracker_update_position(rotation_mdegps angle);
+void tracker_update_position(rotation_mdegps rotation);
