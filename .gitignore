@@ -1,14 +1,19 @@
+#VsCode
 .conan/*
 **/build/*
 .vscode/.cortex-debug.peripherals.state.json
 .vscode/.cortex-debug.registers.state.json
 cmake-*
+
+#Jetbrains
 .idea
 .downloads
 .DS_store
 
-demo/build
+#CI-Local
+build-host
 
 
 # Sonar
 **/.scannerwork
+
