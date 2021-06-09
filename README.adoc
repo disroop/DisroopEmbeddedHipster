@@ -3,17 +3,17 @@
 image::https://github.com/disroop/DisroopEmbeddedHipster/actions/workflows/ci.yml/badge.svg[]
 
 :uri-sonar: https://sonarcloud.io/dashboard?id=disroop_DisroopEmbeddedHipster
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=bugs[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=code_smells[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=coverage[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=duplicated_lines_density[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=ncloc[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=sqale_rating[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=alert_status[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=reliability_rating[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=security_rating[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=sqale_index[Badge,link={uri-sonar}]
-image:https://sonarcloud.io/api/project_badges/measure?project=disroop_mumoco&metric=vulnerabilities[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=bugs[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=code_smells[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=coverage[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=duplicated_lines_density[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=ncloc[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=sqale_rating[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=alert_status[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=reliability_rating[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=security_rating[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=sqale_index[Badge,link={uri-sonar}]
+image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=vulnerabilities[Badge,link={uri-sonar}]
 
 DisroopEmbeddedHipster is a showcase project which demonstrates how to create modern embedded applications with a modular architecture and implementing CI/CD practices.
 
