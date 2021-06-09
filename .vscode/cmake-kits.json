@@ -5,9 +5,9 @@
     "toolchainFile": "${workspaceFolder}/build/utest/conan_toolchain.cmake"
   },
   {
-    "name": "blinky",
-    "environmentSetupScript": "/workspace/build/${buildKit}-${buildType}g/activate.sh",
-    "toolchainFile": "${workspaceFolder}/build/${buildKit}-${buildType}/conan_toolchain.cmake"
+    "name": "blinky-debug",
+    "environmentSetupScript": "/workspace/build/blinky-debug/activate.sh",
+    "toolchainFile": "${workspaceFolder}/build/blinky-debug/conan_toolchain.cmake"
   },
   {
     "name": "demo",
