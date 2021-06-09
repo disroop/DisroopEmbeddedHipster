@@ -1,6 +1,6 @@
 = DisroopEmbeddedHipster
 
-image::https://github.com/disroop/DisroopEmbeddedHipster/actions/workflows/build--all-conan.yml/badge.svg[]
+image::https://github.com/disroop/DisroopEmbeddedHipster/actions/workflows/ci.yml/badge.svg[]
 
 
 image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=bugs[]
