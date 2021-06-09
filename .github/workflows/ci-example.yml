@@ -48,7 +48,7 @@ jobs:
           ctest --test-dir build-host --verbose"
         name: unit-test execution
       - run: |
-          python calc_gcov.py
+          python ./tools/coverage.py --build build-host --source-folder source --gcov --output build-host/gcov
         name: create coverage report
       - run: sonar-scanner
           -Dsonar.projectKey=disroop_DisroopEmbeddedHipster
