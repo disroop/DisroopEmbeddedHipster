@@ -23,6 +23,8 @@
   ],
   "python.linting.pylintEnabled": true,
   "python.linting.enabled": true,
+  "python.envFile": "${workspaceFolder}/.env/dev.env",
+  "python.pythonPath": "/bin/python",
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
@@ -97,7 +99,6 @@
   "files.autoSaveDelay": 500,
   "workbench.tree.indent": 20,
   "cortex-debug.armToolchainPath": "/home/dev/.conan/data/gcc_arm_none_eabi/10.2.0/disroop/release/source/toolchain/bin",
-  "python.envFile": "${workspaceFolder}/.env/dev.env",
   "workbench.colorCustomizations": {
     "activityBar.background": "#2aa5a1",
     "titleBar.activeBackground": "#a3d858",
@@ -108,5 +109,5 @@
   },
   "numberedBookmarks.navigateThroughAllFiles": "replace",
   "editor.formatOnType": true,
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
 }
