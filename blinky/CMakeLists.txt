@@ -1,12 +1,15 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-#Include Conan
+
 include(${CMAKE_CURRENT_BINARY_DIR}/cmake_vars.cmake)
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_toolchain.cmake)
-# Set the project name
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+
 project(blinky C CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 11)
+
+find_package("Coverage" REQUIRED)
 
 add_subdirectory(source)
 

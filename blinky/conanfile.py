@@ -12,7 +12,7 @@ class Blinky(ConanFile):
     default_user = "disroop"
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps","CMakeToolchain","cmake_vars","virtualenv"
-    exports_sources = "source/*", "test/*", "CMakeLists.txt"
+    exports_sources = "cmake/*", "source/*", "test/*", "CMakeLists.txt"
 
     def build_requirements(self):
         if self.settings.arch == "x86_64":
