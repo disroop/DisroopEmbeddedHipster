@@ -32,7 +32,8 @@
 		"anjali.clipboard-history",
 		"vscode-icons-team.vscode-icons",
 		"alefragnani.numbered-bookmarks",
-		"sourcegraph.sourcegraph"
+		"sourcegraph.sourcegraph",
+		"cschleiden.vscode-github-actions"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
