@@ -15,7 +15,7 @@
       "device": "STM32L475VG",
       "ipAddress": "172.17.0.1",
       "runToMain": false,
-      "svdFile": "${workspaceRoot}/blinky/doc/STM32L4x5.svd",
+      "svdFile": "${workspaceRoot}/blinky/assets/STM32L4x5.svd",
       "preRestartCommands": [
         "load",
         "enable breakpoint",
