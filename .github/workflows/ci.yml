@@ -58,7 +58,7 @@ jobs:
           -Dsonar.cfamily.build-wrapper-output=build-arm/bw-output
           -Dsonar.host.url=https://sonarcloud.io/
           -Dsonar.cfamily.threads=2
-          -Dsonar.cfamily.cache.enabled=false
+          -Dsonar.cfamily.cache.enabled=True
           -Dsonar.cfamily.gcov.reportsPath=build-host/gcov/
           #-Dsonar.exclusions=blinky/source/platform-controller/** #Exclude platform specific code, copied from cpu vendor
           #-Dsonar.cfamily.cppunit.reportsPath=build-host/utest-report/
