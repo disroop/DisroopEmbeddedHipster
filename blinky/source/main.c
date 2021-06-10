@@ -15,7 +15,7 @@ void platform_init() {
     BSP_GYRO_Init();
     BSP_GYRO_LowPower(0);
 }
-int main() {
+void main() {
     platform_init();
     indication indicator =
         indication_create(LED_GREEN, BSP_LED_On, BSP_LED_Off);
@@ -27,7 +27,6 @@ int main() {
     while (1) {
         scheduler_update();
     }
-    return 0;
 }
 
 static void SystemClock_Config(void) {
