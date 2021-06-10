@@ -49,11 +49,3 @@ For more information read the <<doc/doc.adoc#,documentation>>
 Try our VsCode extension
 
 https://marketplace.visualstudio.com/items?itemName=disroop.conan
-
-== Code Analysis
-
-image:https://sonarcloud.io/images/project_badges/sonarcloud-black.svg[]
-
-
-
-
