@@ -45,7 +45,7 @@ jobs:
         name: build host
       - run: |
           /bin/bash -c "export GTEST_OUTPUT='xml:$(pwd)/build-host/utest-report/' &&
-          ctest --test-dir build-host --verbose"
+          ctest --test-dir build-host"
         name: unit-test execution
       - run: |
           python ./tools/coverage.py --build build-host --source-folder source --gcov --output build-host/gcov
@@ -70,7 +70,7 @@ jobs:
         if: success() || failure() # run this step even if previous step failed
         with:
           name: Publish test # Name of the check run which will be created
-          path: build-host/utest-report/blinky_test.xml # Path to test results
+          path: build-host/utest-report/*.xml # Path to test results
           reporter: jest-junit # Format of test results
   mumoco-build:
     runs-on: ubuntu-latest
