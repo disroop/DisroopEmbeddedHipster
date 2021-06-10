@@ -26,18 +26,28 @@ TEST_F(UT_Movement, run_over_threshold) {
     EXPECT_TRUE(movement_has_rotated());
 }
 
-TEST_F(UT_Movement, run_over_threshold) {
-    pfakeGyro->set_gyro(100, 200, 1001);
+TEST_F(UT_Movement, run_below_threshold) {
+    pfakeGyro->set_gyro(100, 200, 400);
     movement_init(&fake_gyro_wrapper);
     movement_reset();
     movement_run();
-    EXPECT_TRUE(movement_has_rotated());
+    EXPECT_FALSE(movement_has_rotated());
 }
 
-TEST_F(UT_Movement, run_over_threshold) {
+TEST_F(UT_Movement, not_run_over_threshold) {
     pfakeGyro->set_gyro(100, 200, 1001);
     movement_init(&fake_gyro_wrapper);
     movement_reset();
+    EXPECT_FALSE(movement_has_rotated());
+}
+
+TEST_F(UT_Movement, reset) {
+    pfakeGyro->set_gyro(100, 200, 1001);
+    movement_init(&fake_gyro_wrapper);
+    movement_reset();
+    EXPECT_FALSE(movement_has_rotated());
     movement_run();
     EXPECT_TRUE(movement_has_rotated());
+    movement_reset();
+    EXPECT_FALSE(movement_has_rotated());
 }
