@@ -1,6 +1,3 @@
-find_package(GTest REQUIRED)
-include(GoogleTest)
-
 add_executable(movement_internal_test
         ${CMAKE_CURRENT_LIST_DIR}/fake_gyro.cpp
         ${CMAKE_CURRENT_LIST_DIR}/fake_gyro.hpp
