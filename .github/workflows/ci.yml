@@ -60,7 +60,7 @@ jobs:
           -Dsonar.cfamily.threads=2
           -Dsonar.cfamily.cache.enabled=false
           -Dsonar.cfamily.gcov.reportsPath=build-host/gcov/
-          -Dsonar.exclusions=blinky/source/platform-controller/** #Exclude platform specific code, copied from cpu vendor
+          #-Dsonar.exclusions=blinky/source/platform-controller/** #Exclude platform specific code, copied from cpu vendor
           #-Dsonar.cfamily.cppunit.reportsPath=build-host/utest-report/
         name: SonarCloud Scan
         env:
