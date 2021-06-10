@@ -21,11 +21,11 @@ void main() {
         indication_create(LED_GREEN, BSP_LED_On, BSP_LED_Off);
     coordinator_init(100, indicator);
     movement_init(BSP_GYRO_GetXYZ);
-    scheduler_config_time(HAL_Delay);
-    scheduler_add_task(coordinator_run, 100);
-    scheduler_add_task(movement_run, 20);
+    eiger_scheduler_config_time(HAL_Delay);
+    eiger_scheduler_add_task(coordinator_run, 100);
+    eiger_scheduler_add_task(movement_run, 20);
     while (1) {
-        scheduler_update();
+        eiger_scheduler_update();
     }
 }
 

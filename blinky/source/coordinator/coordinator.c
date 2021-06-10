@@ -12,20 +12,20 @@ indication indicator;
 
 void coordinator_init(uint8_t base_ms, indication indication_instance) {
     if (timerIndicationOn == NULL) {
-        timerIndicationOn = timer_create(base_ms);
+        timerIndicationOn = eiger_timer_create(base_ms);
     }
     indicator = indication_instance;
     indication_reset(indicator);
     mode = MODE_IDLE;
 }
 
-void coordinator_destroy() { timer_destroy(timerIndicationOn); }
+void coordinator_destroy() { eiger_timer_destroy(timerIndicationOn); }
 
 void set_mode() {
     if (movement_has_rotated()) {
         mode = MODE_DETECTED;
     }
-    if (timer_elapsed_time_ms(timerIndicationOn) > 2000) {
+    if (eiger_timer_elapsed_time_ms(timerIndicationOn) > 2000) {
         mode = MODE_IDLE;
     }
 }
@@ -33,11 +33,11 @@ void set_mode() {
 void action() {
     if (mode == MODE_IDLE) {
         indication_reset(indicator);
-        timer_reset(timerIndicationOn);
+        eiger_timer_reset(timerIndicationOn);
     }
     if (mode == MODE_DETECTED) {
         indication_indicate(indicator);
-        timer_update(timerIndicationOn);
+        eiger_timer_update(timerIndicationOn);
         movement_reset();
     }
 }

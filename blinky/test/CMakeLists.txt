@@ -1,4 +1,5 @@
 find_package(GTest REQUIRED)
 include(GoogleTest)
+add_subdirectory(eiger)
 add_subdirectory(movement)
 add_subdirectory(indication)
