@@ -33,7 +33,11 @@
 		"vscode-icons-team.vscode-icons",
 		"alefragnani.numbered-bookmarks",
 		"sourcegraph.sourcegraph",
-		"cschleiden.vscode-github-actions"
+		"cschleiden.vscode-github-actions",
+		"notskm.clang-tidy",
+		"mine.cpplint",
+		"pokowaka.pokowaka-iwyu",
+		"ms-azuretools.vscode-docker"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
