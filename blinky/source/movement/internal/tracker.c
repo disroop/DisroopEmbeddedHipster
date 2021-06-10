@@ -18,5 +18,5 @@ void tracker_update_position(rotation_mdegps rotation) {
         (rotation.y > rotation_threshold_mdegps) &&
         (rotation.z > rotation_threshold_mdegps)) {
         hasRotated = true;
-    };
+    }
 }
