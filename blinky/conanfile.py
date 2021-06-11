@@ -8,6 +8,7 @@ class Blinky(ConanFile):
     version = "0.1.0"
     license = "closed"
     url = "TODO"
+    description="a blinky example"
     default_channel = "development"
     default_user = "disroop"
     settings = "os", "compiler", "build_type", "arch"
