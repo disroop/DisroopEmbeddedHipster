@@ -111,4 +111,5 @@
   "numberedBookmarks.navigateThroughAllFiles": "replace",
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
+  "clang-tidy.lintOnSave": true
 }
