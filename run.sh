@@ -7,8 +7,8 @@ cd "$(dirname "$0")" || exit
      else
        echo else
      fi
-     open http://localhost:4001
-     docker run --rm --name forty-jekyll-theme-1 --volume="$PWD:/srv/jekyll" -p 4001:4000 -it  jekyll/jekyll:latest jekyll serve --watch --drafts
+     open http://localhost:4001/DisroopEmbeddedHipster
+     docker run --rm --name forty-jekyll-theme-1 --volume="$(pwd):/srv/jekyll" -p 4001:4000 -it  jekyll/jekyll:latest  jekyll serve --watch --drafts
  }
 
 function run() {
@@ -18,5 +18,5 @@ function run() {
 }
 
 
-run
-#runWithDocker
+#run
+runWithDocker
