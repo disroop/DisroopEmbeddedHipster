@@ -10,12 +10,16 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 11)
 
 find_package("Coverage" REQUIRED)
+if (NOT CMAKE_CROSSCOMPILING)
+    find_package("CodeAnalysis" REQUIRED)
+endif ()
+
 
 add_subdirectory(source)
 
-if(NOT CMAKE_CROSSCOMPILING)
+if (NOT CMAKE_CROSSCOMPILING)
     enable_testing()
     add_subdirectory(test)
-endif()
+endif ()
 
 #conan profile update settings.compiler.libcxx=libstdc++11 default
