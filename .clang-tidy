@@ -1,0 +1,13 @@
+---
+Checks:          '*'
+HeaderFilterRegex: ''
+WarningsAsErrors: '*'
+CheckOptions:
+  - key:    readability-function-size.StatementThreshold
+    value:  '450'
+  - key:    modernize-make-unique.MakeSmartPtrFunction
+    value:  'absl::make_unique'
+  - key:    modernize-make-unique.MakeSmartPtrFunctionHeader
+    value:  'absl/memory/memory.h'
+  - key:    google-readability-braces-around-statements.ShortStatementLines
+    value:  1
