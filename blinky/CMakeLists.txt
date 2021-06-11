@@ -11,6 +11,10 @@ set(CMAKE_C_STANDARD 11)
 
 find_package("Coverage" REQUIRED)
 
+if (NOT CMAKE_CROSSCOMPILING)
+    find_package("CodeAnalysis" REQUIRED)
+endif ()
+
 add_subdirectory(source)
 
 if(NOT CMAKE_CROSSCOMPILING)
