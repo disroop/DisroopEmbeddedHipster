@@ -24,7 +24,11 @@ def run_build(docker_image, container_command):
         print("SUCCESS")
 
 
-if __name__ == "__main__":
+def container_build():
     bash_command = "setup; ./build.sh"
     command = f"/bin/bash -c '{bash_command}'"
     run_build("disroop/embedded-hipster:0.6.2", command)
+
+
+if __name__ == "__main__":
+    container_build()

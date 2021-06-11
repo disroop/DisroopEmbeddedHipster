@@ -1,13 +1,13 @@
 #!/usr/bin/python
-import os
-import docker
 import argparse
+import os
+
+import docker
+
 
 def get_args():
-    cwd = os.getcwd()
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sonartoken", type=str, required=False,
-                        default="", help="Use Sonartoken")
+    parser.add_argument("--sonartoken", type=str, required=False, default="", help="Use Sonartoken")
     return parser.parse_args()
 
 
@@ -16,7 +16,8 @@ def run_build(docker_image, container_command, sonar_token):
     current_path = os.getcwd()
     try:
         retVal = client.containers.run(image=docker_image, command=container_command, remove=True,
-                                       working_dir="/app", volumes={current_path: {'bind': '/app', 'mode': 'rw'}}, environment=[f"SONAR_TOKEN={sonar_token}"])
+                                       working_dir="/app", volumes={current_path: {'bind': '/app', 'mode': 'rw'}},
+                                       environment=[f"SONAR_TOKEN={sonar_token}"])
         retVal = retVal.decode('utf-8')
         print(f'{retVal}')
         print("SUCCESS")
@@ -27,8 +28,12 @@ def run_build(docker_image, container_command, sonar_token):
         exit(1)
 
 
-if __name__ == "__main__":
+def container_demo_build():
     args = get_args()
     bash_command = "setup; ./buildDemo.sh"
     command = f"/bin/bash -c '{bash_command}'"
     run_build("disroop/embedded-hipster-sonar:0.6.2", command, args.sonartoken)
+
+
+if __name__ == "__main__":
+    container_demo_build()

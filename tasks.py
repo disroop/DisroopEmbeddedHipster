@@ -11,7 +11,11 @@ import re
 import shutil
 
 import docker
-from invoke import task
+from invoke import task, Collection
+
+import build
+from build import get_st_link_reflash
+from tools import coverage
 
 FILE_PATH = pathlib.Path(__file__).parent.absolute()
 
@@ -77,3 +81,28 @@ def clean(c):
     folders = [".conan", "build", "cmake-build-debug"]
     for folder in folders:
         shutil.rmtree(folder, ignore_errors=True)
+
+namespace = Collection()
+namespace.add_task(setup_mumoco)
+namespace.add_task(build_blinky)
+namespace.add_task(build_blinky_in_container)
+namespace.add_task(build_demo)
+namespace.add_task(build_demo_in_container)
+namespace.add_task(clean)
+namespace.add_collection(Collection.from_module(coverage), name="coverage")
+namespace.add_collection(Collection.from_module(build))
+
+
+# inv setup.vscode
+# inv setup.dwnloadJlink
+# inv setup.cfig
+#
+#
+# inv build.all
+# inv build.scanner
+# inv build.scanner
+# inv build.scanner
+# inv build.scanner
+#
+#
+# inv debug.

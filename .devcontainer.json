@@ -1,10 +1,12 @@
 {
 	"name": "EmbeddedHipster",
 	// "dockerFile": "Dockerfile",
-	"image": "disroop/embedded-hipster-dev:0.6.2",
+	// "image": "disroop/embedded-hipster-dev:0.6.2",
+	"image": "disroop/embedded-hipster-clion:latest",
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
+		// "-e DISPLAY=192.168.234.245:0.0",
 		"seccomp=unconfined"
 	],
 	"postCreateCommand": "setup && mumoco --remotes",
