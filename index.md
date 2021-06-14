@@ -21,7 +21,7 @@ Especially in current days where teams work remotely and the demand for embedded
 		<h3>Motivation</h3>
 	</header>
 	<p>Every software project wants to deliver maintainable software of high quality with high speed. Modern software development practices like automated testing, continuous integration, and proper tooling can help developers achieve that goal.
-We observe that modern software practices are not the standard in embedded software development and that embedded software engineers solve a lot of toolchain problems instead of domain problems. We would like to change that and enable embedded software engineers to focus on issues that bring business value and deliver high-quality, maintainable software in time. 
+We observe that modern software practices are not the standard in embedded software development and that embedded software engineers solve a lot of toolchain problems instead of domain problems. We want to change that and enable embedded software engineers to focus on issues that bring business value and deliver high-quality, maintainable software in time. 
 
     </p>
 		<header class="major">
