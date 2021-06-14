@@ -18,7 +18,14 @@ image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEm
 
 DisroopEmbeddedHipster is a showcase project which demonstrates how to create modern embedded applications with a modular architecture and implementing CI/CD practices.
 
-These are the main features:
+
+== Get started
+
+todo add the one liner how to setup
+
+todo mention C C++
+
+== Features
 
 * Focusing on https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
 * Using https://hub.docker.com/u/disroop[Docker] to manage the toolchain
