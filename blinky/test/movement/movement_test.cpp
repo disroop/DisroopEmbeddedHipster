@@ -19,7 +19,7 @@ class UT_Movement : public testing::Test {
 };
 
 TEST_F(UT_Movement, run_over_threshold) {
-    pfakeGyro->set_gyro(100, 200, 1001);
+    pfakeGyro->set_gyro(100, 200, 10001);
     movement_init(&fake_gyro_wrapper);
     movement_reset();
     movement_run();
@@ -27,7 +27,7 @@ TEST_F(UT_Movement, run_over_threshold) {
 }
 
 TEST_F(UT_Movement, run_below_threshold) {
-    pfakeGyro->set_gyro(100, 200, 400);
+    pfakeGyro->set_gyro(10000, 200, 400);
     movement_init(&fake_gyro_wrapper);
     movement_reset();
     movement_run();
@@ -35,14 +35,14 @@ TEST_F(UT_Movement, run_below_threshold) {
 }
 
 TEST_F(UT_Movement, not_run_over_threshold) {
-    pfakeGyro->set_gyro(100, 200, 1001);
+    pfakeGyro->set_gyro(100, 200, 10001);
     movement_init(&fake_gyro_wrapper);
     movement_reset();
     EXPECT_FALSE(movement_has_rotated());
 }
 
 TEST_F(UT_Movement, reset) {
-    pfakeGyro->set_gyro(100, 200, 1001);
+    pfakeGyro->set_gyro(100, 200, 10001);
     movement_init(&fake_gyro_wrapper);
     movement_reset();
     EXPECT_FALSE(movement_has_rotated());
