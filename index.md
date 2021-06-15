@@ -46,7 +46,7 @@ We observe that modern software practices are not the standard in embedded softw
 			<h3>Experience</h3>
 		</header>
         <p>Thanks to this setup and modern software practices, we were already able to help software projects focus more on domain problems, generate better communication between teams, destroy silos through standardisation of the development toolchain. In the end, we enabled project teams to deliver fast, highly maintainable software. </p>
-		<p>If you are interested to see more about the DisroopEmbeddedHipster, please contact us at <a href="mailto:embeddedhipster@disroop.ch">embeddedhipster@disroop.ch</a>. We are happy to help you to improve your embedded development process</p> 
+		<p>If you are interested to see more about the DisroopEmbeddedHipster, please contact us at <a href="mailto:embeddedhipster@disroop.ch">embeddedhipster@disroop.ch</a>. We are happy to help you to improve your embedded development process.</p> 
 		<header class="major">
 			<h3>About the authors</h3>
 		</header>
