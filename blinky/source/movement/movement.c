@@ -8,7 +8,7 @@ void (*gyro_hw_xyz)(float*);
 void movement_init(void (*gyro_xyz)(float*)) {
     gyro_hw_xyz = gyro_xyz;
     tracker_reset();
-    tracker_set_threashold_rotation(1000);
+    tracker_set_threashold_rotation(10000);
 }
 
 void movement_reset() { tracker_reset(); }
