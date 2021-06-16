@@ -3,7 +3,7 @@
 
 class FakeDelay {
    public:
-    explicit FakeDelay();
+    FakeDelay();
     void delayMs(uint32_t milliseconds);
     uint32_t getAmountCals();
     uint32_t getDelayValue();

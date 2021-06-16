@@ -1,6 +1,6 @@
 #include "fake_gyro.hpp"
 
-FakeGyro::FakeGyro(float x, float y, float z) : angle_diff({x, y, z}){};
+FakeGyro::FakeGyro(float x, float y, float z) : angle_diff({x, y, z}) {}
 
 void FakeGyro::gyro_xyz(float *xyz) {
     xyz[0] = angle_diff.x;

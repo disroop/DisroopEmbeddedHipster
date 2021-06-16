@@ -1,6 +1,6 @@
 #include "fake_delay.hpp"
 
-FakeDelay::FakeDelay() : delayTimeMs(0), amountOfCalls(0){};
+FakeDelay::FakeDelay() : delayTimeMs(0), amountOfCalls(0) {}
 
 void FakeDelay::delayMs(uint32_t milliseconds) {
     delayTimeMs = milliseconds;
