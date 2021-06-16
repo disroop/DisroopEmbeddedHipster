@@ -16,7 +16,7 @@ image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEm
 image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=sqale_index[Badge,link={uri-sonar}]
 image:https://sonarcloud.io/api/project_badges/measure?project=disroop_DisroopEmbeddedHipster&metric=vulnerabilities[Badge,link={uri-sonar}]
 
-DisroopEmbeddedHipster is a showcase project which demonstrates how to create modern embedded applications with a modular architecture and implementing CI/CD practices.
+DisroopEmbeddedHipster is a showcase project which demonstrates how to create modern C/C++ embedded applications with a modular architecture and implementing CI/CD practices.
 
 
 == Get started
