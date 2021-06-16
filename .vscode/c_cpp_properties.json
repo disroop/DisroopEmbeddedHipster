@@ -1,16 +1,22 @@
 {
     "configurations": [
         {
-            "name": "debug",
+            "name": "config",
+            "configurationProvider": "vector-of-bool.cmake-tools"
+        },
+        {
+            "name": "blinky-debug",
             "intelliSenseMode": "gcc-arm",
             "cStandard": "c99",
             "cppStandard": "c++11",
             "compilerPath": "/home/dev/.conan/data/gcc_arm_none_eabi/10.2.0/disroop/release/source/toolchain/bin/arm-none-eabi-gcc",
             "compileCommands": "${workspaceFolder}/build/blinky-debug/compile_commands.json",
-            "includePath": ["/home/dev/.conan/data/*"]
+            "includePath": [
+                "/home/dev/.conan/data/*"
+            ]
         },
         {
-            "name": "host",
+            "name": "utest",
             "defines": [
                 "${default}"
             ],
@@ -18,8 +24,10 @@
             "cStandard": "c99",
             "cppStandard": "c++11",
             "compilerPath": "/usr/bin/clang",
-            "configurationProvider": "vector-of-boolean.cmake-tools",
-            "includePath": ["/home/dev/.conan/data/*"]
+            "compileCommands": "${workspaceFolder}/build/utest/compile_commands.json",
+            "includePath": [
+                "/home/dev/.conan/data/*"
+            ]
         }
     ],
     "version": 4
