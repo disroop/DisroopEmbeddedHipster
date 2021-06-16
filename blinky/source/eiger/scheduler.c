@@ -29,9 +29,9 @@ void eiger_scheduler_add_task(void (*task)(void), uint8_t update_time_ms) {
 
 void eiger_scheduler_update() {
     for (uint8_t task_nr = 0; task_nr < scheduler.amount_task; task_nr++) {
-        task_map current_tast = scheduler.tasks[task_nr];
-        if (scheduler.time_cnt_ms % (current_tast.update_time_ms + 1) == 0) {
-            current_tast.task();
+        task_map current_task = scheduler.tasks[task_nr];
+        if (scheduler.time_cnt_ms % (current_task.update_time_ms + 1) == 0) {
+            current_task.task();
         }
     }
     if (scheduler.time_cnt_ms > scheduler.max_time_slot_ms) {

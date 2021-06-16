@@ -19,6 +19,9 @@ if (NOT CMAKE_CROSSCOMPILING)
     find_package("CodeAnalysis" REQUIRED)
 endif ()
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
 add_subdirectory(source)
 
 if (NOT CMAKE_CROSSCOMPILING)
