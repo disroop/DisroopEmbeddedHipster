@@ -36,17 +36,6 @@ def build_blinky_in_container(c):
     run_in_docker("disroop/embedded-hipster:0.6.2", "invoke build-blinky")
 
 
-@task(aliases=['bd'])
-def build_demo(c):
-    setup_mumoco(c)
-    c.run(f"conan create --build=missing -o demo:sonar_scanner=True {FILE_PATH}/demo")
-
-
-@task(aliases=['bdc'])
-def build_demo_in_container(c):
-    run_in_docker("disroop/embedded-hipster:0.6.2", "invoke build-demo")
-
-
 namespace = Collection(coverage,
                        generate_gcov)
 
