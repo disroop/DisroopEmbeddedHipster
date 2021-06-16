@@ -3,7 +3,6 @@ extern "C" {
 }
 #include "fake_led.hpp"
 #include "gtest/gtest.h"
-using namespace ::testing;
 
 // Wrapper function uses a global to remember the object:
 static std::unique_ptr<FakeLed> pfakeLed;

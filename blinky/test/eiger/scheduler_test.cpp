@@ -3,7 +3,6 @@ extern "C" {
 }
 #include "fake_delay.hpp"
 #include "gtest/gtest.h"
-using namespace ::testing;
 
 static std::unique_ptr<FakeDelay> fakeDelay;
 static void fake_delay(uint32_t milliseconds) {

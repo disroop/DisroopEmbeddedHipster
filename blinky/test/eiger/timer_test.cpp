@@ -2,7 +2,6 @@ extern "C" {
 #include "timer.h"
 }
 #include "gtest/gtest.h"
-using namespace ::testing;
 
 timer timerA;
 class UT_Timer : public testing::Test {
