@@ -3,11 +3,6 @@
       "config:base",
       "docker:pinDigests"
     ],
-   "packageRules": [
-      {
-        "updateTypes": ["minor", "patch", "pin", "digest"]
-      }
-    ],
     "regexManagers": [
       {
         "fileMatch": ["^.devcontainer.json$"],
