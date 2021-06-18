@@ -1,9 +1,18 @@
 {
-    "packageRules": [
+    "extends": [
+      "config:base",
+      "docker:pinDigests"
+    ],
+   "packageRules": [
       {
-        "matchDatasources": ["docker"],
-        "matchPackageNames": ["foo/bar"],
-        "versioning": "semver"
+        "updateTypes": ["minor", "patch", "pin", "digest"],
+      }
+    ],
+    "regexManagers": [
+      {
+        "fileMatch": ["^.devcontainer.json$"],
+        "matchStrings": ["(?<depName>disroop/embedded-hipster-dev):(?<currentValue>[0-9.]+)\n"],
+        "datasourceTemplate": "docker"
       }
     ]
   }
