@@ -2,7 +2,7 @@
    "regexManagers": [
       {
         "fileMatch": ["^.devcontainer.json$"],
-        "matchStrings": ["(?<depName>disroop/embedded-hipster-dev):(?<currentValue>[0-9.]+)\n"],
+        "matchStrings": ["(?<depName>disroop/embedded-hipster-dev):(?<currentValue>[0-9.]+)"],
         "datasourceTemplate": "docker"
       }
     ]
