@@ -6,29 +6,23 @@
 :sectnumlevels: 5
 
 
+== Requirements
+
+- Docker
+- Vscode
+    ink extensions
+
 == Getting Started
 todo describe how to clone and run the project
 
 == Introduction
 
-== Conan
+Overview from landing page
 
-== Cmake
-== Unittest
-=== Supported IDE
 
-- VsCode
-- clion
-
-=== Compiler
-==== Host
-===== clang
-===== gcc
-
-==== ARM
-===== clang
-===== arm gcc
-===== iar -> ask for linux licence?
+- Automation
+- Quality built in
+- CI
 
 == Infrastructure
 
@@ -45,42 +39,39 @@ Learn how to organize the document into <<Build Automation>>.
 ==== macOs
 
 == Debug on the HW
-=== OpenOcd
-
 === Segger
-
 - Segger for St-Link
 
+//=== OpenOcd
 
-== Boards
-=== STM
-==== Nucleo-F411RE
-==== Nucleo-L152RE
-==== stm32f3discovery
-==== stm32wb55
-
-
-=== Nordic
-Nordic Thingy:52
-NRF52840? ->nRF52840-DK
 
 == Modular Architecture
 
-* define a module file structure convention and some pyton base classes for libs, header only, ... so that one does not need to rewrite the conan recipe everytime
+BSP, CMSIS, ...
 
-- CMSIS
+current state is simple but could be split in multiple packages
 
 == CI/CD
 
+Note: Continuous Delivery is coming in the future
+
+
 == Build Automation
+- Project CLI
 - azure
 - travis
 - github actions
 - jenkins
 
 
+== Reproducibility
+
+Was macht es reproduzierbar: Docker, Conan
+
 == Quality-Built in
-=== Code Analysis
+
+=== Inspections / Code Analysis
+
 * clangformat
 
 * create build job
@@ -98,24 +89,35 @@ NRF52840? ->nRF52840-DK
 ** Sonar
 ** ... others
 
-* Docker
-** publish disroop docker images
-* Architecture
-** create Modularized Architecture with
-*** runtime
-*** hal
-*** hal implementation
-*** bsp
-*** drivers
-*** Applications
-*** other components
 
-* continuous validation of releases with check sum on binary file
+=== Dependabot
+Stay up to date
+
+=== Coverage
+
+=== Unittests
+
+//* continuous validation of releases with check sum on binary file
 
 
 == Toolchain
+=== Conan
+=== Cmake
+=== Unittest
+=== Supported IDE
 
-- CMake
-- Todo Vervollständigen
+- VsCode
+- clion
+
+=== Compiler
+==== Host
+===== clang
+===== gcc
+
+==== ARM
+===== clang
+===== arm gcc
+===== iar -> ask for linux licence?
+
 
 == VsCode Conan Plugin

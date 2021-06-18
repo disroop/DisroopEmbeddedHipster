@@ -20,17 +20,32 @@ DisroopEmbeddedHipster is a showcase project which demonstrates how to create mo
 
 
 == Get started
-
 todo add the one liner how to setup
 
-todo mention C C++
+gif
+todo add the one liner how to setup
 
 == Features
+* Reproducible and traceable builds with a fully automated toolchain
+* traceability (git history, build history, hashes, ..., timeline in sonar, ...)
+* Build-In Quality
+** Code Analysis
+** Coverage Analysis
+** https://sonarcloud.io/organizations/disroop/projects?search=hipster[Sonar]
+* Build Automation
+** Project CLI with invoke
+** https://github.com/disroop/DisroopEmbeddedHipster/actions[GitHub Actions]
+** https://azure.microsoft.com/de-de/services/devops/pipelines/[Azure-Pipelines -todo]
+** https://www.jenkins.io/[Jenkins -todo]
+* Artifact based software development process
+** source->build->artifact (bin, reports, ..)
+* Quality Gateways
+* Standardisation of toolchain
 
-* Focusing on https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
+== Tools
+
 * Using https://hub.docker.com/u/disroop[Docker] to manage the toolchain
 * Easy to setup developer environment in 10 seconds.
-* Reproducible builds with a fully automated toolchain
 * Use https://docs.conan.io/en/latest/[Conan as package manager]
 * Use CMake in a https://cliutils.gitlab.io/modern-cmake/[Modern CMake] manner
 * Use https://disroop.jfrog.io/[Artifactory] to manage artifacts
@@ -38,16 +53,8 @@ todo mention C C++
 * Testing (Unittest, Conan Package-Tests, Test on the Hardware)
 * Supported unit testing frameworks (https://github.com/google/googletest[Gtest], https://github.com/catchorg/Catch2[Catch2], http://cpputest.github.io/[Cpputest])
 * Use modern IDEs ( https://code.visualstudio.com/[VsCode] and https://www.jetbrains.com/de-de/clion/[Clion])
-* Build-In Quality
-    ** Code Analysis
-    ** Coverage Analysis
-    ** https://sonarcloud.io/organizations/disroop/projects?search=hipster[Sonar]
 
-* Build Automation
-    ** Project CLI with invoke
-    ** https://github.com/disroop/DisroopEmbeddedHipster/actions[GitHub Actions]
-    ** https://azure.microsoft.com/de-de/services/devops/pipelines/[Azure-Pipelines -todo]
-    ** https://www.jenkins.io/[Jenkins -todo]
+* Focusing on https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
 
 For more information read the <<doc/doc.adoc#,documentation>>
 
