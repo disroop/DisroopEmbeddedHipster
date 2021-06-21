@@ -1,7 +1,8 @@
 = DisroopEmbeddedHipster
 :toc:
 :toc:
-:toclevels: 2
+:toc: left
+:toclevels: 3
 :sectnums:
 :sectnumlevels: 5
 
@@ -9,7 +10,7 @@
 == Requirements
 
 - Docker
-- Vscode
+- VSCode
     ink extensions
 
 == Getting Started
@@ -68,37 +69,83 @@ Note: Continuous Delivery is coming in the future
 
 Was macht es reproduzierbar: Docker, Conan
 
+== Project CLI
+WARNING: TODO: describe what a project cli is, what advantage it brings and how it is build
+
+The Disroop Embeded Hipster Project is build with a https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects[Project CLI]
+
+advantage
+
+- executable documetnation. no need to read lond getting started instruction. just run
+
+[source,shell]
+----
+git clone https://github.com/disroop/DisroopEmbeddedHipster
+invoke setup
+code DisroopEmbeddedHipster
+----
+
+The only preconditions are that Docker and Python are installed.
+
 == Quality-Built in
 
-=== Inspections / Code Analysis
+One of the important goals is to build quality in. This means a new developer does not need to read many pages of paper to get to know how some basic things like formatting the code, or what kind of coding rules exist.
+Instead, he should be guided as much as possible with an automated solution. This is the aim of quality built in.
 
-* clangformat
+We manly use code formatters and code analysis tools. Those tools are run in the automated build and if possible we use IDE integration to prevent failing build and assist the developer instantly while editing code.
 
-* create build job
-** use https://github.com/conan-io/conan-package-tools
-** publish to binray
 
-* Coverage Analysis
+=== ClangFormat
+https://clang.llvm.org/docs/ClangFormat.html[ClangFormat] is a very popular code formatting tool with IDE integration in VSCode and CLion. +
+We use a simple well curated Google style.
+
+..clang-format
+[source, c]
+----
+include::../.clang-format[]
+----
+
+
+
+=== Coverage Analysis
+WARNING: todo
+
 ** in Build
 ** IDE Integration
 ** define coverage limits
 
-* Code Analysis
-** clang format
-** iwyu
-** Sonar
-** ... others
+=== Code Analysis
 
+=== clang-tidy
+WARNING: todo
+
+=== CPPCHECK
+http://cppcheck.sourceforge.net/[Cppcheck]
+
+WARNING: todo
+==== include-what-you-use
+WARNING: todo
+https://include-what-you-use.org/[include-what-you-use]
+
+=== Sonar
+WARNING: todo
 
 === Dependabot
 Stay up to date
+WARNING: todo
 
-=== Coverage
+=== renovate
+https://renovatebot.com/[Renovate] Stay up to date
+WARNING: todo
 
-=== Unittests
+=== Conclusion
+Obviously one can not back all rules in an automated solutions as we showed in this chapter. But for those wehre an automated solution exist is server a great benefit.
+
+=== Inspections / Code Analysis
+
+== Unittests
 
 //* continuous validation of releases with check sum on binary file
-
 
 == Toolchain
 === Conan
@@ -106,8 +153,8 @@ Stay up to date
 === Unittest
 === Supported IDE
 
-- VsCode
-- clion
+- VSCode
+- CLion
 
 === Compiler
 ==== Host
@@ -117,7 +164,7 @@ Stay up to date
 ==== ARM
 ===== clang
 ===== arm gcc
-===== iar -> ask for linux licence?
+===== iar
 
 
-== VsCode Conan Plugin
+=== VsCode Conan Plugin
