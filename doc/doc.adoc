@@ -7,23 +7,52 @@
 :sectnumlevels: 5
 
 
-== Requirements
-
-- Docker
-- VSCode
-    ink extensions
+== System Requirements
+DisroopEmbeddedHipster work on Linux, Windows and macOS.
+You need https://www.docker.com/[Docker], https://www.python.org/[Python 3] and http://www.pyinvoke.org/[pyinvoke] preinstalled. All further installation can be done by command of the <<Project CLI>>.
 
 == Getting Started
-todo describe how to clone and run the project
+To get started run
+
+[source,shell]
+----
+git clone https://github.com/disroop/DisroopEmbeddedHipster
+code DisroopEmbeddedHipster
+invoke open_in_vscode
+----
+
+This will clone the project and via the <<Project CLI>> open the project in VSCode.
+
+NOTE:  The command open_in_vscode will install all missing dependencies linke VSCode, the required extension, ...
 
 == Introduction
 
-Overview from landing page
-
+"Text relating to Overview from landing page"
 
 - Automation
 - Quality built in
 - CI
+
+=== Compiler
+We need two outputs. A host build (x86) for running the unit tests and a ARM build for the final firmware.
+
+==== Host
+
+===== clang
+clang is our primare compiler for the unittest builds.
+
+===== gcc -> coming soon
+
+-> feature coming soon
+
+==== ARM
+===== arm gcc
+===== clang
+feature coming soon
+//see also https://labapart.com/blogs/3-the-importance-of-the-toolchain-version-in-embedded-space
+
+===== iar
+feature coming soon
 
 == Infrastructure
 
@@ -33,17 +62,12 @@ Show an overview about
 - Servers ( Artifactory, Build-Automation) For more informatino see
 Learn how to organize the document into <<Build Automation>>.
 
-
-=== Development Operating Systems
-==== Linux
-==== Windows
-==== macOs
-
 == Debug on the HW
 === Segger
 - Segger for St-Link
 
-//=== OpenOcd
+=== OpenOcd
+feature coming soon
 
 
 == Modular Architecture

@@ -1,0 +1,18 @@
+= DisroopEmbeddedHipster
+:toc:
+:toc:
+:toc: left
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 5
+
+
+//:sourcedir: src/main/java
+//:sourcedir-root: {sourcedir}
+//:sourcedir: ../src/main/java
+
+include::doc.adoc[]
+include::blinky.adoc[]
+include::principles.adoc[]
+
+
