@@ -8,7 +8,7 @@
 
 
 == System Requirements
-DisroopEmbeddedHipster work on Linux, Windows and macOS.
+DisroopEmbeddedHipster works on Linux, Windows and macOS.
 You need https://www.docker.com/[Docker], https://www.python.org/[Python 3] and http://www.pyinvoke.org/[pyinvoke] preinstalled. All further installation can be done by command of the <<Project CLI>>.
 
 == Getting Started
@@ -109,19 +109,19 @@ invoke setup
 code DisroopEmbeddedHipster
 ----
 
-The only preconditions are that Docker and Python are installed.
+The only preconditions are, that Docker and Python are installed.
 
 == Quality-Built in
 
 One of the important goals is to build quality in. This means a new developer does not need to read many pages of paper to get to know how some basic things like formatting the code, or what kind of coding rules exist.
 Instead, he should be guided as much as possible with an automated solution. This is the aim of quality built in.
 
-We manly use code formatters and code analysis tools. Those tools are run in the automated build and if possible we use IDE integration to prevent failing build and assist the developer instantly while editing code.
+We manly use code compiler warnings, code formatters and code analysis tools. Those tools are run in the automated build and if possible we use IDE integration to prevent failing build and assist the developer instantly while editing code.
 
 === Compiler Warnings
-The compiler warnings are the fist source for code analysis should be the most importatn too assure the code quality.
+The compiler warnings are the fist source for code analysis and should be the most important tool to assure the code quality.
 We use https://clang.llvm.org/docs/UsersManual.html#id14[-Werror] to assure a minimal code quality must be maintained.
-A more strick approache coudl be to use even more restictive warnings linke -Wextra.
+A more strick approache could be to use even more restictive settings linke -Wextra.
 
 todo investigate what we should recommend: -Wall -Wextra -Werror? https://sourcegraph.com/search?q=context:global+-Wall+-Wextra+-Werror&patternType=literal
 //https://quuxplusone.github.io/blog/2018/12/06/dont-use-weverything/
@@ -167,7 +167,7 @@ WARNING: todo
 Stay up to date
 WARNING: todo
 
-=== renovate
+=== Renovate
 https://renovatebot.com/[Renovate] Stay up to date
 WARNING: todo
 
