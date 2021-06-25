@@ -118,6 +118,15 @@ Instead, he should be guided as much as possible with an automated solution. Thi
 
 We manly use code formatters and code analysis tools. Those tools are run in the automated build and if possible we use IDE integration to prevent failing build and assist the developer instantly while editing code.
 
+=== Compiler Warnings
+The compiler warnings are the fist source for code analysis should be the most importatn too assure the code quality.
+We use https://clang.llvm.org/docs/UsersManual.html#id14[-Werror] to assure a minimal code quality must be maintained.
+A more strick approache coudl be to use even more restictive warnings linke -Wextra.
+
+todo investigate what we should recommend: -Wall -Wextra -Werror? https://sourcegraph.com/search?q=context:global+-Wall+-Wextra+-Werror&patternType=literal
+//https://quuxplusone.github.io/blog/2018/12/06/dont-use-weverything/
+//https://github.com/llvm-mirror/clang/blob/master/include/clang/Basic/DiagnosticGroups.td
+// https://clang.llvm.org/docs/UsersManual.html
 
 === ClangFormat
 https://clang.llvm.org/docs/ClangFormat.html[ClangFormat] is a very popular code formatting tool with IDE integration in VSCode and CLion. +
