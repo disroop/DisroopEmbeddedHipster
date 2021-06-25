@@ -27,7 +27,7 @@ todo add the one liner how to setup
 
 == Features
 * Reproducible and traceable builds with a fully automated toolchain
-* traceability (git history, build history, hashes, ..., timeline in sonar, ...)
+* traceability (git history, build history, hashes, ... , timeline in sonar, ...)
 * Build-In Quality
 ** Code Analysis
 ** Coverage Analysis
