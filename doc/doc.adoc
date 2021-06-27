@@ -18,7 +18,7 @@ To get started run
 ----
 git clone https://github.com/disroop/DisroopEmbeddedHipster
 code DisroopEmbeddedHipster
-invoke open_in_vscode
+invoke vscode.open
 ----
 
 This will clone the project and via the <<Project CLI>> open the project in VSCode.
@@ -94,6 +94,8 @@ Note: Continuous Delivery is coming in the future
 Was macht es reproduzierbar: Docker, Conan
 
 == Project CLI
+
+=== What is a Project CLI
 WARNING: TODO: describe what a project cli is, what advantage it brings and how it is build
 
 The Disroop Embeded Hipster Project is build with a https://interrupt.memfault.com/blog/building-a-cli-for-firmware-projects[Project CLI]
@@ -101,6 +103,7 @@ The Disroop Embeded Hipster Project is build with a https://interrupt.memfault.c
 advantage
 
 - executable documetnation. no need to read lond getting started instruction. just run
+- tab complete for project cli with source <(inv --print-completion-script bash)
 
 [source,shell]
 ----
@@ -108,6 +111,27 @@ git clone https://github.com/disroop/DisroopEmbeddedHipster
 invoke setup
 code DisroopEmbeddedHipster
 ----
+
+The available command // use Font Awesome for admonition icons :icons: font
+
+=== Commands
+
+.project commands
+----
+include::../doc/commands.txt[]
+----
+
+.vscode commands
+----
+include::../doc/vscode_commands.txt[]
+----
+
+.all command
+----
+include::../doc/commands.txt[]
+----
+
+
 
 The only preconditions are, that Docker and Python are installed.
 

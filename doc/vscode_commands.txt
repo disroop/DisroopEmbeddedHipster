@@ -1,0 +1,7 @@
+Available 'code' tasks:
+
+  .install (.i)   Install vscode with required extensions
+  .open (.o)      Open DisroopEmbeddedHipster in vscode
+  .uninstall      Uninstall vscode
+  .update (.u)    Update vscode to newest version
+
