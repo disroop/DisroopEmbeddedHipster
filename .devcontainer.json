@@ -7,7 +7,7 @@
 		"--security-opt",
 		"seccomp=unconfined"
 	],
-	"postCreateCommand": "setup && mumoco --remotes",
+	"postCreateCommand": "setup && source <(inv --print-completion-script bash) && mumoco --remotes",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 	},
