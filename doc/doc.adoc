@@ -76,6 +76,27 @@ BSP, CMSIS, ...
 
 current state is simple but could be split in multiple packages
 
+[graphviz, dot-example, svg]
+----
+include::../doc/conan_graph.dot
+----
+
+[graphviz, dot-example, svg]
+----
+digraph g {
+    a -> b
+    b -> c
+    c -> d
+    d -> a
+}
+----
+
+[graphviz, dot-example, svg]
+----
+include::../doc/cmake_targets_graph.dot
+----
+
+
 == CI/CD
 
 Note: Continuous Delivery is coming in the future
