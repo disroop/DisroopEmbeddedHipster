@@ -116,9 +116,17 @@ The available command // use Font Awesome for admonition icons :icons: font
 
 === Commands
 
+
+
 .project commands
 ----
-include::../doc/commands.txt[]
+include::../doc/project_commands.txt[]
+----
+
+
+.project commands
+----
+include::../doc/project_commands.txt[]
 ----
 
 .vscode commands
@@ -128,7 +136,7 @@ include::../doc/vscode_commands.txt[]
 
 .all command
 ----
-include::../doc/commands.txt[]
+include::../doc/all_commands.txt[]
 ----
 
 

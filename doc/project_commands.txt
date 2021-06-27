@@ -1,0 +1,10 @@
+Available tasks (depth=1):
+
+  build-blinky (bb)                 build blinky project
+  build-blinky-in-container (bbc)   Build the project in a docker container
+  clean (c)                         Cleans all created files
+  setup-mumoco (sm)                 Setup Mumoco remotes
+  code [4 tasks]
+  doc [1 tasks]
+  jlink [1 tasks]
+

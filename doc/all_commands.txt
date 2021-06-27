@@ -1,0 +1,13 @@
+Available tasks:
+
+  build-blinky (bb)                 build blinky project
+  build-blinky-in-container (bbc)   Build the project in a docker container
+  clean (c)                         Cleans all created files
+  setup-mumoco (sm)                 Setup Mumoco remotes
+  code.install (code.i)             Install vscode with required extensions
+  code.open (code.o)                Open DisroopEmbeddedHipster in vscode
+  code.uninstall                    Uninstall vscode
+  code.update (code.u)              Update vscode to newest version
+  doc.gen (doc.g)                   generate files used in the documentation
+  jlink.install
+
