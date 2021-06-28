@@ -16,7 +16,7 @@ jobs:
   buildAnalyze:
     runs-on: ubuntu-latest
     container:
-      image: disroop/embedded-hipster-sonar:0.6.4
+      image: disroop/embedded-hipster-sonar:0.6.5
     steps:
       - name: Checking out our code
         uses: actions/checkout@master
