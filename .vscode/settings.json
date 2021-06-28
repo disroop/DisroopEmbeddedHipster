@@ -21,11 +21,14 @@
   "python.linting.pylintArgs": [
     "--generate-members"
   ],
-  "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true,
   "python.envFile": "${workspaceFolder}/.env/dev.env",
   "python.pythonPath": "/bin/python",
   "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.banditEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
   "files.watcherExclude": {
     "**/.git/objects/**": true,
     "**/.git/subtree-cache/**": true,
