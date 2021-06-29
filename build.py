@@ -33,7 +33,7 @@ def build_blinky(c):
 
 @task(aliases=['bbc'])
 def build_blinky_in_container(c):
-    run_in_docker("disroop/embedded-hipster:0.6.4", "invoke build-blinky")
+    run_in_docker("disroop/embedded-hipster:0.6.5", "invoke build-blinky")
 
 
 namespace = Collection(coverage,
