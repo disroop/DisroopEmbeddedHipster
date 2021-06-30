@@ -22,8 +22,7 @@ DisroopEmbeddedHipster is a showcase project which demonstrates how to create mo
 == Get started
 todo add the one liner how to setup
 
-gif
-todo add the one liner how to setup
+todo add gif
 
 == Features
 * Reproducible and traceable builds with a fully automated toolchain
