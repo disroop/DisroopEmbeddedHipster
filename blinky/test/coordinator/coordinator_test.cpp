@@ -4,11 +4,9 @@ extern "C" {
 
 #include "gtest/gtest.h"
 
-
 class UT_Coordinator : public testing::Test {
    public:
-    void SetUp() override {
-    }
+    void SetUp() override {}
 
     void TearDown() override {}
 };
@@ -16,9 +14,8 @@ class UT_Coordinator : public testing::Test {
 TEST_F(UT_Coordinator, test1) {
     // int ledID = 4;
     // indication indicator =
-        // indication_create(ledID, &fake_led_set, &fake_led_disable);
+    // indication_create(ledID, &fake_led_set, &fake_led_disable);
     // indication_indicate(indicator);
     EXPECT_EQ(1, 1);
     // EXPECT_TRUE(pfakeLed->isSet());
 }
-
