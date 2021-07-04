@@ -4,4 +4,4 @@
 #include <timer.h>
 
 void coordinator_init(timer  t, indication indication_instance);
-void coordinator_run();
+void coordinator_update();

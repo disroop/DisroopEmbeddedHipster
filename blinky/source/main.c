@@ -22,7 +22,7 @@ void setup() {
     coordinator_init(timerIndicationOn, indicator);
     movement_init(BSP_GYRO_GetXYZ);
     eiger_scheduler_config_time(HAL_Delay);
-    eiger_scheduler_add_task(coordinator_run, base_ms);
+    eiger_scheduler_add_task(coordinator_update, base_ms);
     eiger_scheduler_add_task(movement_run, 20);
 }
 
