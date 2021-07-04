@@ -1,6 +1,6 @@
 #include "B-L475E-IOT01/stm32l475e_iot01_gyro.h"
 #include "SystemClock.h"
-#include "coordinator/coordinator.h"
+#include "blinky/blinky.h"
 #include "eiger/scheduler.h"
 #include "indication/indication.h"
 #include "movement/movement.h"
@@ -19,10 +19,10 @@ void setup() {
         indication_create(LED_GREEN, BSP_LED_On, BSP_LED_Off);
     uint8_t base_ms = 100;
     timer timerIndicationOn = eiger_timer_create(base_ms);
-    coordinator_init(timerIndicationOn, indicator);
+    blinky_init(timerIndicationOn, indicator);
     movement_init(BSP_GYRO_GetXYZ);
     eiger_scheduler_config_time(HAL_Delay);
-    eiger_scheduler_add_task(coordinator_update, base_ms);
+    eiger_scheduler_add_task(blinky_update, base_ms);
     eiger_scheduler_add_task(movement_run, 20);
 }
 

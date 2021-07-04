@@ -1,17 +1,17 @@
 extern "C" {
-#include "coordinator.h"
+#include "blinky.h"
 }
 
 #include "gtest/gtest.h"
 
-class UT_Coordinator : public testing::Test {
+class UT_Blinky : public testing::Test {
    public:
     void SetUp() override {}
 
     void TearDown() override {}
 };
 
-TEST_F(UT_Coordinator, test1) {
+TEST_F(UT_Blinky, test1) {
     // int ledID = 4;
     // indication indicator =
     // indication_create(ledID, &fake_led_set, &fake_led_disable);

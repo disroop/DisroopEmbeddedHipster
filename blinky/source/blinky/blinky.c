@@ -1,4 +1,4 @@
-#include "coordinator.h"
+#include "blinky.h"
 
 #include "indication.h"
 #include "movement.h"
@@ -11,7 +11,7 @@ enum state_enum { STATE_IDLE, STATE_DETECTED };
 
 enum state_enum state = STATE_IDLE;
 
-void coordinator_init(timer t, indication indication_instance) {
+void blinky_init(timer t, indication indication_instance) {
     timerIndicationOn = t;
     indicator = indication_instance;
     indication_reset(indicator);
@@ -39,7 +39,7 @@ void action() {
     }
 }
 
-void coordinator_update() {
+void blinky_update() {
     update_state();
     action();
 }
