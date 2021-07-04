@@ -1,6 +1,6 @@
 find_package(GTest REQUIRED)
 include(GoogleTest)
-add_subdirectory(coordinator)
+add_subdirectory(blinky)
 add_subdirectory(eiger)
 add_subdirectory(movement)
 add_subdirectory(indication)

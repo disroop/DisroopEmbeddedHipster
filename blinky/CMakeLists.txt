@@ -4,7 +4,7 @@ include(${CMAKE_CURRENT_BINARY_DIR}/cmake_vars.cmake)
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_toolchain.cmake)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-project(blinky C CXX)
+project(blinky_app C CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_C_STANDARD 11)
