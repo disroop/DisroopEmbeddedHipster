@@ -22,23 +22,5 @@
         "monitor reset"
       ]
     },
-    {
-      "name": "linux",
-      "type": "cppdbg",
-      "request": "launch",
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
-      "logging": {
-        "trace": true,
-        "traceResponse": true
-      },
-      "linux": {
-        "MIMode": "gdb",
-      },
-    },
-    
   ]
 }

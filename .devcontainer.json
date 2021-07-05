@@ -7,7 +7,7 @@
 		"--security-opt",
 		"seccomp=unconfined"
 	],
-	"postCreateCommand": "setup && source <(inv --print-completion-script bash) && mumoco --remotes",
+	"postCreateCommand": "setup && mumoco --remotes", //&& source <(inv --print-completion-script bash) Add later
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 	},
@@ -17,7 +17,6 @@
 	"extensions": [
 		"ms-vscode.cpptools",
 		"twxs.cmake",
-		"vadimcn.vscode-lldb",
 		"mhutchie.git-graph",
 		"joaompinto.asciidoctor-vscode",
 		"cschlosser.doxdocgen",

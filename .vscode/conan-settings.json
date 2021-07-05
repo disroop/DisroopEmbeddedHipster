@@ -5,11 +5,11 @@
             "conanFile": "${workspaceFolder}/blinky/conanfile.py",
             "profileBuild": "default",
             "profileHost": "default",
-            "installArg": "--build missing -s:b build_type=Debug -s:h build_type=Release",
+            "installArg": "--build missing -s:b build_type=Debug -s:h build_type=Debug",
             "buildArg": "",
             "createUser": "disroop",
             "createChannel": "development",
-            "createArg": "--build=missing -s build_type=Debug -s:h build_type=Release"
+            "createArg": "--build=missing -s build_type=Debug -s:h build_type=Debug"
         },
         {
             "name": "blinky-debug",

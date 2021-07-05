@@ -10,6 +10,24 @@
       "pattern": "**/{build,Linux-None-Debug,cmake-build-Linux-None-Debug}/**/bin/*{test,Test,TEST}",
     }
   ],
+  "testMate.cpp.debug.configTemplate": {
+    "type": "cppdbg",
+    "request": "launch",
+    "args": [],
+    "stopAtEntry": true,
+    "cwd": "${workspaceFolder}",
+    "program": "${exec}",
+    "env": "${envObj}",
+    "environment": "${envObjArray}",
+    "sourceFileMap": "${sourceFileMapObj}",
+    "externalConsole": false,
+    "logging": {
+      "trace": false,
+      "traceResponse": false
+    },
+    "MIMode": "gdb",
+    "miDebuggerPath": "/usr/bin/gdb"
+  },
   "todohighlight.include": [
     "**/*.c",
     "**/*.cpp",
@@ -114,5 +132,5 @@
   "numberedBookmarks.navigateThroughAllFiles": "replace",
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
-  "clang-tidy.lintOnSave": true
+  "clang-tidy.lintOnSave": true,
 }
