@@ -29,4 +29,8 @@ if (NOT CMAKE_CROSSCOMPILING)
     add_subdirectory(test)
 endif ()
 
+add_custom_target(graphviz ALL
+                  "${CMAKE_COMMAND}" "--graphviz=cmake-target-graph.dot" .
+                  WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
+
 #conan profile update settings.compiler.libcxx=libstdc++11 default

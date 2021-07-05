@@ -72,28 +72,46 @@ feature coming soon
 
 == Modular Architecture
 
-BSP, CMSIS, ...
+DisroopEmbeddedHipster is build in a modular architecture. Modularity is the decomposition of the overall functionality into smaller pieces with standardized interfaces.
 
-current state is simple but could be split in multiple packages
 
+=== Conan Dependencies
+As illustrated in <<blinky_dependencies>>, the application _blinky_ depends on the BSP (_stm32_bsp_iot_node_),
+a runtime (_stm32_runtime_l475_vtg_)a runtime (_stm32_runtime_l475_vtg_).
+Other modules
+
+
+todo: explain _gcc_arm_none_eabi_ or remove this dependecy.
+
+
+[[blinky_dependencies]]
+.blinky conan dependencies
 [graphviz, dot-example, svg]
 ----
-include::../doc/conan_graph.dot
+include::conan_graph_blinky_debug.dot[]
 ----
 
+The conan dependency tree in case of creating and running unit tests looks different. There the only dependency used is _gtest_. https://github.com/disroop/DisroopConanPackages/blob/master/recipes/cmake_vars/conanfile.py[cmake_vars] is a helper dependency which exports environment variables and options from a conanfile.
+
+.utest conan dependencies
 [graphviz, dot-example, svg]
 ----
-digraph g {
-    a -> b
-    b -> c
-    c -> d
-    d -> a
-}
+include::conan_graph_utest.dot[]
 ----
 
+
+=== Cmake Target Dependencies
+
+.blinky cmake target dependencies
 [graphviz, dot-example, svg]
 ----
-include::../doc/cmake_targets_graph.dot
+include::../build/blinky-debug/cmake-target-graph.dot[]
+----
+
+.utest cmake target dependencies
+[graphviz, dot-example, svg]
+----
+include::../build/utest/cmake-target-graph.dot[]
 ----
 
 
