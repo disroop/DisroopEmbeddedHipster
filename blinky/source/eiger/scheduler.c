@@ -11,7 +11,9 @@ struct scheduler_type {
     uint8_t time_base_ms;
     uint16_t max_time_slot_ms;
     uint16_t time_cnt_ms;
-} scheduler;
+};
+
+struct scheduler_type scheduler;
 
 void eiger_scheduler_config_time(void (*delay_ms)(uint32_t)) {
     scheduler.delay_func = delay_ms;
