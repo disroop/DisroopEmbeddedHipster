@@ -17,7 +17,7 @@ void eiger_timer_destroy(timer self) { free(self); }
 
 void eiger_timer_reset(timer self) { self->counter = 0; }
 
-uint16_t eiger_timer_elapsed_time_ms(timer self) {
+uint16_t eiger_timer_elapsed_time_ms(const timer self) {
     return self->counter * self->base_ms;
 }
 

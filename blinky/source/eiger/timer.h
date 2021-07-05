@@ -9,6 +9,6 @@ void eiger_timer_destroy(timer self);
 
 void eiger_timer_reset(timer self);
 
-uint16_t eiger_timer_elapsed_time_ms(timer self);
+uint16_t eiger_timer_elapsed_time_ms(const timer self);
 
 void eiger_timer_update(timer self);
