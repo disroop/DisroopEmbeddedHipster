@@ -36,7 +36,8 @@
 		"notskm.clang-tidy",
 		"mine.cpplint",
 		"pokowaka.pokowaka-iwyu",
-		"ms-azuretools.vscode-docker"
+		"ms-azuretools.vscode-docker",
+		"hediet.vscode-drawio"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
