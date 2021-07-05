@@ -133,4 +133,5 @@
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
   "clang-tidy.lintOnSave": true,
+  "clang-tidy.buildPath": "${workspaceFolder}/build/utest" //TODO: How to change to active CMAKE Kit?
 }
