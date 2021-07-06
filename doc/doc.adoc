@@ -216,6 +216,7 @@ WARNING: todo
 
 ** in Build
 ** IDE Integration
+//see https://marketplace.visualstudio.com/items?itemName=JacquesLucke.gcov-viewer
 ** define coverage limits
 
 === Code Analysis
