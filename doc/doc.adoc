@@ -255,6 +255,7 @@ Obviously one can not back all rules in an automated solutions as we showed in t
 == Toolchain
 === Conan
 === Cmake
+//https://blog.feabhas.com/2021/07/cmake-part-1-the-dark-arts/
 === Unittest
 === Supported IDE
 
