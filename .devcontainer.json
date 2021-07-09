@@ -37,7 +37,8 @@
 		"mine.cpplint",
 		"pokowaka.pokowaka-iwyu",
 		"ms-azuretools.vscode-docker",
-		"hediet.vscode-drawio"
+		"hediet.vscode-drawio",
+		"tomoki1207.pdf",
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
