@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 
-include(${CMAKE_CURRENT_BINARY_DIR}/cmake_vars.cmake)
+
 include(${CMAKE_CURRENT_BINARY_DIR}/conan_toolchain.cmake)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
