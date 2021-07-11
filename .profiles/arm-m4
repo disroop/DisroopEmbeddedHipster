@@ -17,6 +17,3 @@ arch=armv7
 
 [build_requires]
 gcc_arm_none_eabi/10.2.0@disroop/release
-
-[env]
-CMAKE_SYSTEM_NAME="Generic"

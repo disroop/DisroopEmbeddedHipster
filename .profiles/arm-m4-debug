@@ -3,6 +3,6 @@ include(arm-m4)
 build_type = Debug
 
 [env]
-CONAN_C_FLAGS=$base_c_flags -Og
-CONAN_CXX_FLAGS=$base_c_flags -Og
+CFLAGS=$base_c_flags -Og
+CXXFLAGS=$base_c_flags -Og
 LDFLAGS=$base_ld_flags
