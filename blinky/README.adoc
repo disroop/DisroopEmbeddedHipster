@@ -1,0 +1,52 @@
+= Binky
+:toc:
+:toc:
+:toclevels: 2
+:sectnums:
+:sectnumlevels: 5
+:imagesdir: ./assets/doc-images
+
+== Introduction
+The blinky project is an example project to demonstrate the embedded hipster showcase on an actual project. The source code is written in c code because we have seen that many embedded projects prefer to use C over CPP. However, all of the tools can be combined with CPP projects aswell.
+
+== Function
+The blinky application detects rotation movement. If rotation movement is detected, the green led is ON. If after 2 seconds no movement is detected, the green led is switched off. A rotation movement is detected if the device rotates above 10 dps.
+
+== HW-Platform
+The blinky project uses the link:https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html[B-L475E-IOT01A]
+ Board from STMicroelectronics. The B-L475E-IOT01A Board has STM32L4 Microcontroller with onboard low-power wireless connection interfaces like ble, nfc, wifi. It also comes with onboard sensors (gyro, accelerometer, temp, ..).With these features, the board is perfect for IoT showcases. 
+
+image::B-L475E-IOT01A.jpg[B-L475E-IOT01A]
+
+== Conan dependencies
+The conan dependecies show on which conan packages the blinky application depends on. It shows that there are a lot more dependecies when compiling for the target architecture (B-L475E-IOT01A Board) than for unit tests.
+
+=== Target Platform (Release build)
+The following diagram shows the dependency graph of the blinky project build for the target platform.
+
+image::conan_graph_blinky.png[Dependecies of Target]
+
+All of the target conan package dependencies are developed and maintened by disroop and can be found in the following github repository link:https://github.com/disroop/DisroopConanPackages[DisroopConanPackages].
+
+=== Target Utest 
+The following diagram shows the dependency graph of the blinky project build to run unit tests.
+
+image::conan_graph_utest.png[Dependecies of Unit test]
+
+To unit test the blinky application the gtest framework is used. The conan package is an official conan repository and maintained by the conan community and can be found in the following repository link:https://github.com/conan-io/conan-center-index[Conan-Center-Index].
+
+== Cmake targets
+The cmake graph shows the dependency of the libraries of the blinky application. This diagram shows more content then the conan dependency because it also shows the internal package dependencies.
+
+=== Target Platform (Release build)
+
+The following diagram shows the cmake dependency graph of the blinky app for the target build.
+
+image::cmake_blinky.png[Dependecies of cmake targets]
+
+
+=== Target Utest 
+
+The following diagram shows the cmake dependency graph of the blinky app build for utest.
+
+image::cmake_blinky_utest.png[Dependecies of cmake targets utest]
