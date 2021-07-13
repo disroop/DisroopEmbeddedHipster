@@ -17,7 +17,7 @@ def install(c):
     tasks.util.run("code --install-extension ms-vscode-remote.remote-containers --force")
     tasks.util.run("code --install-extension ms-azuretools.vscode-docker --force")
     tasks.util.run("code --install-extension mhutchie.git-graph --force")
-    tasks.util.run("code sourcegraph.sourcegraph --force")
+    tasks.util.run("code --install-extension sourcegraph.sourcegraph --force")
 
 
 DISROOP_EMBEDDED_HIPSTER_ROOT_PATH = pathlib.Path(__file__).parent.absolute()
