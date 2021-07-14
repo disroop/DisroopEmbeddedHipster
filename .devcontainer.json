@@ -39,6 +39,7 @@
 		"ms-azuretools.vscode-docker",
 		"hediet.vscode-drawio",
 		"tomoki1207.pdf",
+		"gruntfuggly.todo-tree"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
