@@ -29,7 +29,7 @@ if (NOT CMAKE_CROSSCOMPILING)
     add_subdirectory(test)
 endif ()
 
-add_custom_target(graphviz ALL
+add_custom_target(graphviz 
                   "${CMAKE_COMMAND}" "--graphviz=cmake-target-graph.dot" .
                   WORKING_DIRECTORY "${CMAKE_BINARY_DIR}")
 
