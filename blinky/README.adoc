@@ -7,14 +7,14 @@
 :imagesdir: ./assets/doc-images
 
 == Introduction
-The blinky project is an example project to demonstrate the embedded hipster showcase on an actual project. The source code is written in c code because we have seen that many embedded projects prefer to use C over CPP. However, all of the tools can be combined with CPP projects aswell.
+The blinky project is an example project to demonstrate the embedded hipster showcase on an actual project. The source code is written in C code because we have seen that many embedded projects prefer to use C over {cpp}. However, all of the tools can be combined with {cpp} projects as well.
 
 == Function
-The blinky application detects rotation movement. If rotation movement is detected, the green led is ON. If after 2 seconds no movement is detected, the green led is switched off. A rotation movement is detected if the device rotates above 10 dps.
+The blinky application detects rotation movement. If rotation movement is detected, the green led is switched on. If after 2 seconds of no movement detection, the green led is switched off. A rotation movement is detected if the device rotates above 10 degrees per second.
 
 == HW-Platform
 The blinky project uses the link:https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html[B-L475E-IOT01A]
- Board from STMicroelectronics. The B-L475E-IOT01A Board has STM32L4 Microcontroller with onboard low-power wireless connection interfaces like ble, nfc, wifi. It also comes with onboard sensors (gyro, accelerometer, temp, ..).With these features, the board is perfect for IoT showcases. 
+ Board from STMicroelectronics. The B-L475E-IOT01A Board has a STM32L4 Microcontroller with onboard low-power wireless connection interfaces like ble, nfc, wifi. It also comes with onboard sensors (gyro, accelerometer, temp, ..). With these features, the board is perfectly suited for IoT showcases. 
 
 image::B-L475E-IOT01A.jpg[B-L475E-IOT01A]
 
@@ -26,7 +26,7 @@ The following diagram shows the dependency graph of the blinky project build for
 
 image::conan_graph_blinky.png[Dependecies of Target]
 
-All of the target conan package dependencies are developed and maintened by disroop and can be found in the following github repository link:https://github.com/disroop/DisroopConanPackages[DisroopConanPackages].
+All of the target conan package dependencies are developed and maintened by link:https://www.disroop.ch[Disroop] and can be found in the following github repository link:https://github.com/disroop/DisroopConanPackages[DisroopConanPackages].
 
 === Target Utest 
 The following diagram shows the dependency graph of the blinky project build to run unit tests.
