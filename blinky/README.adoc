@@ -14,7 +14,7 @@ The blinky application detects rotation movement. If rotation movement is detect
 
 == HW-Platform
 The blinky project uses the link:https://www.st.com/en/evaluation-tools/b-l475e-iot01a.html[B-L475E-IOT01A]
- Board from STMicroelectronics. The B-L475E-IOT01A Board has a STM32L4 Microcontroller with onboard low-power wireless connection interfaces like ble, nfc, wifi. It also comes with onboard sensors (gyro, accelerometer, temp, ..). With these features, the board is perfectly suited for IoT showcases. 
+ Board from STMicroelectronics. The B-L475E-IOT01A Board has a STM32L4 Microcontroller with onboard low-power wireless connection interfaces like BLE, NFC, Wi-Fi. It also comes with onboard sensors (gyro, accelerometer, temp, ..). With these features, the board is perfectly suited for IoT showcases. 
 
 image::B-L475E-IOT01A.jpg[B-L475E-IOT01A]
 
