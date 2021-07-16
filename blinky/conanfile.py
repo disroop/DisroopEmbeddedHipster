@@ -33,7 +33,6 @@ class Blinky(ConanFile):
 
     def build(self):
         cmake = CMake(self)
-        
         cmake.configure()
         cmake.build()
         if self.settings.arch == "x86_64":
