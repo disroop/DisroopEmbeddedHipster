@@ -23,7 +23,22 @@ DisroopEmbeddedHipster is a showcase project which demonstrates how to create mo
 
 
 == Get started
-todo add the one liner how to setup
+To use the EmbeddedHipster project and start to develop you need to install the following tools on your computer:
+
+* https://www.docker.com/products/docker-desktop[Docker-Desktop]
+
+* https://code.visualstudio.com[VsCode]
+
+* https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers[VsCode Plugin - Remote Container]
+
+If those tools are installed clone the repo and open vscode in the repository.
+
+```console
+git clone https://github.com/disroop/DisroopEmbeddedHipster.git
+code ./DisroopEmbeddedHipster
+```
+
+To start developing start the container with the remote container plugin.
 
 todo add gif
 
