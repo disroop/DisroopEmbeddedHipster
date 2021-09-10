@@ -27,7 +27,7 @@
   "remotes": [
     {
       "name": "disroop-conan",
-      "url": "https://disroop.jfrog.io/artifactory/api/conan/disroop-conan",
+      "url": "https://disroopartifacts.jfrog.io/artifactory/api/conan/disroop-conan",
       "force": true
     }
   ]
