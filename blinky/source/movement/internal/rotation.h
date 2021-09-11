@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INTERNAL_ROTATION_H
+#define INTERNAL_ROTATION_H
 #include "inttypes.h"
 
 typedef struct rotation_mdegps_type {
@@ -8,3 +9,4 @@ typedef struct rotation_mdegps_type {
 } rotation_mdegps;
 
 rotation_mdegps get_rotation(void (*gyro_xyz)(float*));
+#endif

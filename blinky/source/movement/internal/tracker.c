@@ -2,21 +2,32 @@
 
 #include <stdlib.h>
 
-uint16_t rotation_threshold_mdegps = 0;
-bool hasRotated = false;
+typedef struct tracker_struct {
+    uint16_t rotation_threshold_mdegps;
+    bool hasRotated;
+} tracker_struct;
 
-void tracker_set_threashold_rotation(uint16_t threshold_mdegps) {
-    rotation_threshold_mdegps = threshold_mdegps;
+tracker tracker_create() {
+    tracker tracker = malloc(sizeof(tracker_struct));
+    tracker->hasRotated = false;
+    tracker->rotation_threshold_mdegps = 0;
+    return tracker;
 }
 
-void tracker_reset() { hasRotated = false; }
+void tracker_delete(tracker self) { free(self); }
 
-bool tracker_has_rotated() { return hasRotated; }
+void tracker_set_threashold_rotation(tracker self, uint16_t threshold_mdegps) {
+    self->rotation_threshold_mdegps = threshold_mdegps;
+}
 
-void tracker_update_position(rotation_mdegps rotation) {
-    if ((rotation.x > rotation_threshold_mdegps) ||
-        (rotation.y > rotation_threshold_mdegps) ||
-        (rotation.z > rotation_threshold_mdegps)) {
-        hasRotated = true;
+void tracker_reset(tracker self) { self->hasRotated = false; }
+
+bool tracker_has_rotated(tracker self) { return self->hasRotated; }
+
+void tracker_update_position(tracker self, rotation_mdegps rotation) {
+    if ((rotation.x > self->rotation_threshold_mdegps) ||
+        (rotation.y > self->rotation_threshold_mdegps) ||
+        (rotation.z > self->rotation_threshold_mdegps)) {
+        self->hasRotated = true;
     }
 }

@@ -1,21 +1,36 @@
 #include "movement.h"
 
+#include <stdlib.h>
+
 #include "internal/rotation.h"
 #include "internal/tracker.h"
 
-void (*gyro_hw_xyz)(float*);
+typedef struct movement_struct {
+    tracker tracker;
+    void (*gyro_hw_xyz)(float*);
+} movement_struct;
 
-void movement_init(void (*gyro_xyz)(float*)) {
-    gyro_hw_xyz = gyro_xyz;
-    tracker_reset();
-    tracker_set_threashold_rotation(10000);
+movement movement_create(void (*gyro_xyz)(float*)) {
+    movement movement = malloc(sizeof(movement_struct));
+    movement->gyro_hw_xyz = gyro_xyz;
+    movement->tracker = tracker_create();
+    tracker_reset(movement->tracker);
+    tracker_set_threashold_rotation(movement->tracker, 10000);
+    return movement;
 }
 
-void movement_reset() { tracker_reset(); }
+void movement_delete(movement self) {
+    tracker_delete(self->tracker);
+    free(self);
+}
 
-bool movement_has_rotated() { return tracker_has_rotated(); }
+void movement_reset(movement self) { tracker_reset(self->tracker); }
 
-void movement_run() {
-    rotation_mdegps rotation_mdegps = get_rotation(gyro_hw_xyz);
-    tracker_update_position(rotation_mdegps);
+bool movement_has_rotated(movement self) {
+    return tracker_has_rotated(self->tracker);
+}
+
+void movement_run(movement self) {
+    rotation_mdegps rotation_mdegps = get_rotation(self->gyro_hw_xyz);
+    tracker_update_position(self->tracker, rotation_mdegps);
 }

@@ -1,12 +1,21 @@
-#pragma once
+#ifndef INTERNAL_TRACKER_H
+#define INTERNAL_TRACKER_H
 #include <stdbool.h>
 
 #include "rotation.h"
 
-void tracker_set_threashold_rotation(uint16_t threshold_mdegps);
+typedef struct tracker_struct *tracker;
 
-void tracker_reset();
+tracker tracker_create();
 
-bool tracker_has_rotated();
+void tracker_delete(tracker self);
 
-void tracker_update_position(rotation_mdegps rotation);
+void tracker_set_threashold_rotation(tracker self, uint16_t threshold_mdegps);
+
+void tracker_reset(tracker self);
+
+bool tracker_has_rotated(tracker self);
+
+void tracker_update_position(tracker self, rotation_mdegps rotation);
+
+#endif

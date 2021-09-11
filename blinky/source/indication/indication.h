@@ -1,4 +1,5 @@
-#pragma once
+#ifndef INDICATION_H
+#define INDICATION_H
 
 #include <inttypes.h>
 
@@ -12,3 +13,5 @@ void indication_destroy(indication self);
 void indication_indicate(indication self);
 
 void indication_reset(indication self);
+
+#endif

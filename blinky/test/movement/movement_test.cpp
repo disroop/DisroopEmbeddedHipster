@@ -10,10 +10,11 @@ TEST(UT_Movement, run_over_threshold) {
         xyz[1] = 200;
         xyz[2] = 10001;
     };
-    movement_init(gyro_fake);
-    movement_reset();
-    movement_run();
-    EXPECT_TRUE(movement_has_rotated());
+    movement movement_instance = movement_create(gyro_fake);
+    movement_reset(movement_instance);
+    movement_run(movement_instance);
+    EXPECT_TRUE(movement_has_rotated(movement_instance));
+    movement_delete(movement_instance);
 }
 
 TEST(UT_Movement, run_below_threshold) {
@@ -22,10 +23,11 @@ TEST(UT_Movement, run_below_threshold) {
         xyz[1] = 200;
         xyz[2] = 400;
     };
-    movement_init(gyro_fake);
-    movement_reset();
-    movement_run();
-    EXPECT_FALSE(movement_has_rotated());
+    movement movement_instance = movement_create(gyro_fake);
+    movement_reset(movement_instance);
+    movement_run(movement_instance);
+    EXPECT_FALSE(movement_has_rotated(movement_instance));
+    movement_delete(movement_instance);
 }
 
 TEST(UT_Movement, not_run_over_threshold) {
@@ -34,9 +36,10 @@ TEST(UT_Movement, not_run_over_threshold) {
         xyz[1] = 200;
         xyz[2] = 10001;
     };
-    movement_init(gyro_fake);
-    movement_reset();
-    EXPECT_FALSE(movement_has_rotated());
+    movement movement_instance = movement_create(gyro_fake);
+    movement_reset(movement_instance);
+    EXPECT_FALSE(movement_has_rotated(movement_instance));
+    movement_delete(movement_instance);
 }
 
 TEST(UT_Movement, reset) {
@@ -45,11 +48,12 @@ TEST(UT_Movement, reset) {
         xyz[1] = 200;
         xyz[2] = 10001;
     };
-    movement_init(gyro_fake);
-    movement_reset();
-    EXPECT_FALSE(movement_has_rotated());
-    movement_run();
-    EXPECT_TRUE(movement_has_rotated());
-    movement_reset();
-    EXPECT_FALSE(movement_has_rotated());
+    movement movement_instance = movement_create(gyro_fake);
+    movement_reset(movement_instance);
+    EXPECT_FALSE(movement_has_rotated(movement_instance));
+    movement_run(movement_instance);
+    EXPECT_TRUE(movement_has_rotated(movement_instance));
+    movement_reset(movement_instance);
+    EXPECT_FALSE(movement_has_rotated(movement_instance));
+    movement_delete(movement_instance);
 }

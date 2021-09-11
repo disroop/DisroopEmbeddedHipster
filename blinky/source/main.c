@@ -19,8 +19,8 @@ void setup() {
         indication_create(LED_GREEN, BSP_LED_On, BSP_LED_Off);
     uint8_t base_ms = 100;
     timer timerIndicationOn = eiger_timer_create(base_ms);
-    blinky_init(timerIndicationOn, indicator);
-    movement_init(BSP_GYRO_GetXYZ);
+    movement hw_movement = movement_create(BSP_GYRO_GetXYZ);
+    blinky_init(timerIndicationOn, indicator, hw_movement);
     eiger_scheduler_config_time(HAL_Delay);
     eiger_scheduler_add_task(blinky_update, base_ms);
     eiger_scheduler_add_task(movement_run, 20);
