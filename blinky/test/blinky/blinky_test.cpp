@@ -15,7 +15,7 @@ class UT_Blinky : public testing::Test {
     void TearDown() override {}
 };
 
-TEST_F(UT_Blinky, no indication) {
+TEST_F(UT_Blinky, no_indication) {
     timer timer_indication = eiger_timer_create(100);
     indication indicator_fake = indication_create(0, NULL, NULL);
     movement movement_fake = movement_create(NULL);
