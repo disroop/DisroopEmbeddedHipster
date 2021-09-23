@@ -1,7 +1,7 @@
 {
   "channel": "development",
   "user": "disroop",
-  "conf": [
+  "configurations": [
     {
       "hostprofile": "default",
       "buildprofile": "default",
