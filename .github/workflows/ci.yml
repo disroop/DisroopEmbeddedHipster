@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@master
       - run: |
           setup
-          mumoco --remotes
+          mumoco remotes
         name: setup conan
       - run: |
           conan install -if build-host -pr:b=default -pr:h=default --build=missing blinky/conanfile.py

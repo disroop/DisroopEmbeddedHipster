@@ -1,24 +1,26 @@
 {
-  "channel": "development",
-  "user": "disroop",
+  "signature": {
+    "channel": "development",
+    "user": "disroop"
+  },
   "configurations": [
     {
-      "hostprofile": "default",
-      "buildprofile": "default",
+      "host_profile": "default",
+      "build_profile": "default",
       "build": "missing"
     },
     {
-      "hostprofile": ".profiles/arm-m4-debug",
-      "buildprofile": "default",
-      "buildsettings": [
+      "host_profile": ".profiles/arm-m4-debug",
+      "build_profile": "default",
+      "build_settings": [
         "build_type=Release"
       ],
       "build": "missing"
     },
     {
-      "hostprofile": ".profiles/arm-m4-release",
-      "buildprofile": "default",
-      "buildsettings": [
+      "host_profile": ".profiles/arm-m4-release",
+      "build_profile": "default",
+      "build_settings": [
         "build_type=Release"
       ],
       "build": "missing"
