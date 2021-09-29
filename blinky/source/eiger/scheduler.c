@@ -4,9 +4,12 @@ typedef struct task_map_type {
     uint8_t update_time_ms;
 } task_map;
 
+#define MAX_AMOUNT_TASKS 5
+static const int max_time_slots_ms = 10000;
+
 struct scheduler_type {
     void (*delay_func)(uint32_t);
-    task_map tasks[5];
+    task_map tasks[MAX_AMOUNT_TASKS];
     uint8_t amount_task;
     uint8_t time_base_ms;
     uint16_t max_time_slot_ms;
@@ -19,7 +22,7 @@ void eiger_scheduler_config_time(void (*delay_ms)(uint32_t)) {
     scheduler.delay_func = delay_ms;
     scheduler.amount_task = 0;
     scheduler.time_base_ms = 1;
-    scheduler.max_time_slot_ms = 10000;
+    scheduler.max_time_slot_ms = max_time_slots_ms;
     scheduler.time_cnt_ms = 1;
 }
 

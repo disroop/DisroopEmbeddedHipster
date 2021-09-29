@@ -1,7 +1,7 @@
 {
 	"name": "EmbeddedHipster",
 	// "dockerFile": "Dockerfile",
-	"image": "disroop/embedded-hipster-dev:0.6.9",
+	"image": "disroop/embedded-hipster-dev:0.6.12",
 	"runArgs": [
 		"--cap-add=SYS_PTRACE",
 		"--security-opt",
@@ -33,13 +33,13 @@
 		"alefragnani.numbered-bookmarks",
 		"sourcegraph.sourcegraph",
 		"cschleiden.vscode-github-actions",
-		"notskm.clang-tidy",
-		"mine.cpplint",
 		"pokowaka.pokowaka-iwyu",
 		"ms-azuretools.vscode-docker",
 		"hediet.vscode-drawio",
 		"tomoki1207.pdf",
-		"gruntfuggly.todo-tree"
+		"gruntfuggly.todo-tree",
+		"llvm-vs-code-extensions.vscode-clangd",
+		"jacqueslucke.gcov-viewer"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"

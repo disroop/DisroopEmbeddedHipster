@@ -3,6 +3,8 @@
 #include <inttypes.h>
 #include <stdlib.h>
 
+#include "mocks_definitions.h"
+
 typedef struct indication_struct {
     uint8_t led_indicate_counter;
     uint8_t led_reset_counter;
@@ -10,6 +12,9 @@ typedef struct indication_struct {
 
 indication indication_create(uint8_t led_number, void (*enable_led)(int),
                              void (*disable_led)(int)) {
+    UNUSED(led_number);
+    UNUSED(enable_led);
+    UNUSED(disable_led);
     indication indication = malloc(sizeof(indication_struct));
     indication->led_reset_counter = 0;
     indication->led_indicate_counter = 0;

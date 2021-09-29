@@ -1,12 +1,12 @@
 [
   {
     "name": "utest",
-    "environmentSetupScript": "/workspace/build/utest/activate.sh",
+    "environmentSetupScript": "${workspaceFolder}/build/utest/activate.sh",
     "toolchainFile": "${workspaceFolder}/build/utest/conan_toolchain.cmake"
   },
   {
     "name": "blinky-debug",
-    "environmentSetupScript": "/workspace/build/blinky-debug/activate.sh",
+    "environmentSetupScript": "${workspaceFolder}/build/blinky-debug/activate.sh",
     "toolchainFile": "${workspaceFolder}/build/blinky-debug/conan_toolchain.cmake"
   }
 ]

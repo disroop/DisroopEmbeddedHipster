@@ -2,12 +2,15 @@
 
 #include <stdlib.h>
 
+#include "mocks_definitions.h"
+
 typedef struct movement_struct {
     bool rotated;
     int counter;
 } movement_struct;
 
 movement movement_create(void (*gyro_xyz)(float*)) {
+    UNUSED(gyro_xyz);
     movement movement = malloc(sizeof(movement_struct));
     movement->rotated = false;
     movement->counter = 0;

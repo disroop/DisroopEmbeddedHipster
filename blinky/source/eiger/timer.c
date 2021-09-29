@@ -1,10 +1,11 @@
 #include "timer.h"
 
+#include <stdint.h>
 #include <stdlib.h>
 typedef struct timer_struct {
     uint16_t counter;
     uint16_t base_ms;
-} timer_struct;
+} __attribute__((aligned(4))) timer_struct;
 
 timer eiger_timer_create(int16_t base_ms) {
     timer timer_instance = malloc(sizeof(timer_struct));
@@ -17,7 +18,7 @@ void eiger_timer_destroy(timer self) { free(self); }
 
 void eiger_timer_reset(timer self) { self->counter = 0; }
 
-uint16_t eiger_timer_elapsed_time_ms(const timer self) {
+uint16_t eiger_timer_elapsed_time_ms(timer self) {
     return self->counter * self->base_ms;
 }
 
