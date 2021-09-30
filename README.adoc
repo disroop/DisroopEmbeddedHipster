@@ -60,6 +60,10 @@ image::doc/open_run_unit_test_arm.gif[]
 * Quality Gateways
 * Standardisation of toolchain
 
+To help developers to get immediatily feedback there is builtin quality in the IDE. For example linting tools or test coverage view.
+
+image::doc/builtin_quality.gif[]
+
 == Tools
 
 * Using https://hub.docker.com/u/disroop[Docker] to manage the toolchain
