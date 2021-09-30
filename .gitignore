@@ -19,3 +19,4 @@ build-host
 
 #Clangd
 .cache
+compile_commands.json
