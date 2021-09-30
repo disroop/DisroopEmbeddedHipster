@@ -1,5 +1,4 @@
-#ifndef MOVEMENT_H
-#define MOVEMENT_H
+#pragma once
 #include <stdbool.h>
 
 typedef struct movement_struct *movement;
@@ -9,4 +8,3 @@ void movement_delete(movement self);
 void movement_reset(movement self);
 bool movement_has_rotated(movement self);
 void movement_run(movement self);
-#endif

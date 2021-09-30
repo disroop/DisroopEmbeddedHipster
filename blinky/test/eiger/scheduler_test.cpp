@@ -13,38 +13,44 @@ static void fake_delay(uint32_t milliseconds) {
 
 static uint32_t runCounter;
 static void run() { runCounter++; }
-
-class UTScheduler : public testing::Test {
+static scheduler schedulertest = nullptr;
+class UTschedulertest : public testing::Test {
+   private:
    public:
     void SetUp() override {
         runCounter = 0;
         fakeDelay = absl::make_unique<FakeDelay>();
-        eiger_scheduler_config_time(&fake_delay);
+        schedulertest = eiger_scheduler_create(&fake_delay);
     }
 
-    void TearDown() override {}
+    void TearDown() override { eiger_scheduler_delete(schedulertest); }
 };
 
-bool update_timer(const uint16_t &max_updates) {
-    eiger_scheduler_add_task(&run, 1);
+auto update_timer(scheduler schedulertest, const uint16_t &max_updates)
+    -> bool {
+    eiger_scheduler_add_task(schedulertest, &run, 1);
     bool succesUpdate = true;
     for (uint32_t i = 0; (i < max_updates) && succesUpdate; i++) {
-        succesUpdate = eiger_scheduler_update();
+        succesUpdate = eiger_scheduler_update(schedulertest);
     }
     return succesUpdate;
 }
-TEST_F(UTScheduler, updateTimeMax) {
+TEST_F(UTschedulertest, updateTimeMax) {
     const uint16_t max_updates = 10000;
-    EXPECT_TRUE(update_timer(max_updates));
+    EXPECT_TRUE(update_timer(schedulertest, max_updates));
     EXPECT_EQ(1, fakeDelay->getDelayValue());
     EXPECT_EQ(max_updates, fakeDelay->getAmountCals());
 }
 
-TEST_F(UTScheduler, updateTimeMaxOverflow) {
+TEST_F(UTschedulertest, updateTimeMaxOverflow) {
     const uint16_t max_updates = 10001;
-    EXPECT_TRUE(update_timer(max_updates));
+    EXPECT_TRUE(update_timer(schedulertest, max_updates));
     EXPECT_EQ(1, fakeDelay->getDelayValue());
     EXPECT_EQ(max_updates, fakeDelay->getAmountCals());
 }
 
-TEST(SchedulerNoSetup, noinit) { EXPECT_FALSE(eiger_scheduler_update()); }
+TEST(schedulertestNoSetup, noinit) {
+    scheduler schedulertestnosetup = eiger_scheduler_create(&fake_delay);
+    EXPECT_FALSE(eiger_scheduler_update(schedulertestnosetup));
+    eiger_scheduler_delete(schedulertestnosetup);
+}

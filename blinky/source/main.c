@@ -13,6 +13,7 @@ void platform_init() {
     BSP_GYRO_LowPower(0);
 }
 
+scheduler scheduler = NULL;
 void setup() {
     const uint8_t blinky_update_time_ms = 100;
     const uint8_t movement_update_time_ms = 20;
@@ -24,16 +25,16 @@ void setup() {
     timer timerIndicationOn = eiger_timer_create(blinky_update_time_ms);
     movement hw_movement = movement_create(BSP_GYRO_GetXYZ);
     blinky_init(timerIndicationOn, indicator, hw_movement);
-    eiger_scheduler_config_time(HAL_Delay);
-    eiger_scheduler_add_task(blinky_update, blinky_update_time_ms);
-    eiger_scheduler_add_task((void (*)(void))movement_run,
+    scheduler = eiger_scheduler_create(HAL_Delay);
+    eiger_scheduler_add_task(scheduler, blinky_update, blinky_update_time_ms);
+    eiger_scheduler_add_task(scheduler, (void (*)(void))movement_run,
                              movement_update_time_ms);
 }
 
 int main() {
     setup();
     while (1) {
-        if (!eiger_scheduler_update()) {
+        if (!eiger_scheduler_update(scheduler)) {
             break;
         }
     }
