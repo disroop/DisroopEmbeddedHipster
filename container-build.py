@@ -27,4 +27,4 @@ def run_build(docker_image, container_command):
 if __name__ == "__main__":
     bash_command = "setup; ./build.sh"
     command = f"/bin/bash -c '{bash_command}'"
-    run_build("disroop/embedded-hipster:0.6.9", command)
+    run_build("disroop/embedded-hipster:0.6.12", command)
