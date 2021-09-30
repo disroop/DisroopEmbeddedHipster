@@ -2,8 +2,12 @@
 
 #include <stdlib.h>
 
+#include <inttypes.h>
+
 #include "internal/rotation.h"
 #include "internal/tracker.h"
+
+const uint16_t threshold_rotation = 10000;
 
 typedef struct movement_struct {
     tracker tracker;
@@ -15,7 +19,7 @@ movement movement_create(void (*gyro_xyz)(float*)) {
     movement->gyro_hw_xyz = gyro_xyz;
     movement->tracker = tracker_create();
     tracker_reset(movement->tracker);
-    tracker_set_threashold_rotation(movement->tracker, 10000);
+    tracker_set_threashold_rotation(movement->tracker, threshold_rotation);
     return movement;
 }
 
