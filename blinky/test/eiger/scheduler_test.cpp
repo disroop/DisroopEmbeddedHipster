@@ -26,11 +26,11 @@ class UTScheduler : public testing::Test {
 };
 
 TEST_F(UTScheduler, updateTimeMax) {
-    const uint16_t max_updates = 1000;
+    const uint16_t max_updates = 10000;
     eiger_scheduler_add_task(&run, 1);
     for (uint32_t i = 0; i < max_updates; i++) {
         eiger_scheduler_update();
     }
     EXPECT_EQ(1, fakeDelay->getDelayValue());
-    EXPECT_EQ(10000, fakeDelay->getAmountCals());
+    EXPECT_EQ(max_updates, fakeDelay->getAmountCals());
 }
