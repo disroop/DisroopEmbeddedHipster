@@ -35,12 +35,13 @@ If those tools are installed clone the repo and open vscode in the repository.
 
 ```console
 git clone https://github.com/disroop/DisroopEmbeddedHipster.git
-code ./DisroopEmbeddedHipster
+cd ./DisroopEmbeddedHipster
+code .
 ```
-
 To start developing start the container with the remote container plugin.
 
-todo add gif
+image::doc/open_run_unit_test_arm.gif[]
+
 
 == Features
 * Reproducible and traceable builds with a fully automated toolchain
