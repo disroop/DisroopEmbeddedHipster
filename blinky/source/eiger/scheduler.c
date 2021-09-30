@@ -1,4 +1,5 @@
 #include "scheduler.h"
+
 typedef struct task_map_type {
     void (*task)(void);
     uint8_t update_time_ms;
@@ -32,7 +33,10 @@ void eiger_scheduler_add_task(void (*task)(void), uint8_t update_time_ms) {
     scheduler.amount_task++;
 }
 
-void eiger_scheduler_update() {
+bool eiger_scheduler_update() {
+    if (scheduler.amount_task == 0) {
+        return false;
+    }
     for (uint8_t task_nr = 0; task_nr < scheduler.amount_task; task_nr++) {
         task_map current_task = scheduler.tasks[task_nr];
         if (scheduler.time_cnt_ms % (current_task.update_time_ms + 1) == 0) {
@@ -45,4 +49,5 @@ void eiger_scheduler_update() {
         scheduler.time_cnt_ms++;
     }
     scheduler.delay_func(scheduler.time_base_ms);
+    return true;
 }

@@ -25,12 +25,26 @@ class UTScheduler : public testing::Test {
     void TearDown() override {}
 };
 
+bool update_timer(const uint16_t &max_updates) {
+    eiger_scheduler_add_task(&run, 1);
+    bool succesUpdate = true;
+    for (uint32_t i = 0; (i < max_updates) && succesUpdate; i++) {
+        succesUpdate = eiger_scheduler_update();
+    }
+    return succesUpdate;
+}
 TEST_F(UTScheduler, updateTimeMax) {
     const uint16_t max_updates = 10000;
-    eiger_scheduler_add_task(&run, 1);
-    for (uint32_t i = 0; i < max_updates; i++) {
-        eiger_scheduler_update();
-    }
+    EXPECT_TRUE(update_timer(max_updates));
     EXPECT_EQ(1, fakeDelay->getDelayValue());
     EXPECT_EQ(max_updates, fakeDelay->getAmountCals());
 }
+
+TEST_F(UTScheduler, updateTimeMaxOverflow) {
+    const uint16_t max_updates = 10001;
+    EXPECT_TRUE(update_timer(max_updates));
+    EXPECT_EQ(1, fakeDelay->getDelayValue());
+    EXPECT_EQ(max_updates, fakeDelay->getAmountCals());
+}
+
+TEST(SchedulerNoSetup, noinit) { EXPECT_FALSE(eiger_scheduler_update()); }

@@ -30,14 +30,14 @@ void setup() {
                              movement_update_time_ms);
 }
 
-void infinite() { eiger_scheduler_update(); }
-
 int main() {
     setup();
     while (1) {
-        infinite();
+        if (!eiger_scheduler_update()) {
+            break;
+        }
     }
-    return 0;
+    return -1;
 }
 
 void assert_failed(char *file, uint32_t line) {}
