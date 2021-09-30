@@ -1,5 +1,7 @@
 #include "blinky.h"
 
+#include <inttypes.h>
+
 timer timerIndicationOn;
 indication indicator;
 movement movement_sensor;
@@ -20,7 +22,8 @@ void blinky_init(timer timer_instance, indication indication_instance,
 void update_state() {
     uint16_t elapsed_time_ms = eiger_timer_elapsed_time_ms(timerIndicationOn);
     bool rotated = movement_has_rotated(movement_sensor);
-    if (state == STATE_DETECTED && elapsed_time_ms > 2000) {
+    const uint16_t max_time_ms = 2000;
+    if (state == STATE_DETECTED && elapsed_time_ms > max_time_ms) {
         state = STATE_IDLE;
     } else if (state == STATE_IDLE && rotated) {
         state = STATE_DETECTED;
