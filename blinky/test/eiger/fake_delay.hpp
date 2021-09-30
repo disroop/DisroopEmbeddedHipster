@@ -1,12 +1,12 @@
 #pragma once
-#include <inttypes.h>
+#include <cinttypes>
 
 class FakeDelay {
    public:
     FakeDelay();
     void delayMs(uint32_t milliseconds);
-    uint32_t getAmountCals();
-    uint32_t getDelayValue();
+    auto getAmountCals() const -> uint32_t;
+    auto getDelayValue() const -> uint32_t;
 
    private:
     uint32_t delayTimeMs;

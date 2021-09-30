@@ -7,7 +7,7 @@ std::function<void(int)> set_led, disable_led;
 extern "C" void wrapper_set_led(int i) { set_led(i); }
 extern "C" void wrapper_disable_led(int i) { disable_led(i); }
 
-TEST(UT_Indication, indicate) {
+TEST(UTIndication, indicate) {
     int ledId = 4;
     int hwLedId = 0;
     bool hwLedOn = false;
@@ -17,7 +17,7 @@ TEST(UT_Indication, indicate) {
         hwLedId = id;
         hwLedOn = true;
     };
-    disable_led = [&](int id) { runDisableLed = true; };
+    disable_led = [&](int /*id*/) { runDisableLed = true; };
 
     indication indicator =
         indication_create(ledId, wrapper_set_led, wrapper_disable_led);
@@ -28,13 +28,13 @@ TEST(UT_Indication, indicate) {
     EXPECT_FALSE(runDisableLed);
 }
 
-TEST(UT_Indication, reset_led) {
+TEST(UTIndication, resetled) {
     int ledId = 4;
     int hwLedId = 0;
     bool hwLedOn = false;
     bool runEnableLed = false;
 
-    set_led = [&](int id) { runEnableLed = true; };
+    set_led = [&](int /*id*/) { runEnableLed = true; };
     disable_led = [&](int id) {
         hwLedId = id;
         hwLedOn = false;

@@ -3,11 +3,11 @@ extern "C" {
 }
 #include "gtest/gtest.h"
 
-TEST(UT_Rotation, positive) {
+TEST(UTRotation, positive) {
     auto gyro_fake = [](float* xyz) {
-        xyz[0] = 100;
-        xyz[1] = 200;
-        xyz[2] = 300;
+        xyz[0] = 100;  // NOLINT
+        xyz[1] = 200;  // NOLINT
+        xyz[2] = 300;  // NOLINT
     };
     rotation_mdegps moved_angle = get_rotation(gyro_fake);
     EXPECT_EQ(100, moved_angle.x);

@@ -1,4 +1,5 @@
 find_package(GTest REQUIRED)
+find_package(absl REQUIRED)
 include(GoogleTest)
 add_subdirectory(blinky)
 add_subdirectory(eiger)

@@ -7,6 +7,6 @@ void FakeDelay::delayMs(uint32_t milliseconds) {
     amountOfCalls++;
 }
 
-uint32_t FakeDelay::getAmountCals() { return amountOfCalls; }
+auto FakeDelay::getAmountCals() const -> uint32_t { return amountOfCalls; }
 
-uint32_t FakeDelay::getDelayValue() { return delayTimeMs; }
+auto FakeDelay::getDelayValue() const -> uint32_t { return delayTimeMs; }

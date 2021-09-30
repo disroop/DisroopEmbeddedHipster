@@ -30,6 +30,8 @@ class Blinky(ConanFile):
         if self.settings.arch == "armv7":
             self.requires("stm32_bsp_iot_node/1.1.7@disroop/development")
             self.requires("stm32_runtime_l475_vtg/0.1.0@disroop/development")
+        elif self.settings.arch == "x86_64":
+            self.requires("abseil/20210324.2")
 
     def build(self):
         cmake = CMake(self)

@@ -7,7 +7,7 @@
 		"--security-opt",
 		"seccomp=unconfined"
 	],
-	"postCreateCommand": "setup && mumoco --remotes", //&& source <(inv --print-completion-script bash) Add to bashsrc in docker
+	"postCreateCommand": "setup && mumoco remotes", //&& source <(inv --print-completion-script bash) Add to bashsrc in docker
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash",
 	},

@@ -76,5 +76,6 @@
   "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
   "clangd.arguments": [
     "--resource-dir=/usr/lib/clang/10.0.0"
-  ]
+  ],
+  "clangd.path": "/usr/bin/clangd-12"
 }
