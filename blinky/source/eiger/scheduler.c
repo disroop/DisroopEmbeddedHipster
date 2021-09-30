@@ -18,8 +18,8 @@ typedef struct scheduler_struct {
     uint16_t time_cnt_ms;
 } scheduler_struct;
 
-scheduler eiger_scheduler_create(void (*delay_ms)(uint32_t)) {
-    scheduler scheduler = malloc(sizeof(scheduler_struct));
+eiger_scheduler eiger_scheduler_create(void (*delay_ms)(uint32_t)) {
+    eiger_scheduler scheduler = malloc(sizeof(scheduler_struct));
     scheduler->delay_func = delay_ms;
     scheduler->amount_task = 0;
     scheduler->time_base_ms = 1;
@@ -28,16 +28,16 @@ scheduler eiger_scheduler_create(void (*delay_ms)(uint32_t)) {
     return scheduler;
 }
 
-void eiger_scheduler_delete(scheduler self) { free(self); }
+void eiger_scheduler_delete(eiger_scheduler self) { free(self); }
 
-void eiger_scheduler_add_task(scheduler self, void (*task)(void),
+void eiger_scheduler_add_task(eiger_scheduler self, void (*task)(void),
                               uint8_t update_time_ms) {
     task_map added_task = {.task = task, .update_time_ms = update_time_ms};
     self->tasks[self->amount_task] = added_task;
     self->amount_task++;
 }
 
-bool eiger_scheduler_update(scheduler self) {
+bool eiger_scheduler_update(eiger_scheduler self) {
     if (self->amount_task == 0) {
         return false;
     }

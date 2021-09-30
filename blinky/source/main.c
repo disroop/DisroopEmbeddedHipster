@@ -13,7 +13,7 @@ void platform_init() {
     BSP_GYRO_LowPower(0);
 }
 
-scheduler scheduler = NULL;
+eiger_scheduler scheduler = NULL;
 void setup() {
     const uint8_t blinky_update_time_ms = 100;
     const uint8_t movement_update_time_ms = 20;

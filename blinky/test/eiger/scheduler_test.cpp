@@ -13,7 +13,7 @@ static void fake_delay(uint32_t milliseconds) {
 
 static uint32_t runCounter;
 static void run() { runCounter++; }
-static scheduler schedulertest = nullptr;
+static eiger_scheduler schedulertest = nullptr;
 class UTschedulertest : public testing::Test {
    private:
    public:
@@ -26,7 +26,7 @@ class UTschedulertest : public testing::Test {
     void TearDown() override { eiger_scheduler_delete(schedulertest); }
 };
 
-auto update_timer(scheduler schedulertest, const uint16_t &max_updates)
+auto update_timer(eiger_scheduler schedulertest, const uint16_t &max_updates)
     -> bool {
     eiger_scheduler_add_task(schedulertest, &run, 1);
     bool succesUpdate = true;
@@ -50,7 +50,7 @@ TEST_F(UTschedulertest, updateTimeMaxOverflow) {
 }
 
 TEST(schedulertestNoSetup, noinit) {
-    scheduler schedulertestnosetup = eiger_scheduler_create(&fake_delay);
+    eiger_scheduler schedulertestnosetup = eiger_scheduler_create(&fake_delay);
     EXPECT_FALSE(eiger_scheduler_update(schedulertestnosetup));
     eiger_scheduler_delete(schedulertestnosetup);
 }
