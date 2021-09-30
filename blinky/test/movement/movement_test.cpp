@@ -2,13 +2,12 @@ extern "C" {
 #include "movement.h"
 }
 #include "gtest/gtest.h"
-using namespace ::testing;
 
-TEST(UT_Movement, run_over_threshold) {
+TEST(UTMovement, runOverThreshold) {
     auto gyro_fake = [](float *xyz) {
-        xyz[0] = 100;
-        xyz[1] = 200;
-        xyz[2] = 10001;
+        xyz[0] = 100;    // NOLINT
+        xyz[1] = 200;    // NOLINT
+        xyz[2] = 10001;  // NOLINT
     };
     movement movement_instance = movement_create(gyro_fake);
     movement_reset(movement_instance);
@@ -17,11 +16,11 @@ TEST(UT_Movement, run_over_threshold) {
     movement_delete(movement_instance);
 }
 
-TEST(UT_Movement, run_below_threshold) {
+TEST(UTMovement, runBelowThreshold) {
     auto gyro_fake = [](float *xyz) {
-        xyz[0] = 10000;
-        xyz[1] = 200;
-        xyz[2] = 400;
+        xyz[0] = 10000;  // NOLINT
+        xyz[1] = 200;    // NOLINT
+        xyz[2] = 400;    // NOLINT
     };
     movement movement_instance = movement_create(gyro_fake);
     movement_reset(movement_instance);
@@ -30,11 +29,11 @@ TEST(UT_Movement, run_below_threshold) {
     movement_delete(movement_instance);
 }
 
-TEST(UT_Movement, not_run_over_threshold) {
+TEST(UTMovement, notRunOverThreshold) {
     auto gyro_fake = [](float *xyz) {
-        xyz[0] = 100;
-        xyz[1] = 200;
-        xyz[2] = 10001;
+        xyz[0] = 100;    // NOLINT
+        xyz[1] = 200;    // NOLINT
+        xyz[2] = 10001;  // NOLINT
     };
     movement movement_instance = movement_create(gyro_fake);
     movement_reset(movement_instance);
@@ -42,11 +41,11 @@ TEST(UT_Movement, not_run_over_threshold) {
     movement_delete(movement_instance);
 }
 
-TEST(UT_Movement, reset) {
+TEST(UTMovement, reset) {
     auto gyro_fake = [](float *xyz) {
-        xyz[0] = 100;
-        xyz[1] = 200;
-        xyz[2] = 10001;
+        xyz[0] = 100;    // NOLINT
+        xyz[1] = 200;    // NOLINT
+        xyz[2] = 10001;  // NOLINT
     };
     movement movement_instance = movement_create(gyro_fake);
     movement_reset(movement_instance);
