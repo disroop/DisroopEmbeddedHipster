@@ -159,7 +159,7 @@ The available command // use Font Awesome for admonition icons :icons: font
 
 .project commands
 ----
-include::../doc/project_commands.txt[]
+include::https://raw.githubusercontent.com/disroop/DisroopEmbeddedHipster/main/doc/project_commands.txt[]
 ----
 
 
