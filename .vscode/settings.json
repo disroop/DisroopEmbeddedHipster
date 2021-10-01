@@ -62,14 +62,6 @@
   "files.autoSaveDelay": 500,
   "workbench.tree.indent": 20,
   "cortex-debug.armToolchainPath": "/home/dev/.conan/data/gcc_arm_none_eabi/10.2.0/disroop/release/source/toolchain/bin",
-  "workbench.colorCustomizations": {
-    "activityBar.background": "#2aa5a1",
-    "titleBar.activeBackground": "#a3d858",
-    "titleBar.activeForeground": "#282734",
-    "sideBar.background": "#282734",
-    "editor.background": "#282734",
-    "statusBar.background": "#282734"
-  },
   "numberedBookmarks.navigateThroughAllFiles": "replace",
   "editor.formatOnType": true,
   "editor.formatOnSave": true,
