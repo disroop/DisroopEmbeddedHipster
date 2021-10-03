@@ -2,6 +2,7 @@ from invoke import task
 import shutil
 import os
 
+
 def _generate_blinky_conan_graph(context, output_folder: str, file_name: str, build_arg: str = ""):
     context.run(f"conan info ./blinky --graph {output_folder}/{file_name}.dot {build_arg}")
     context.run(f"dot -Tpng {output_folder}/{file_name}.dot > {output_folder}/{file_name}.png")
@@ -15,11 +16,12 @@ def _generate_blinky_cmake_graph(context, output_folder: str, file_name: str, bu
     context.run(f"dot -Tpng {output_folder}/tmp/cmake-target-graph.dot > {output_folder}/{file_name}.png")
     shutil.rmtree(f"{output_folder}/tmp")
 
+
 @task(aliases=['g'])
 def gen(c):
     """generate files used in the documentation"""
     # project cli commands
-    c.run("inv -l --list-depth 1 > ./doc/project_commands.txt")
+    c.run("inv -l > ./doc/project_commands.txt")
     c.run("inv -l > ./doc/all_commands.txt")
     c.run("inv -l code> ./doc/vscode_commands.txt")
 
