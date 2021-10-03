@@ -13,7 +13,7 @@ def install(c):
         linux_in_docker_cmd=None,
         linux_cmd="sudo snap install --classic code",  # todo michel please test and remove comment if ok
         mac_os_cmd="brew install --cask visual-studio-code",
-        windows_cmd="scoop instal vscode")
+        windows_cmd="scoop install vscode")
     tasks.util.run("code --install-extension ms-vscode-remote.remote-containers --force")
     tasks.util.run("code --install-extension ms-azuretools.vscode-docker --force")
     tasks.util.run("code --install-extension mhutchie.git-graph --force")
