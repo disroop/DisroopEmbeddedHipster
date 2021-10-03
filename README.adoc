@@ -23,7 +23,7 @@ DisroopEmbeddedHipster is a showcase project which demonstrates how to create mo
 
 
 == Get started
-To use the EmbeddedHipster project and start to develop you need to install the following tools on your computer:
+- Install the following tools on your computer:
 
 * https://www.docker.com/products/docker-desktop[Docker-Desktop]
 
@@ -31,21 +31,21 @@ To use the EmbeddedHipster project and start to develop you need to install the 
 
 * https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers[VsCode Plugin - Remote Container]
 
-If those tools are installed clone the repo and open vscode in the repository.
+- Clone the repo and open with VsCode.
 
-```console
+[source,console]
+----
 git clone https://github.com/disroop/DisroopEmbeddedHipster.git
 cd ./DisroopEmbeddedHipster
 code .
-```
-To start developing start the container with the remote container plugin.
+----
+- Start the container with the remote container plugin.
 
 image::doc/open_run_unit_test_arm.gif[]
 
-
 == Features
 * Reproducible and traceable builds with a fully automated toolchain
-* traceability (git history, build history, hashes, ... , timeline in sonar, ...)
+* Traceability (git history, build history, hashes, ... , timeline in sonar, ...)
 * Build-In Quality
 ** Code Analysis
 ** Coverage Analysis
@@ -60,27 +60,24 @@ image::doc/open_run_unit_test_arm.gif[]
 * Quality Gateways
 * Standardisation of toolchain
 
-To help developers to get immediatily feedback there is builtin quality in the IDE. For example linting tools or test coverage view.
+// können wir das ins doc.adoc verschieben?
+To help developers to get immediately feedback there is builtin quality in the IDE. For example linting tools or test coverage view.
 
 image::doc/builtin_quality.gif[]
 
 == Tools
-
 * Using https://hub.docker.com/u/disroop[Docker] to manage the toolchain
-* Easy to setup developer environment in 10 seconds.
-* Use https://docs.conan.io/en/latest/[Conan as package manager]
-* Use CMake in a https://cliutils.gitlab.io/modern-cmake/[Modern CMake] manner
+* Easy to set up developer environment in 10 seconds.
+* Use https://docs.conan.io/en/latest/[Conan] as package manager
+* Use https://cmake.org/[CMake] in a https://cliutils.gitlab.io/modern-cmake/[Modern CMake] manner
 * Use https://disroop.jfrog.io/[Artifactory] to manage artifacts
 * Modular Architecture
-* Testing (Unittest, Conan Package-Tests, Test on the Hardware)
-* Supported unit testing frameworks (https://github.com/google/googletest[Gtest], https://github.com/catchorg/Catch2[Catch2], http://cpputest.github.io/[Cpputest])
-* Use modern IDEs ( https://code.visualstudio.com/[VsCode] and https://www.jetbrains.com/de-de/clion/[Clion])
-
+* Testing: Unittest, Conan Package-Tests, Test on the Hardware
+* Supported testing frameworks: https://github.com/google/googletest[Gtest], https://github.com/catchorg/Catch2[Catch2], http://cpputest.github.io/[Cpputest]
+* Use modern IDEs: https://code.visualstudio.com/[VsCode] and https://www.jetbrains.com/de-de/clion/[Clion]
 * Focusing on https://en.wikipedia.org/wiki/ARM_Cortex-M[ARM Cortex-M]
 
 For more information read the <<doc/doc.adoc#,documentation>>
-
-
 
 Try our VsCode extension
 
