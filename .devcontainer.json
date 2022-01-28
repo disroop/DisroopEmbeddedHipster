@@ -39,7 +39,8 @@
 		"tomoki1207.pdf",
 		"gruntfuggly.todo-tree",
 		"llvm-vs-code-extensions.vscode-clangd",
-		"jacqueslucke.gcov-viewer"
+		"jacqueslucke.gcov-viewer",
+		"snyk-security.snyk-vulnerability-scanner"
 	],
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	"workspaceFolder": "/workspace"
