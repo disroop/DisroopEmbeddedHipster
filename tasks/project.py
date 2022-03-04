@@ -33,7 +33,7 @@ def build_blinky(c):
 @task(aliases=['bbc'])
 def build_blinky_in_container(c):
     """Build the project in a docker container"""
-    run_in_docker("disroop/embedded-hipster:0.6.13", "invoke build-blinky")
+    run_in_docker("disroop/embedded-hipster:0.6.14", "invoke build-blinky")
 
 
 def run_docker_build(docker_image, container_command):
