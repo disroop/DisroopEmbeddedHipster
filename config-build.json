@@ -26,6 +26,9 @@
       "build": "missing"
     }
   ],
+  "conan": {
+    "enabled": true
+  },
   "remotes": [
     {
       "name": "disroop-conan",
