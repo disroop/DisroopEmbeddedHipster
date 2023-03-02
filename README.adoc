@@ -51,7 +51,7 @@ image::doc/open_run_unit_test_arm.gif[]
 ** Coverage Analysis
 ** https://sonarcloud.io/organizations/disroop/projects?search=hipster[Sonar]
 * Build Automation
-** Project CLI with invoke
+** Project CLI with https://www.pyinvoke.org/[invoke]
 ** https://github.com/disroop/DisroopEmbeddedHipster/actions[GitHub Actions]
 ** https://azure.microsoft.com/de-de/services/devops/pipelines/[Azure-Pipelines -todo]
 ** https://www.jenkins.io/[Jenkins -todo]
